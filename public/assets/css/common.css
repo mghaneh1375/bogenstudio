@@ -1,0 +1,115 @@
+:root {
+    --main-color: #DA0000;
+    --navbar-height: 80px;
+    --back-color: #F3F2F2;
+    --bogen-logo-width: 122px;
+    --silver: #5D5D5D;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--back-color);
+}
+
+#navbar {
+    height: var(--navbar-height);
+    position: relative;
+    width: 100vw;
+}
+
+#bogenLogo {
+    /* Layout Properties */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--bogen-logo-width);
+    height: 100%;
+    /* UI Properties */
+    background: var(--main-color) 0% 0% no-repeat padding-box;
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+}
+
+#bogenLogo span:first-child {
+    /* Layout Properties */
+    margin-top: 18px !important;
+    margin-left: 5px;
+    margin-bottom: -5px;
+    display: inline-block !important;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 30px/40px Segoe UI;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+#bogenLogo span:last-child {
+    /* Layout Properties */
+    margin-left: 63px !important;
+    margin-top: -8px;
+    display: inline-block !important;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal lighter 20px/27px Segoe UI;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+#menuContainer {
+    position: absolute;
+    left: calc(var(--bogen-logo-width) + 10px);
+    height: 100%;
+    width: calc(100vw - var(--bogen-logo-width) - 10px);
+}
+
+#secondLogo {
+    height: calc(100% - 10px);
+    margin-top: 5px;
+    width: 65px;
+    float: left;
+}
+
+#menu {
+    height: 100%;
+    background-color: #FFFFFF;
+    margin-left: 5px;
+    width: calc(100% - 65px - 5px);
+    box-shadow: 0px 3px 6px #00000029;
+    float: left;
+    display: flex;
+}
+
+#menu p {
+    color: var(--main-color);
+    font: normal normal normal 18px/33px Segoe UI;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+#menu p:not(.selected) {
+    color: var(--silver) !important;
+}
+
+#menu button {
+    background-color: var(--main-color);
+    color: white;
+    width: 140px;
+    align-self: center;
+    height: 50px;
+    border: 1px solid white;
+    font: normal normal bold 18px/33px Segoe UI;
+    letter-spacing: 1px;
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 20px;
+}

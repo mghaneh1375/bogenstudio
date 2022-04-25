@@ -1,0 +1,284 @@
+:root {
+    --very-big-text-size: 72px;
+    --text-size: 16px;
+    --little-big-text-size: 18px;
+    --bubble-color: #B8B8B8;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#slider {
+    height: calc(100vh - var(--navbar-height) - 50px);
+    margin-left: 50px;
+    margin-bottom: 30px;
+    background: transparent linear-gradient(64deg, #24462F 0%, #193020 48%, #080F0B 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    position: relative;
+    padding-left: 80px;
+    color: white;
+}
+
+#slider .bigTexts {
+    padding-top: 20px;
+}
+
+#slider .bigTexts .bigSliderText {
+    font: normal normal bold var(--very-big-text-size)/85px Segoe UI;
+}
+
+#slider .smallText {
+    position: absolute;
+    width: 500px;
+    bottom: 30px;
+    font: normal normal normal var(--text-size)/20px Segoe UI;
+}
+
+#sliderCanvas {
+    position: absolute;
+    right: 30px;
+    top: 80px;
+    bottom: 200px;
+    width: calc(100vw - 500px - 50px - 60px - 30px - 50px);
+    height: calc(100% - 80px - 200px);
+}
+
+#sliderCanvas .bubbles {
+    height: 20px;
+    width: 200px;
+    position: absolute;
+    top: calc(100% + 30px);
+    left: calc(50% - 100px);
+    text-align: center;
+}
+
+#sliderCanvas .bubbles .bubble {
+    background: #FFFFFFC7;
+}
+
+#sliderCanvas .bubbles .bubble {
+    background-color: var(--bubble-color);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    float: left;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#sliderCanvas .bubbles .selected-bubble {
+    background-color: var(--main-color);
+    width: 12px;
+    height: 12px;
+    margin-top: -2px;
+}
+
+.innerContent {
+    margin-right: 90px;
+    margin-left: 90px;
+}
+
+.boxes {
+    height: 350px;
+    display: flex;
+    margin-bottom: 80px;
+}
+
+.boxes .box {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 20px;
+    margin-right: 10px;
+    width: calc(20% - 15px - 30px);
+    padding: 35px 15px 20px;
+    float: left;
+}
+
+.boxes .box .title {
+    color: var(--silver);
+    display: block;
+    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    margin: 0 !important;
+}
+
+.boxes .box .desc {
+    color: var(--silver);
+    display: block;
+    font: normal normal normal var(--text-size)/20px Segoe UI;
+    margin-top: 10px !important;
+}
+
+.boxes .box img {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+}
+
+.boxes .box:nth-child(5) .title {
+    margin-top: 10px !important;
+}
+
+.boxes .box:nth-child(4) img, .boxes .box:nth-child(5) img {
+    width: 100px !important;
+}
+
+.three-col {
+    height: 80px;
+    display: flex;
+}
+
+.three-col div {
+    width: 30vw;
+    align-self: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.three-col div:nth-child(1) {
+    width: 36vw !important;
+}
+
+.three-col div img {
+    float: left;
+}
+
+.three-col div div {
+    margin-left: 10px;
+    display: block;
+}
+
+.three-col div .title {
+    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    margin-bottom: 10px !important;
+    margin-top: 5px !important;
+}
+
+.three-col div .desc {
+    font: normal normal normal var(--text-size)/20px Segoe UI;
+    margin-top: 0 !important;
+}
+
+#products {
+    margin-top: 100px;
+    border-radius: 0 20px 20px 0;
+    background-color: white;
+    /*height: 240px;*/
+    display: flex;
+    margin-right: 120px;
+}
+
+#products .left {
+    float: left;
+    width: 608px;
+}
+
+#products .left .nav {
+    height: 45px;
+    margin-left: 15px;
+    margin-top: -45px;
+}
+
+#products .left .nav .item {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 20px 20px 0px 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    color: var(--silver);
+    cursor: pointer;
+    height: 100%;
+    margin-left: 5px;
+}
+
+#products .left .nav .selected {
+    background: var(--main-color) 0% 0% no-repeat padding-box;
+    color: white;
+}
+
+#products .left .nav .backArrow, #products .nav .nextArrow {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 20px 20px 0px 0px;
+    width: 60px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+#products .left .nav .nextArrow {
+    margin-left: 5px;
+    margin-right: 15px;
+    clear: right;
+}
+
+#products .left .nav .backArrow img, #products .nav .nextArrow img {
+    height: 25px;
+    margin-top: 15px;
+}
+
+#products .left .nav .backArrow img {
+    margin-left: 20px;
+}
+
+#products .left .nav .nextArrow img {
+    margin-left: 25px;
+}
+
+#products .content {
+    width: 100%;
+}
+
+#products .content .title {
+    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    color: var(--silver);
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#products .content .desc {
+    font: normal normal bold var(--text-size)/20px Segoe UI;
+    color: var(--silver);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#products .content .bubbles  {
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+#products .content .bubbles .bubble {
+    background-color: var(--bubble-color);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    float: left;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#products .content .bubbles .selected-bubble {
+    background-color: var(--main-color);
+    width: 8px;
+    height: 8px;
+    margin-top: -1px;
+}
+
+#products .right {
+    float: left;
+    margin-top: -70px;
+}
+
+#products .right img {
+    display: inline-block;
+    /*width: 600px;*/
+    height: 270px;
+    border-radius: 20px;
+}
+
