@@ -172,13 +172,21 @@ body {
 
 #products .left {
     float: left;
-    width: 608px;
+    width: 50%;
 }
 
 #products .left .nav {
     height: 45px;
     margin-left: 15px;
     margin-top: -45px;
+}
+
+#productsTag {
+    display: flex;
+    float: left;
+    height: 100%;
+    width: calc(100% - 140px);
+    overflow: hidden;
 }
 
 #products .left .nav .item {

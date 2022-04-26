@@ -12,7 +12,7 @@
         <title>Bogen Studio</title>
 
 
-        
+
     </head>
 
     <body>
@@ -133,27 +133,13 @@
 
                     <div class="nav">
 
-                        <div class="backArrow">
+                        <div id="productBackArrow" class="backArrow">
                             <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/arrowright.svg')}}">
                         </div>
 
-                        <div class="item selected">
-                            <p>Industry</p>
-                        </div>
+                        <div id="productsTag"></div>
 
-                        <div class="item">
-                            <p>Education</p>
-                        </div>
-
-                        <div class="item">
-                            <p>Training</p>
-                        </div>
-
-                        <div class="item">
-                            <p>Game</p>
-                        </div>
-
-                        <div class="nextArrow">
+                        <div id="productNextArrow" class="nextArrow">
                             <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/arrowleft.svg')}}">
                         </div>
 
@@ -161,13 +147,12 @@
 
                     <div class="content">
                         <div>
-                            <p class="title">augmented Reality (AR) & Virtual Reality (VR)</p>
-                            <p class="desc">augmented Reality (AR) & Virtual Reality (VR) is en route to becomingugmented Reality (AR) & Virtual Reality (VR) is en route to becoming</p>
-                            <div class="bubbles">
-                                <div class="bubble selected-bubble"></div>
-                                <div class="bubble"></div>
-                                <div class="bubble"></div>
+                            <p id="productTitle" class="title"></p>
+                            <p id="productDigest" class="desc"></p>
+
+                            <div id="productsBubbles" class="bubbles">
                             </div>
+
                         </div>
                     </div>
 
@@ -195,8 +180,8 @@
             var getProductsPath = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/product')}}';
         </script>
 
-        <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/fbxloader.js')}}"></script>
-        <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/home.js')}}"></script>
+{{--        <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/fbxloader.js')}}"></script>--}}
+        <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/home.js?v=1.2')}}"></script>
 
     </body>
 </html>

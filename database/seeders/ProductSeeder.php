@@ -50,7 +50,27 @@ class ProductSeeder extends Seeder
             "title_en" => Str::random(30),
             "digest_en" => Str::random(100),
             "description_en" => Str::random(1000),
-            "tags_en" => "NewTag",
+            "tags_en" => "Training_NewTag",
+            "priority" => 3,
+            "default_lang" => "en",
+            'pic' => 'Ft5UvAe0a5HTBLnWQFWO7we2rCqzCFkfusG5XaJu.jpg'
+        ]);
+
+        Product::create([
+            "title_en" => Str::random(30),
+            "digest_en" => Str::random(100),
+            "description_en" => Str::random(1000),
+            "tags_en" => "Education_NewTag2",
+            "priority" => 3,
+            "default_lang" => "en",
+            'pic' => 'Ft5UvAe0a5HTBLnWQFWO7we2rCqzCFkfusG5XaJu.jpg'
+        ]);
+
+        Product::create([
+            "title_en" => Str::random(30),
+            "digest_en" => Str::random(100),
+            "description_en" => Str::random(1000),
+            "tags_en" => "NewTag2_NewTag3",
             "priority" => 3,
             "default_lang" => "en",
             'pic' => 'Ft5UvAe0a5HTBLnWQFWO7we2rCqzCFkfusG5XaJu.jpg'
