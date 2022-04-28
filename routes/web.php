@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return Redirect::to('/en');
+});
+
 Route::prefix('{locale}')->middleware('checkLang')->group(function () {
 
     Route::get('/', function () {
         return view('welcome');
-    });
+    })->name('home');
 
 });
 
