@@ -1,0 +1,64 @@
+footer {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: var(--green-color);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    color: white;
+    margin-top: 50px;
+    position: relative;
+}
+
+footer .col {
+    width: 17%;
+}
+
+footer .col:first-child {
+    width: 32%;
+}
+
+footer .col:first-child h1 {
+    font: normal normal bold var(--very-big-text-size)/45px var(--font-family);
+}
+
+footer .col:first-child img {
+    width: 100px;
+}
+
+footer .col:first-child p {
+    font: normal normal 300 var(--big-text-size)/20px var(--font-family);
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+footer .col:nth-child(2) h1, footer .col:nth-child(3) h1,
+footer .col:nth-child(4) h1, footer .col:nth-child(5) h1 {
+    font: normal normal bold var(--big-text-size)/45px var(--font-family);
+}
+
+footer .col:nth-child(2) a, footer .col:nth-child(3) a,
+footer .col:nth-child(4) a, footer .col:nth-child(5) a {
+    display: block;
+    color: inherit !important;
+    text-decoration: none !important;
+    font: normal normal 300 var(--text-size)/20px var(--font-family);
+    margin-top: 5px;
+}
+
+footer .address {
+    position: absolute;
+    bottom: 0;
+    left: 32%;
+}
+
+footer .address h1 {
+    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    margin-bottom: 0 !important;
+}
+
+footer .address p {
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    margin-top: 0 !important;
+}

@@ -1,0 +1,144 @@
+:root {
+    --slider-margin-right: 50px;
+    --slider-transition-time: 2s;
+}
+
+#slider {
+    height: 50vh;
+    width: 100vw;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#slider .images {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-right: var(--slider-margin-right);
+    width: calc(100% - var(--slider-margin-right));
+    box-shadow: 0px 3px 6px #00000029;
+    height: 100%;
+    position: relative;
+}
+
+#slider .images img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    visibility: hidden;
+    left: calc(100% + var(--slider-margin-right));
+    transition: left var(--slider-transition-time);
+    z-index: 3;
+}
+
+#slider .images .imp {
+    z-index: 5;
+}
+
+#slider .images .active {
+    left: 0 !important;
+    visibility: visible;
+}
+
+#slider .texts {
+    background: #FFFFFFCC 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 0;
+    width: 150px;
+    z-index: 10;
+    padding: 10px 70px 10px 30px;
+}
+
+#slider .texts p:first-child {
+    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    color: var(--silver);
+    margin-bottom: 10px !important;
+}
+
+#slider .texts p:last-child {
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--silver);
+    margin-top: 0 !important;
+}
+
+#slider .bubbles {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50px;
+}
+
+.innerContent {
+    margin-left: 50px;
+    margin-right: var(--slider-margin-right);
+    width: calc(100vw - 50px - var(--slider-margin-right));
+    margin-top: 60px;
+    display: flex;
+}
+
+.innerContent .about > img {
+    width: 100px;
+}
+
+.innerContent .about p {
+    padding-right: 50px;
+    text-align: justify;
+}
+
+.innerContent .about a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.innerContent .about {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 30px;
+    width: calc(50% - 15px);
+    float: left;
+    padding: 20px;
+    margin-right: 15px;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--silver);
+}
+
+.innerContent .about span {
+    display: block;
+    float: left;
+}
+
+.innerContent .about span > img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.innerContent .map {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 30px;
+    width: calc(50% - 15px);
+    float: left;
+    padding: 20px;
+    margin-left: 15px;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--silver);
+}
+
+.innerContent .map img {
+    width: 100%;
+}
+
+.innerContent .map h2 {
+    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
+    margin-bottom: 10px !important;
+}
+
+.innerContent > .map > p {
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    margin-top: 0 !important;
+}

@@ -4,12 +4,21 @@
     --back-color: #F3F2F2;
     --bogen-logo-width: 122px;
     --silver: #5D5D5D;
+    --font-family: Segoe UI;
+    --monster-text-size: 72px;
+    --text-size: 16px;
+    --little-big-text-size: 18px;
+    --big-text-size: 22px;
+    --very-big-text-size: 36px;
+    --bubble-color: #B8B8B8;
+    --green-color: #24462F;
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: var(--back-color);
+    overflow-x: hidden;
 }
 
 #navbar {
@@ -39,7 +48,7 @@ body {
     display: inline-block !important;
     /* UI Properties */
     text-align: left;
-    font: normal normal bold 30px/40px Segoe UI;
+    font: normal normal bold 30px/40px var(--font-family);
     letter-spacing: 0;
     color: #FFFFFF;
     opacity: 1;
@@ -52,7 +61,7 @@ body {
     display: inline-block !important;
     /* UI Properties */
     text-align: left;
-    font: normal normal lighter 20px/27px Segoe UI;
+    font: normal normal lighter 20px/27px var(--font-family);
     letter-spacing: 0;
     color: #FFFFFF;
     opacity: 1;
@@ -82,9 +91,14 @@ body {
     display: flex;
 }
 
+#menu p a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 #menu p {
     color: var(--main-color);
-    font: normal normal normal 18px/33px Segoe UI;
+    font: normal normal normal 18px/33px var(--font-family);
     padding-right: 20px;
     padding-left: 20px;
     text-align: center;
@@ -103,7 +117,7 @@ body {
     align-self: center;
     height: 50px;
     border: 1px solid white;
-    font: normal normal bold 18px/33px Segoe UI;
+    font: normal normal bold 18px/33px var(--font-family);
     letter-spacing: 1px;
     margin-left: auto;
     margin-right: 20px;
@@ -112,4 +126,21 @@ body {
 
 .content {
     margin-top: 20px;
+}
+
+.bubbles .bubble {
+    background-color: var(--bubble-color);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    float: left;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.bubbles .selected-bubble {
+    background-color: var(--main-color);
+    width: 8px;
+    height: 8px;
+    margin-top: -1px;
 }

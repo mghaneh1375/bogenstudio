@@ -1,0 +1,41 @@
+:root {
+    --font-family: IRANSans !important;
+}
+
+#navbar {
+    direction: rtl;
+}
+
+#bogenLogo {
+    right: 0;
+}
+
+#bogenLogo span:first-child {
+    margin-right: 5px;
+    margin-left: initial;
+    text-align: left;
+}
+
+#bogenLogo span:last-child {
+    margin-right: 63px;
+    margin-left: initial;
+}
+
+#menuContainer {
+    right: calc(var(--bogen-logo-width) + 10px);
+    left: initial;
+}
+
+#menu {
+    float: right;
+}
+
+#secondLogo {
+    float: right;
+}
+
+#menu button {
+    margin-right: auto;
+    margin-left: 20px;
+}
+

@@ -1,0 +1,39 @@
+#contact {
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 50px;
+    display: flex;
+}
+
+#contact input {
+    background-color: #FFFFFF;
+    margin-right: 20px;
+    width: calc(25% - 20px);
+    border: none !important;
+    padding: 10px;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+}
+
+#contact input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--silver);
+    opacity: 1; /* Firefox */
+}
+
+#contact input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--silver);
+}
+
+#contact input::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--silver);
+}
+
+#contact button {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: calc(25% - 20px);
+    color: white;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    cursor: pointer;
+}

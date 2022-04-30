@@ -1,19 +1,8 @@
-:root {
-    --very-big-text-size: 72px;
-    --text-size: 16px;
-    --little-big-text-size: 18px;
-    --bubble-color: #B8B8B8;
-}
-
-body {
-    overflow-x: hidden;
-}
-
 #slider {
     height: calc(100vh - var(--navbar-height) - 50px);
     margin-left: 50px;
     margin-bottom: 30px;
-    background: transparent linear-gradient(64deg, #24462F 0%, #193020 48%, #080F0B 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(64deg, var(--green-color) 0%, #193020 48%, #080F0B 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -27,14 +16,14 @@ body {
 }
 
 #slider .bigTexts .bigSliderText {
-    font: normal normal bold var(--very-big-text-size)/85px Segoe UI;
+    font: normal normal bold var(--monster-text-size)/85px var(--font-family);
 }
 
 #slider .smallText {
     position: absolute;
     width: 500px;
     bottom: 30px;
-    font: normal normal normal var(--text-size)/20px Segoe UI;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
 }
 
 #sliderCanvas {
@@ -100,14 +89,14 @@ body {
 .boxes .box .title {
     color: var(--silver);
     display: block;
-    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
     margin: 0 !important;
 }
 
 .boxes .box .desc {
     color: var(--silver);
     display: block;
-    font: normal normal normal var(--text-size)/20px Segoe UI;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
     margin-top: 10px !important;
 }
 
@@ -151,13 +140,13 @@ body {
 }
 
 .three-col div .title {
-    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
     margin-bottom: 10px !important;
     margin-top: 5px !important;
 }
 
 .three-col div .desc {
-    font: normal normal normal var(--text-size)/20px Segoe UI;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
     margin-top: 0 !important;
 }
 
@@ -196,7 +185,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     float: left;
-    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
     color: var(--silver);
     cursor: pointer;
     height: 100%;
@@ -242,7 +231,7 @@ body {
 }
 
 #products .content .title {
-    font: normal normal bold var(--little-big-text-size)/20px Segoe UI;
+    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
     color: var(--silver);
     margin-top: 50px;
     padding-left: 20px;
@@ -250,7 +239,7 @@ body {
 }
 
 #products .content .desc {
-    font: normal normal bold var(--text-size)/20px Segoe UI;
+    font: normal normal bold var(--text-size)/20px var(--font-family);
     color: var(--silver);
     padding-left: 20px;
     padding-right: 20px;
@@ -261,22 +250,22 @@ body {
     padding-top: 10px;
 }
 
-#products .content .bubbles .bubble {
-    background-color: var(--bubble-color);
-    border-radius: 50%;
-    width: 6px;
-    height: 6px;
-    float: left;
-    cursor: pointer;
-    margin-left: 5px;
-}
+/*#products .content .bubbles .bubble {*/
+/*    background-color: var(--bubble-color);*/
+/*    border-radius: 50%;*/
+/*    width: 6px;*/
+/*    height: 6px;*/
+/*    float: left;*/
+/*    cursor: pointer;*/
+/*    margin-left: 5px;*/
+/*}*/
 
-#products .content .bubbles .selected-bubble {
-    background-color: var(--main-color);
-    width: 8px;
-    height: 8px;
-    margin-top: -1px;
-}
+/*#products .content .bubbles .selected-bubble {*/
+/*    background-color: var(--main-color);*/
+/*    width: 8px;*/
+/*    height: 8px;*/
+/*    margin-top: -1px;*/
+/*}*/
 
 #products .right {
     float: left;
