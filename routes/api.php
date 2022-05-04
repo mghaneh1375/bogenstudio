@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +28,12 @@ Route::prefix('/{lang}')->group(function () {
 
     Route::apiResource('/product', ProductController::class)->only('index');
 
+    Route::get('videos/{limit?}', [VideoController::class, 'index']);
+
 });
 
 Route::apiResource('product', ProductController::class)->only('store', 'show', 'destroy', 'update');
+
+Route::apiResource('video', VideoController::class)->only('store', 'destroy', 'update');
+
+

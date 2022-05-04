@@ -3,6 +3,11 @@
 @section('head')
     @parent
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/about.css")}}"/>
+    @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+        \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/about-rtl.css')}}">
+    @endif
+
     <title>Bogen Studio</title>
 @stop
 
@@ -35,14 +40,14 @@
 
         <div class="about">
             <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/layer.png')}}">
-            <p>Our main concept of business is providing Intelligent and customize solutions based on IT to different kinds of clients. Also, we try to develop services based on computer vision technologies individually or in partnership with other companies, academic institutes or research centers. We also provide hardware solutions besides our software solutions to make e tourism and virtual tourism systems for destinations like museums, Galleries.</p>
+            <p>{{__('about.desc')}}</p>
             <a target="_blank" href="mailto:info@bogenstudio.com"><span><img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/mail.svg')}}"></span><span>Info@bogenstudio.com</span></a>
         </div>
 
         <div class="map">
             <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/map.png')}}">
-            <h2>Bogen Studio GmbH</h2>
-            <p>lindengasse 56/18-19 (C/O IMPACHub - 1070 Wien</p>
+            <h2>{{__('footer.address_header')}}</h2>
+            <p>{{__('footer.address_desc')}}</p>
         </div>
     </div>
 

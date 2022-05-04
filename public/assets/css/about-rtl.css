@@ -1,0 +1,19 @@
+.about {
+    direction: rtl;
+}
+
+.innerContent .about span {
+    float: right;
+}
+.innerContent .about span > img {
+    margin-left: 5px;
+    margin-right: 0;
+}
+.innerContent .about p {
+    padding-left: 50px;
+    padding-right: 0;
+}
+
+.innerContent .map {
+    direction: rtl;
+}

@@ -3,6 +3,10 @@
 @section('head')
     @parent
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/home.css")}}"/>
+    @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+        \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/home-rtl.css')}}">
+    @endif
     <title>Bogen Studio</title>
 @stop
 
@@ -97,7 +101,9 @@
                     <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/arrowright.svg')}}">
                 </div>
 
-                <div id="productsTag"></div>
+                <div id="productsTagParent">
+                    <div id="productsTag"></div>
+                </div>
 
                 <div id="productNextArrow" class="nextArrow">
                     <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/arrowleft.svg')}}">
@@ -126,6 +132,16 @@
 
     @include('layouts.contact')
 
+    <script>
+        var getModelsPath = '{{url('api/model')}}';
+        var assetPath = '{{url('/')}}' + "/assets/";
+        var getProductsPath = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/product')}}';
+        var locale = '{{\Illuminate\Support\Facades\App::getLocale()}}';
+        var fetchLimit = 3;
+    </script>
+
+    @include('layouts.videos')
+
     <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
     <script type="importmap">
       {
@@ -135,12 +151,7 @@
       }
     </script>
 
-    <script>
-        var getModelsPath = '{{url('api/model')}}';
-        var getProductsPath = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/product')}}';
-    </script>
-
-    <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/home.js?v=1.2')}}"></script>
+    <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/home.js?v=1.3')}}"></script>
     <script async type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/fbxloader.js')}}"></script>
 
     @include('layouts.footer')

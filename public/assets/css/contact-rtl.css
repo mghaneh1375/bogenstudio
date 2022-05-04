@@ -2,11 +2,11 @@
     --font-family: IRANSans !important;
 }
 
-footer {
+#contact {
     direction: rtl;
 }
 
-footer .address {
-    right: 30%;
-    left: initial;
+#contact input {
+    margin-left: 20px;
+    margin-right: 0;
 }

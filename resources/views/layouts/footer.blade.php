@@ -7,17 +7,17 @@
 <footer>
 
     <div class="col">
-        <h1>We are in Vienna, The heart of Beauty & Technology</h1>
+        <h1>{{__('footer.monsterText')}}</h1>
         <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/footer.png')}}">
-        <p>Located in Vienna Impact Hub</p>
+        <p>{{__('footer.located')}}</p>
     </div>
 
     <div class="col">
         <h1>{{__('footer.findOutMore')}}</h1>
-        <a>{{__('footer.products')}}</a>
-        <a>{{__('footer.solutions')}}</a>
-        <a>{{__('footer.news')}}</a>
-        <a>{{__('footer.about')}}</a>
+        <a href="{{route('products', ['locale' => \Illuminate\Support\Facades\App::getLocale()])}}">{{__('footer.products')}}</a>
+        <a href="{{route('solutions', ['locale' => \Illuminate\Support\Facades\App::getLocale()])}}">{{__('footer.solutions')}}</a>
+        <a href="{{route('allNews', ['locale' => \Illuminate\Support\Facades\App::getLocale()])}}">{{__('footer.news')}}</a>
+        <a href="{{route('about', ['locale' => \Illuminate\Support\Facades\App::getLocale()])}}">{{__('footer.about')}}</a>
 
         <div class="address">
             <h1>{{__('footer.address_header')}}</h1>
@@ -27,16 +27,16 @@
     </div>
 
     <div class="col">
-        <h1>products</h1>
+        <h1>{{__('footer.products')}}</h1>
         <a>Blink</a>
         <a>Fire Studio</a>
     </div>
 
     <div class="col">
-        <h1>In your Language</h1>
+        <h1>{{__('footer.lang')}}</h1>
         <a href="{{route('changeLang', ['lang' => 'en'])}}">English</a>
-        <a>Deutsch</a>
-        <a>العربیه</a>
+        <a href="{{route('changeLang', ['lang' => 'gr'])}}">Deutsch</a>
+        <a href="{{route('changeLang', ['lang' => 'ar'])}}">العربیه</a>
         <a href="{{route('changeLang', ['lang' => 'fa'])}}">فارسی</a>
     </div>
 

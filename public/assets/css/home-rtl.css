@@ -1,0 +1,51 @@
+#products .left .nav .item {
+    direction: rtl;
+    float: right;
+    margin-right: 5px;
+    margin-left: initial;
+}
+
+#products .left {
+    direction: rtl;
+}
+
+#products .left .nav .backArrow, #products .left .nav .nextArrow, #productsTag {
+    float: right;
+}
+
+#products .left .nav .nextArrow {
+    clear: left;
+}
+
+#products .left .nav .backArrow img, #products .left .nav .nextArrow img {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#products .left .nav .backArrow img {
+    margin-left: initial;
+    margin-right: 20px;
+}
+
+#products .left .nav .nextArrow img {
+    margin-right: 25px;
+    margin-left: initial;
+}
+
+#productsTag {
+    width: max-content;
+    width: -moz-max-content;
+}
+
+#productsTagParent {
+    direction: rtl;
+    float: right;
+}
+
+#products .content .bubbles {
+    padding-right: 5px;
+    padding-left: initial;
+}

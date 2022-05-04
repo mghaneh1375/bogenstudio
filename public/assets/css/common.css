@@ -9,6 +9,7 @@
     --text-size: 16px;
     --little-big-text-size: 18px;
     --big-text-size: 22px;
+    --medium-big-text-size: 28px;
     --very-big-text-size: 36px;
     --bubble-color: #B8B8B8;
     --green-color: #24462F;
@@ -24,7 +25,7 @@ body {
 #navbar {
     height: var(--navbar-height);
     position: relative;
-    width: 100vw;
+    width: 100%;
 }
 
 #bogenLogo {
@@ -71,7 +72,7 @@ body {
     position: absolute;
     left: calc(var(--bogen-logo-width) + 10px);
     height: 100%;
-    width: calc(100vw - var(--bogen-logo-width) - 10px);
+    width: calc(100% - var(--bogen-logo-width) - 10px);
 }
 
 #secondLogo {
@@ -143,4 +144,8 @@ body {
     width: 8px;
     height: 8px;
     margin-top: -1px;
+}
+
+.hidden {
+    display: none !important;
 }

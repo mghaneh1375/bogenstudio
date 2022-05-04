@@ -68,6 +68,7 @@ class Product extends Model
     protected $hidden = [
         'visibility'
     ];
+
     public function scopeVisible($query) {
         return $query->where('visibility', '=', true);
     }

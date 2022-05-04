@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
@@ -40,5 +41,25 @@ Route::prefix('{locale}')->middleware('checkLang')->group(function () {
     Route::get('/about', function () {
         return view('about');
     })->name('about');
+
+    Route::get('/products', function () {
+        return view('products');
+    })->name('products');
+
+    Route::get('/product/{productId}', function ($productId) {
+        return view('product', ['productId' => $productId]);
+    })->name('product');
+
+    Route::get('/news', function () {
+        return view('allNews');
+    })->name('allNews');
+
+    Route::get('/news/{newsId}', function ($newsId) {
+        return view('news', ['newsId' => $newsId]);
+    })->name('news');
+
+    Route::get('/solutions', function () {
+        return view('solutions');
+    })->name('solutions');
 
 });

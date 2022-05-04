@@ -1,0 +1,109 @@
+#videos {
+    margin-top: 50px;
+    border-radius: 0 20px 20px 0;
+    background-color: white;
+    /*height: 240px;*/
+    display: flex;
+    margin-right: 120px;
+    padding: 20px 20px 80px;
+    flex-wrap: wrap;
+}
+
+#videos .first-row {
+    width: 100%;
+    display: flex;
+    clear: both;
+    position: relative;
+}
+
+#videos .first-row-img {
+    width: 75%;
+    float: left;
+    z-index: 2;
+}
+
+#videos .first-row-img img {
+    width: 100%;
+}
+
+#videos .first-row-decs {
+    padding-left: 20px;
+    width: calc(25% - 20px);
+    margin-top: 70px;
+}
+
+#videos .first-row-decs .title {
+    font: normal normal bold var(--medium-big-text-size)/36px var(--font-family);
+    color: var(--silver);
+}
+
+#videos .first-row-decs .desc {
+    font: normal normal normal var(--little-big-text-size)/24px var(--font-family);
+    color: var(--silver);
+}
+
+#videos .second-row {
+    width: 100%;
+    clear: both;
+    margin-top: 20px;
+}
+
+#videos .second-row-img {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#videos .second-row-img img {
+    width: 300px;
+    z-index: 2;
+}
+
+#videos .second-row-img .txt {
+    width: calc(100% - 300px - 40px);
+    padding: 20px;
+}
+
+#videos .second-row-img h1 {
+    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
+    color: var(--silver);
+}
+
+#videos .second-row-img p {
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--silver);
+}
+
+#videos .first-row .play {
+    width: 100px;
+    position: absolute;
+    left: calc(75% / 2 - 50px);
+    top: calc(50% - 50px);
+    cursor: pointer;
+    z-index: 3;
+}
+
+#videos .first-row .video {
+    position: absolute;
+    left: 0;
+    width: 75%;
+    top: 0;
+}
+
+#videos .second-row-img .video {
+    position: absolute;
+    left: 0;
+    width: 300px;
+    top: 0;
+}
+
+#videos .second-row .play {
+    width: 50px;
+    position: absolute;
+    left: calc(300px / 2 - 25px);
+    top: calc(50% - 25px);
+    cursor: pointer;
+    z-index: 3;
+}

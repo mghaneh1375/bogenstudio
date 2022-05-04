@@ -1,0 +1,44 @@
+#videos {
+    margin-top: 50px;
+    border-radius: 20px 0 0 20px;
+    background-color: white;
+    display: flex;
+    margin-left: 120px;
+    margin-right: initial;
+    padding: 20px 20px 80px;
+    flex-wrap: wrap;
+    direction: rtl;
+}
+
+#videos .first-row-img {
+    float: right;
+}
+
+#videos .first-row-decs {
+    padding-left: initial;
+    padding-right: 20px;
+}
+
+#videos .second-row-img {
+    float: right;
+}
+
+#videos .first-row .play {
+    right: calc(75% / 2 - 50px);
+    left: initial;
+}
+
+#videos .first-row .video {
+    right: 0;
+    left: initial;
+}
+
+#videos .second-row .play {
+    right: calc(300px / 2 - 25px);
+    left: initial;
+}
+
+#videos .second-row-img .video {
+    right: 0;
+    left: initial;
+}

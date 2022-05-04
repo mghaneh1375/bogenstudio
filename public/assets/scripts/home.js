@@ -50,15 +50,15 @@ function hover(node, on) {
     switch (nth) {
         case "1":
             if(on)
-                newSrc = "./assets/images/blinkcolor.png";
+                newSrc = assetPath + "images/blinkcolor.png";
             else
-                newSrc = "./assets/images/blinkgray.png";
+                newSrc = assetPath + "images/blinkgray.png";
             break;
         default:
             if(on)
-                newSrc = "./assets/images/fireblue.svg";
+                newSrc = assetPath + "images/fireblue.svg";
             else
-                newSrc = "./assets/images/firegray.svg";
+                newSrc = assetPath + "images/firegray.svg";
             break;
     }
 
@@ -102,36 +102,73 @@ function getArticles() {
                 changeProductTag(parseInt($(this).attr('data-idx')));
             });
 
-            var productsTagLeft = productsTagNode.offset().left;
-            var productsTagWidth = productsTagNode[0].scrollWidth;
 
-            $("#productNextArrow").on('click', function () {
-
-                var nextArrowLeft = $(this).offset().left;
-                var scrollLeft = productsTagNode[0].scrollLeft;
-
-                if(nextArrowLeft - productsTagLeft < productsTagWidth - scrollLeft) {
-                    productsTagNode.animate({
-                        scrollLeft: scrollLeft + 100
-                    }, 700);
-                }
-
-            });
-
-            $("#productBackArrow").on('click', function () {
-
-                var scrollLeft = productsTagNode[0].scrollLeft;
-
-                if(scrollLeft > 0) {
-                    productsTagNode.animate({
-                        scrollLeft: scrollLeft > 100 ? scrollLeft - 100 : 0
-                    }, 700);
-                }
-
-            });
-
+            if(locale === "fa" || locale === "ar")
+                scrollProductTagsRtl();
+            else
+                scrollProductTagsLtr();
 
         }
     });
 
+}
+
+function scrollProductTagsLtr() {
+
+    var productsTagNode = $("#productsTagParent");
+
+    var productsTagLeft = productsTagNode.offset().left;
+    var productsTagWidth = productsTagNode[0].scrollWidth;
+
+    $("#productNextArrow").on('click', function () {
+
+        var nextArrowLeft = $(this).offset().left;
+        var scrollLeft = productsTagNode[0].scrollLeft;
+
+        if(nextArrowLeft - productsTagLeft < productsTagWidth - scrollLeft) {
+            productsTagNode.animate({
+                scrollLeft: scrollLeft + 100
+            }, 700);
+        }
+
+    });
+
+    $("#productBackArrow").on('click', function () {
+
+        var scrollLeft = productsTagNode[0].scrollLeft;
+
+        if(scrollLeft > 0) {
+            productsTagNode.animate({
+                scrollLeft: scrollLeft > 100 ? scrollLeft - 100 : 0
+            }, 700);
+        }
+
+    });
+}
+
+function scrollProductTagsRtl() {
+
+    var productsTagNode = $("#productsTagParent");
+
+    $("#productNextArrow").on('click', function () {
+
+        var scrollRight = productsTagNode[0].scrollLeft;
+
+        productsTagNode.animate({
+            scrollLeft: scrollRight - 100
+        }, 700);
+
+    });
+
+    $("#productBackArrow").on('click', function () {
+
+        var scrollLeft = productsTagNode[0].scrollLeft;
+
+        if(scrollLeft < 0) {
+            productsTagNode.animate({
+                scrollLeft: scrollLeft < -100 ? scrollLeft + 100 : 0
+            }, 700);
+        }
+
+    });
 }

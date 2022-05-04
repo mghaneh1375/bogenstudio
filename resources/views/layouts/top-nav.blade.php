@@ -25,7 +25,7 @@
             <p {{($routeName == "home") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale())}}">{{__('footer.home')}}</a></p>
             <p>{{__('footer.solutions')}}</p>
             <p>{{__('footer.products')}}</p>
-            <p>{{__('footer.news')}}</p>
+            <p {{($routeName == "allNews") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/news')}}">{{__('footer.news')}}</a></p>
             <p {{($routeName == "about") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/about')}}">{{__('footer.about')}}</a></p>
 
             <button>{{__('footer.create')}}</button>

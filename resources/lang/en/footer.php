@@ -16,4 +16,7 @@ return [
     "call" => "Call Us",
     "emailUs" => "Email Us",
     "findUs" => "Find Us",
+    "lang" => "In your Language",
+    "monsterText" => "We are in Vienna, The heart of Beauty & Technology",
+    "located" => "Located in Vienna Impact Hub",
 ];

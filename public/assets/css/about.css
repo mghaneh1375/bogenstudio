@@ -5,7 +5,7 @@
 
 #slider {
     height: 50vh;
-    width: 100vw;
+    width: 100%;
     margin-bottom: 30px;
     position: relative;
 }
@@ -76,7 +76,7 @@
 .innerContent {
     margin-left: 50px;
     margin-right: var(--slider-margin-right);
-    width: calc(100vw - 50px - var(--slider-margin-right));
+    width: calc(100% - 50px - var(--slider-margin-right));
     margin-top: 60px;
     display: flex;
 }
