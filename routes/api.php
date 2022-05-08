@@ -4,7 +4,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VideoController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::apiResource('model', ModelController::class);
+
+Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
+
+    Route::apiResource('/product', ProductController::class)->except(['create', 'edit']);
+
 });
 
-Route::apiResource('model', ModelController::class);
 
 Route::prefix('/{lang}')->group(function () {
 
@@ -36,4 +38,4 @@ Route::apiResource('product', ProductController::class)->only('store', 'show', '
 
 Route::apiResource('video', VideoController::class)->only('store', 'destroy', 'update');
 
-
+Route::post('doLogin', [HomeController::class, 'doLogin'])->name('doLogin');

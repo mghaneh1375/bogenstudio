@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AdminProductDigest;
 use App\Http\Resources\ProductDigest;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
@@ -13,12 +16,16 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @param $lang
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return AnonymousResourceCollection
      */
-    public function index($lang) {
+    public function index(Request $request, $lang="en") {
 
-        $products = Product::all()->toArray();
+        if($request->user() != null)
+            return AdminProductDigest::collection(Product::all())->additional(['status' => 'ok']);
+
+        $products = Product::visible()->toArray();
         $distinct_tags = [];
         $product_tags = [];
 
@@ -110,19 +117,19 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
+     * @param Product $product
+     * @return ProductResource
      */
     public function show(Product $product)
     {
-        //
+        return ProductResource::make($product)->additional(['status' => 'ok']);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param Product $product
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product)
@@ -190,11 +197,15 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param Product $product
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product)
     {
-        //
+        if(file_exists(__DIR__ . '/../../../storage/app/public/products/' . $product->pic))
+            unlink(__DIR__ . '/../../../storage/app/public/products/' . $product->pic);
+
+        $product->delete();
+        return response()->json(["status" => "ok"]);
     }
 }
