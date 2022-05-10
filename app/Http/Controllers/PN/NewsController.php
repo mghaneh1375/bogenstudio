@@ -1,31 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\PN;
 
-use App\Models\News;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class NewsController extends Controller
+class NewsController extends PNController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $lang="en")
     {
-        //
+        parent::doIndex($request, true, $lang);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +26,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        parent::doStore($request, true);
     }
 
     /**
@@ -44,21 +35,11 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(Product $news)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\News  $news
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(News $news)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -67,7 +48,7 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, Product $news)
     {
         //
     }
@@ -78,7 +59,7 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(Product $news)
     {
         //
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\PNController;
 
 use App\Http\Resources\AdminProductDigest;
 use App\Http\Resources\ProductDigest;
@@ -10,22 +10,15 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Validation\Rule;
 
-class ProductController extends Controller
+class PNController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @param Request $request
-     * @param $lang
-     * @return AnonymousResourceCollection
-     */
-    public function index(Request $request, $lang="en") {
+    public static function index(Request $request, $isNews, $lang) {
 
         if($request->user() != null)
-            return AdminProductDigest::collection(Product::all())->additional(['status' => 'ok']);
+            return AdminProductDigest::collection(Product::whereIsNews($isNews)->get())->additional(['status' => 'ok']);
 
-        $products = Product::visible()->toArray();
+        $products = Product::whereIsNews($isNews)->visible()->toArray();
         $distinct_tags = [];
         $product_tags = [];
 
@@ -77,13 +70,7 @@ class ProductController extends Controller
         return ProductDigest::collection($all_tags)->additional(['status' => 'ok']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request) {
+    public static function store(Request $request, $isNews) {
 
         $request->validate([
             'tags_en' => 'nullable|string',
@@ -110,29 +97,14 @@ class ProductController extends Controller
         if($request->hasFile("pic_file") && $request->pic_file != null)
             $request["pic"] = str_replace("public/products/", "", $request->pic_file->store("public/products"));
 
+        $request["visibility"] = true;
+        $request["is_news"] = $isNews;
+
         Product::create($request->toArray());
         return response()->json(['status' => 'ok']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param Product $product
-     * @return ProductResource
-     */
-    public function show(Product $product)
-    {
-        return ProductResource::make($product)->additional(['status' => 'ok']);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
+    public static function update(Request $request, Product $product)
     {
         $request->validate([
             'tags_en' => 'nullable|string',
@@ -194,13 +166,7 @@ class ProductController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
+    public static function destroy(Product $product)
     {
         if(file_exists(__DIR__ . '/../../../storage/app/public/products/' . $product->pic))
             unlink(__DIR__ . '/../../../storage/app/public/products/' . $product->pic);
