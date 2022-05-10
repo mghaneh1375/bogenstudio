@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\PN;
 
 use App\Http\Resources\AdminProductDigest;
 use App\Http\Resources\ProductDigest;
@@ -23,13 +23,22 @@ class ProductController extends PNController
     public function index(Request $request, $lang="en") {
 
         if($request->user() != null)
-            return AdminProductDigest::collection(Product::all())->additional(['status' => 'ok']);
+            return AdminProductDigest::collection(Product::whereIsNews(false)->get())->additional(['status' => 'ok']);
 
-        $products = Product::visible()->toArray();
+        $products = Product::whereIsNews(false)->visible()->get()->toArray();
         $distinct_tags = [];
         $product_tags = [];
 
+        $org_lang = $lang;
+
         foreach ($products as $product) {
+
+            $lang = $org_lang;
+
+            if($product['title_' . $lang] == null ||
+                empty($product['title_' . $lang])
+            )
+                $lang = $product['default_lang'];
 
             if($product['tags_' . $lang] == null) {
                 array_push($product_tags, []);
@@ -84,7 +93,7 @@ class ProductController extends PNController
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        self::store($request, false);
+        return parent::doStore($request, false);
     }
 
     /**
@@ -95,7 +104,7 @@ class ProductController extends PNController
      */
     public function show(Product $product)
     {
-        return ProductResource::make($product)->additional(['status' => 'ok']);
+        return parent::show($product);
     }
 
     /**
@@ -107,7 +116,7 @@ class ProductController extends PNController
      */
     public function update(Request $request, Product $product)
     {
-        self::update($request, $product);
+        return parent::update($request, $product);
     }
 
     /**
@@ -118,6 +127,6 @@ class ProductController extends PNController
      */
     public function destroy(Product $product)
     {
-        self::destroy($product);
+        return parent::destroy($product);
     }
 }

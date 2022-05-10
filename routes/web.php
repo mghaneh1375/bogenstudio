@@ -24,8 +24,6 @@ Route::get('/about', function () {
     return Redirect::to('/en/about');
 });
 
-Route::post('contactMe', [HomeController::class, 'contactMe'])->name('contactMe');
-
 Route::get('changeLang/{lang}', [HomeController::class, 'changeLanguage'])->name('changeLang');
 
 Route::view('/login', 'panel.login')->name('login');
@@ -36,9 +34,38 @@ Route::prefix('admin-panel')->group(function () {
         return view('panel/home');
     })->name('admin.home');
 
-    Route::view('news', 'panel.news')->name('admin.news');
 
-    Route::view('models', 'panel.models')->name('admin.model');
+    Route::view('news', 'panel.news.index')->name('admin.news');
+
+    Route::view('addNews', 'panel.news.store')->name('admin.news.store');
+
+    Route::get('news/{newsId}', function ($newsId) {
+        return view('panel.news.show', compact('newsId'));
+    });
+
+
+    Route::view('contacts', 'panel.contact.index')->name('admin.contacts');
+
+
+    Route::view('models', 'panel.model.index')->name('admin.models');
+
+    Route::view('addModel', 'panel.model.store')->name('admin.model.store');
+
+    Route::get('model/{modelId}', function ($modelId) {
+        return view('panel.model.show', compact('modelId'));
+    });
+
+
+
+    Route::view('videos', 'panel.video.index')->name('admin.videos');
+
+    Route::view('addVideo', 'panel.video.store')->name('admin.video.store');
+
+    Route::get('video/{videoId}', function ($videoId) {
+        return view('panel.video.show', compact('videoId'));
+    });
+
+
 
     Route::view('products', 'panel.product.index')->name('admin.products');
 
@@ -48,7 +75,6 @@ Route::prefix('admin-panel')->group(function () {
         return view('panel.product.show', compact('productId'));
     });
 
-    Route::view('contacts', 'panel.contacts')->name('admin.contacts');
 
     Route::get('logout', [HomeController::class, 'logout'])->name('logout');
 

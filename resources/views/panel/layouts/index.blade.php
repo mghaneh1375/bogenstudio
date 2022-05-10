@@ -18,24 +18,7 @@
 
                     <center>
 
-                        <div style="margin: 10px">
-                            <a href="{{route('admin.model.store')}}" class="btn btn-default">Add Item</a>
-                        </div>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>texture</th>
-                                    <td>priority</td>
-                                    <td>visibility</td>
-                                    <td>created at</td>
-                                    <td>updated at</td>
-                                    <td>op</td>
-                                </tr>
-                            </thead>
-                            <tbody id="table-body">
-                            </tbody>
-                        </table>
+                        @yield('table')
 
                     </center>
 
@@ -46,13 +29,6 @@
 
     <script src="{{asset('panel/js/fetchTableData.js')}}"></script>
 
-    <script>
-
-        $(document).ready(function () {
-            fetchData('{{url('api/admin-panel/model')}}', 'table-body',
-                '{{url('admin-panel/model')}}', '{{url('api/model')}}');
-        });
-
-    </script>
+    @yield('script')
 
 @stop

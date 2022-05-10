@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ModelController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PN\ProductController;
+use App\Http\Controllers\PN\NewsController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +19,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('model', ModelController::class);
-
 Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
 
-    Route::apiResource('/product', ProductController::class)->except(['create', 'edit']);
+    Route::apiResource('/contact', ContactController::class)->only(['index', 'destroy']);
 
+    Route::get('/contact/unseen', [ContactController::class, 'getCountUnSeen'])->name('contact.unseen');
+
+
+
+    Route::apiResource('/product', ProductController::class)->except(['create', 'edit', 'update']);
+
+    Route::post('/product/{product}', [ProductController::class, 'update']);
+
+
+    Route::apiResource('/news', NewsController::class)->except(['create', 'edit', 'update']);
+
+    Route::post('/news/{news}', [NewsController::class, 'update']);
+
+
+    Route::apiResource('/model', ModelController::class)->except(['create', 'edit', 'update']);
+
+    Route::post('/model/{model}', [ModelController::class, 'update']);
+
+
+    Route::apiResource('/model', ModelController::class)->except(['create', 'edit', 'update']);
+
+    Route::post('/model/{model}', [ModelController::class, 'update']);
+
+
+    Route::apiResource('/video', VideoController::class)->except(['create', 'edit', 'update']);
+
+    Route::post('/video/{video}', [VideoController::class, 'update']);
 });
 
 
@@ -32,10 +59,12 @@ Route::prefix('/{lang}')->group(function () {
 
     Route::get('videos/{limit?}', [VideoController::class, 'index']);
 
+    Route::get('news/{limit?}', [NewsController::class, 'index']);
+
 });
 
-Route::apiResource('product', ProductController::class)->only('store', 'show', 'destroy', 'update');
+Route::post('contactMe', [ContactController::class, 'store'])->name('contactMe');
 
-Route::apiResource('video', VideoController::class)->only('store', 'destroy', 'update');
+Route::get('model', [ModelController::class, 'index']);
 
 Route::post('doLogin', [HomeController::class, 'doLogin'])->name('doLogin');

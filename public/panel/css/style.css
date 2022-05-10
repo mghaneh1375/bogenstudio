@@ -114,8 +114,17 @@ padding: 0
 
 #mainContainer {
     margin-top: 5%;
-    margin: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
     direction: rtl;
+}
+
+#unseen {
+    font-size: 0.6em;
+}
+
+table {
+    width: 100%;
 }
 
 th, td {
@@ -170,9 +179,23 @@ th, td {
     width: 100% !important;
 }
 
-.big-input input, .big-input textarea, .big-input button, .big-input select {
+.big-input input, .big-input textarea,
+.big-input button, .big-input select {
     padding: 7px;
     width: 100%;
+}
+
+.big-input input[type=file] {
+    width: calc(100% - 200px) !important;
+    float: left;
+    clear: right;
+}
+
+.big-input label {
+    float: left;
+    width: 120px;
+    margin-top: 10px;
+    text-align: left;
 }
 
 .big-input input, .big-input textarea {

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\PNController;
+namespace App\Http\Controllers\PN;
+
+use App\Http\Controllers\Controller;
 
 use App\Http\Resources\AdminProductDigest;
 use App\Http\Resources\ProductDigest;
@@ -13,64 +15,7 @@ use Illuminate\Validation\Rule;
 class PNController extends Controller
 {
 
-    public static function index(Request $request, $isNews, $lang) {
-
-        if($request->user() != null)
-            return AdminProductDigest::collection(Product::whereIsNews($isNews)->get())->additional(['status' => 'ok']);
-
-        $products = Product::whereIsNews($isNews)->visible()->toArray();
-        $distinct_tags = [];
-        $product_tags = [];
-
-        foreach ($products as $product) {
-
-            if($product['tags_' . $lang] == null) {
-                array_push($product_tags, []);
-                continue;
-            }
-
-            $tags = explode('_', $product['tags_' . $lang]);
-            array_push($product_tags, $tags);
-
-            foreach ($tags as $tag) {
-
-                if(in_array($tag, $distinct_tags))
-                    continue;
-
-                array_push($distinct_tags, $tag);
-            }
-
-        }
-
-        $all_tags = [];
-
-        foreach ($distinct_tags as $tag) {
-
-            $tag_products = [];
-
-            $i = -1;
-
-            foreach ($products as $product) {
-
-                $i++;
-
-                if(!in_array($tag, $product_tags[$i]))
-                    continue;
-
-                array_push($tag_products, $product);
-            }
-
-            usort($tag_products, function ($a, $b) {
-                return $a['priority'] - $b['priority'];
-            });
-
-            array_push($all_tags, ['tag' => $tag, 'products' => $tag_products, 'lang' => $lang]);
-        }
-
-        return ProductDigest::collection($all_tags)->additional(['status' => 'ok']);
-    }
-
-    public static function store(Request $request, $isNews) {
+    public function doStore(Request $request, $isNews) {
 
         $request->validate([
             'tags_en' => 'nullable|string',
@@ -104,7 +49,11 @@ class PNController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
-    public static function update(Request $request, Product $product)
+    public function show(Product $product) {
+        return ProductResource::make($product)->additional(['status' => 'ok']);
+    }
+
+    public function update(Request $request, Product $product)
     {
         $request->validate([
             'tags_en' => 'nullable|string',
@@ -166,7 +115,7 @@ class PNController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
-    public static function destroy(Product $product)
+    public function destroy(Product $product)
     {
         if(file_exists(__DIR__ . '/../../../storage/app/public/products/' . $product->pic))
             unlink(__DIR__ . '/../../../storage/app/public/products/' . $product->pic);

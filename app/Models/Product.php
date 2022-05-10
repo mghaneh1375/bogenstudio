@@ -30,10 +30,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $pic
  * @property integer $priority
  * @property boolean $visibility
+ * @property boolean $is_news
  * @method static Builder|Product newModelQuery()
  * @method static Builder|Product newQuery()
  * @method static Builder|Product query()
  * @method static Builder|Product whereId($value)
+ * @method static Builder|Product whereIsNews($value)
  * @mixin Eloquent
  */
 
@@ -62,11 +64,13 @@ class Product extends Model
         'pic',
         'default_lang',
         'priority',
-        'visibility'
+        'visibility',
+        'is_news'
     ];
 
     protected $hidden = [
-        'visibility'
+        'visibility',
+        'is_news'
     ];
 
     public function scopeVisible($query) {
