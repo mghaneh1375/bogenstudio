@@ -2,7 +2,6 @@
 
 @section('header')
     @parent
-
 @stop
 
 @section('content')
@@ -16,7 +15,7 @@
 
                 <div id="mainContainer" class="page-content">
                     <form id="form">
-                        @include('panel.model.structure')
+                        @yield('structure')
                         <div class="big-input">
                             <input style="text-align: center" type="submit" class="btn btn-warning" value="Store">
                         </div>
@@ -26,10 +25,6 @@
         </div>
     </div>
 
-    <script>
-        var storeUrl = '{{url('api/admin-panel/model')}}';
-        var redirectUrl = '{{route('admin.models')}}';
-    </script>
     <script src="{{asset('panel/js/create_edit.js')}}"></script>
 
 @stop

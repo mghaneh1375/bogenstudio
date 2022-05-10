@@ -1,4 +1,5 @@
-function fetchData(url, nodeId, showUrl, deleteUrl) {
+function fetchData(url, nodeId,
+                   showUrl, keys) {
 
     var token = localStorage.getItem('token');
     if(token == null)
@@ -20,17 +21,24 @@ function fetchData(url, nodeId, showUrl, deleteUrl) {
             var html = '';
 
             for(var i = 0; i < res.length; i++) {
+
                 html += '<tr id="row_' + res[i].id + '">';
-                html += '<td>' + res[i].title + '</td>';
-                html += '<td><img src="' + res[i].image + '"></td>';
-                html += '<td>' + res[i].default_lang + '</td>';
-                html += '<td>' + res[i].priority + '</td>';
-                html += '<td>' + res[i].visibility + '</td>';
-                html += '<td>' + res[i].created_at + '</td>';
-                html += '<td>' + res[i].updated_at + '</td>';
+
+                for(var j = 0; j < keys.length; j++) {
+
+                    if(keys[j] === "image" || keys[j] === "texture" || keys[j] === "preview")
+                        html += '<td><img src="' + res[i][keys[j]] + '"></td>';
+                    else
+                        html += '<td>' + res[i][keys[j]] + '</td>';
+
+                }
+
                 html += '<td>';
-                html += '<a href="' + showUrl + '/' + res[i].id +'" class="btn btn-info glyphicon glyphicon-eye-open"></a>';
-                html += '<button onclick="removeSelectedItem(\'' + deleteUrl + '\', ' + res[i].id + ')" class="btn btn-danger glyphicon glyphicon-trash"></button>';
+
+                if(showUrl != null)
+                    html += '<a href="' + showUrl + '/' + res[i].id +'" class="btn btn-info glyphicon glyphicon-eye-open"></a>';
+
+                html += '<button onclick="removeSelectedItem(\'' + url + '\', ' + res[i].id + ')" class="btn btn-danger glyphicon glyphicon-trash"></button>';
                 html += '</td>';
                 html += '</tr>';
             }
@@ -85,14 +93,24 @@ function fetchFormData(url) {
             res = res.data;
             for (var key in res) {
 
-                if(key === "pic" || key === "default_lang")
+                if(key === "pic" || key === "preview" || key === "texture") {
+                    $("#" + key).removeClass('hidden').attr('src', res[key]);
                     continue;
+                }
+
+                if(key === "default_lang" || key === "visibility") {
+                    $("#" + key).removeClass('hidden').val(res[key]).change();
+                    continue;
+                }
+
+                if(key === "model") {
+                    $("#sliderCanvas").removeClass('hidden');
+                    modelPath = res['model'];
+                    texturePath = res['texture'];
+                }
 
                 $("#" + key).val(res[key]);
             }
-
-            $("#default_lang").val(res["default_lang"]).change();
-            $("#pic").removeClass('hidden').attr('src', res['pic']);
         }
     });
 

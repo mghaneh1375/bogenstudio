@@ -80,8 +80,21 @@ function render() {
     renderer.render(scene, camera);
 }
 
-function showModel(modelPath, texturePath) {
+export function showModel(modelPath, texturePath) {
     camera.position.set(0, 50, 100);
     loadFBX(modelPath, texturePath);
     animate();
 }
+
+$(document).ready(function () {
+
+    var timer = setInterval(function () {
+
+        if(modelPath !== null) {
+            clearInterval(timer);
+            showModel(modelPath, texturePath);
+        }
+
+    }, 500);
+
+})

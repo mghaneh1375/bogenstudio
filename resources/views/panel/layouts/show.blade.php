@@ -16,7 +16,7 @@
 
                 <div id="mainContainer" class="page-content">
                     <form id="editForm">
-                        @include('panel.product.structure')
+                        @yield('structure')
                         <div class="big-input">
                             <input style="text-align: center" type="submit" class="btn btn-warning" value="Edit">
                         </div>
@@ -27,20 +27,7 @@
     </div>
 
     <script src="{{asset('panel/js/fetchTableData.js')}}"></script>
-
-    <script>
-
-        var editUrl = '{{url('api/admin-panel/product/' . $productId)}}';
-        var redirectUrl = '{{route('admin.products')}}';
-
-        $(document).ready(function () {
-
-            fetchFormData('{{url('api/admin-panel/product/' . $productId)}}');
-
-        });
-
-    </script>
-
+    @yield('script')
     <script src="{{asset('panel/js/create_edit.js')}}"></script>
 
 @stop

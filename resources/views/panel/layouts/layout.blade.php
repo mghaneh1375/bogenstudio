@@ -178,16 +178,15 @@
 
                     <li class="nav-item"><a data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i></i> <span class="mini-dn">تنظیمات سیستمی</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                         <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                            <a href="{{route('admin.model')}}" class="dropdown-item">مدیریت obj فایل اسلایدبار</a>
+                            <a href="{{route('admin.models')}}" class="dropdown-item">مدیریت obj فایل اسلایدبار</a>
                             <a href="{{route('admin.news')}}" class="dropdown-item">مدیریت اخبار</a>
                             <a href="{{route('admin.products')}}" class="dropdown-item">مدیریت محصولات</a>
-{{--                            <a href="{{route('manageArticles')}}" class="dropdown-item">مدیریت مقالات</a>--}}
-{{--                            <a href="{{route('manageNews')}}" class="dropdown-item">مدیریت اخبار</a>--}}
+                            <a href="{{route('admin.videos')}}" class="dropdown-item">مدیریت ویدیوها</a>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('admin.contacts')}}" aria-expanded="false"><i></i> <span class="mini-dn">تماس ها</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <a href="{{route('admin.contacts')}}" aria-expanded="false"><i></i> <span class="mini-dn">تماس ها</span> <span id="unseen"></span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     </li>
 
                     <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i></i> <span class="mini-dn">پروفایل من</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
@@ -236,9 +235,7 @@
         <script src="{{URL::asset('panel/js/counterup/counterup-active.js')}}"></script>
         <!-- jvectormap JS
             ============================================ -->
-    {{--<script src="{{URL::asset('panel/js/jvectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>--}}
-    {{--<script src="{{URL::asset('panel/js/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>--}}
-    {{--<script src="{{URL::asset('panel/js/jvectormap/jvectormap-active.js')}}"></script>--}}
+
     <!-- peity JS
                 ============================================ -->
         <script src="{{URL::asset('panel/js/peity/jquery.peity.min.js')}}"></script>
@@ -286,6 +283,28 @@
                 }
                 return true;
             }
+
+            $(document).ready(function() {
+                var token = localStorage.getItem('token');
+                if(token == null) {
+                    window.location.href = '/';
+                    return;
+                }
+
+                $.ajax({
+                    type: 'get',
+                    url: '{{route('contact.unseen')}}',
+                    headers: {
+                        'Authorization': "Bearer " + token,
+                        'accept': 'application/json'
+                    },
+                    success: function(res) {
+
+                        if(res.status === "ok" && parseInt(res.unseen) > 0)
+                            $("#unseen").append(res.unseen + " تماس دیده نشده ");
+                    }
+                });
+            });
 
         </script>
     @show

@@ -19,7 +19,10 @@ class Model3DResource extends JsonResource
             'visibility' => $this->visibility,
             'model' => URL::asset('storage/models/' . $this->model),
             'texture' => ($this->texture == null) ? '' : URL::asset('storage/models/' . $this->texture),
-            'priority' => $this->priority
+            'priority' => $this->priority,
+            'id' => $this->id,
+            'created_at' => explode('T', $this->created_at)[0],
+            'updated_at' => explode('T', $this->updated_at)[0],
         ];
     }
 }

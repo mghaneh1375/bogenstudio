@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|Contact query()
  * @method static Builder|Contact whereId($value)
  * @method static Builder|Contact whereIp($value)
+ * @method static Builder|Contact whereSeen($value)
  * @mixin Eloquent
  */
 class Contact extends Model

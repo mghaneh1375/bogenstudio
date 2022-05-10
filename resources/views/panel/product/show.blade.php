@@ -15,7 +15,7 @@
             <div class="sparkline8-graph dashone-comment dashtwo-messages">
 
                 <div id="mainContainer" class="page-content">
-                    <form id="form">
+                    <form id="editForm">
                         @include('panel.product.structure')
                         <div class="big-input">
                             <input style="text-align: center" type="submit" class="btn btn-warning" value="Edit">
@@ -30,6 +30,9 @@
 
     <script>
 
+        var editUrl = '{{url('api/admin-panel/product/' . $productId)}}';
+        var redirectUrl = '{{route('admin.products')}}';
+
         $(document).ready(function () {
 
             fetchFormData('{{url('api/admin-panel/product/' . $productId)}}');
@@ -37,5 +40,7 @@
         });
 
     </script>
+
+    <script src="{{asset('panel/js/create_edit.js')}}"></script>
 
 @stop

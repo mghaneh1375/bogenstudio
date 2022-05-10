@@ -66,8 +66,11 @@ function loadFBX(modelPath, texturePath) {
                 }
             });
 
-            object.scale.set(.6, .6, .6);
-            object.position.set(0, -200, 0);
+            // object.scale.set(.6, .6, .6);
+            // object.position.set(0, -200, 0);
+
+            object.scale.set(1, 1, 1);
+            object.position.set(0, -50, 0);
 
             for( var i = scene.children.length - 1; i >= 0; i--)
                 scene.remove(scene.children[i]);
@@ -116,7 +119,7 @@ var models = null;
 
 function showModel() {
 
-    camera.position.set(-124, -65, 315);
+    camera.position.set(0, 50, 100);
 
     loadFBX(models[currIdx].model, models[currIdx].texture);
     animate();

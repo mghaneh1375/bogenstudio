@@ -77,6 +77,14 @@
 </div>
 
 <div class="big-input">
+    <select id="visibility" name="visibility" class="hidden">
+        <option value="-1">visibility</option>
+        <option value="1">true</option>
+        <option value="0">false</option>
+    </select>
+</div>
+
+<div class="big-input">
     <img id="pic" class="hidden">
 </div>
 

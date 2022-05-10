@@ -33,6 +33,7 @@ class ProductResource extends JsonResource
             'tags_gr' => $this->tags_gr,
             'priority' => $this->priority,
             'default_lang' => $this->default_lang,
+            'visibility' => $this->visibility,
             'pic' => asset('storage/products/' . $this->pic)
         ];
     }

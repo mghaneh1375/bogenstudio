@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PN;
 
 use App\Models\Product;
+use App\Http\Resources\AdminProductDigest;
 use Illuminate\Http\Request;
 
 class NewsController extends PNController
@@ -14,7 +15,11 @@ class NewsController extends PNController
      */
     public function index(Request $request, $lang="en")
     {
-        parent::doIndex($request, true, $lang);
+
+        if($request->user() != null)
+            return AdminProductDigest::collection(Product::whereIsNews(true)->get())->additional(['status' => 'ok']);
+
+
     }
 
 
@@ -26,7 +31,7 @@ class NewsController extends PNController
      */
     public function store(Request $request)
     {
-        parent::doStore($request, true);
+        return parent::doStore($request, true);
     }
 
     /**
@@ -37,7 +42,7 @@ class NewsController extends PNController
      */
     public function show(Product $news)
     {
-        //
+        return parent::show($news);
     }
 
 
@@ -50,7 +55,7 @@ class NewsController extends PNController
      */
     public function update(Request $request, Product $news)
     {
-        //
+        return parent::update($request, $news);
     }
 
     /**
@@ -61,6 +66,6 @@ class NewsController extends PNController
      */
     public function destroy(Product $news)
     {
-        //
+        return parent::destroy($news);
     }
 }

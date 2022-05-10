@@ -30,6 +30,6 @@
         var storeUrl = '{{url('api/admin-panel/product')}}';
         var redirectUrl = '{{route('admin.products')}}';
     </script>
-    <script src="{{asset('panel/js/product.js')}}"></script>
+    <script src="{{asset('panel/js/create_edit.js')}}"></script>
 
 @stop
