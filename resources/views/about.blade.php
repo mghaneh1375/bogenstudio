@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/about-rtl.css')}}">
     @endif
 
+    <link rel="stylesheet" href="{{asset('/assets/css/slider-mobile.css')}}">
+
     <title>Bogen Studio</title>
 @stop
 
@@ -53,6 +55,7 @@
 
     @include('layouts.contact')
     @include('layouts.footer')
+    @include('layouts.footer-mobile')
 
     <script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/about.js')}}"></script>
 

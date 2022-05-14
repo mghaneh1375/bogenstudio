@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PN;
 use App\Http\Resources\AdminProductDigest;
 use App\Http\Resources\ProductDigest;
 use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductResourceForUser;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -17,19 +18,22 @@ class ProductController extends PNController
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @param $lang
+     * @param string $lang
+     * @param bool $organized
      * @return AnonymousResourceCollection
      */
-    public function index(Request $request, $lang="en") {
+    public function index(Request $request, $lang="en", $organized=true) {
 
         if($request->user() != null)
             return AdminProductDigest::collection(Product::whereIsNews(false)->get())->additional(['status' => 'ok']);
 
-        $products = Product::whereIsNews(false)->visible()->get()->toArray();
+        $products = Product::whereIsNews(false)->visible()->orderBy('priority', 'desc')->get()->toArray();
+
         $distinct_tags = [];
         $product_tags = [];
 
         $org_lang = $lang;
+        $output = [];
 
         foreach ($products as $product) {
 
@@ -40,13 +44,18 @@ class ProductController extends PNController
             )
                 $lang = $product['default_lang'];
 
-            if($product['tags_' . $lang] == null) {
-                array_push($product_tags, []);
-                continue;
+            if($organized) {
+                if ($product['tags_' . $lang] == null) {
+                    array_push($product_tags, []);
+                    continue;
+                }
             }
 
             $tags = explode('_', $product['tags_' . $lang]);
-            array_push($product_tags, $tags);
+
+            if($organized)
+                array_push($product_tags, $tags);
+
 
             foreach ($tags as $tag) {
 
@@ -56,6 +65,20 @@ class ProductController extends PNController
                 array_push($distinct_tags, $tag);
             }
 
+            if(!$organized) {
+                $product['lang'] = $lang;
+                array_push($output, $product);
+            }
+
+        }
+
+        if(!$organized) {
+            return ProductResourceForUser::collection($output)->additional(
+                [
+                    'status' => 'ok',
+                    'tags' => $distinct_tags
+                ]
+            );
         }
 
         $all_tags = [];
@@ -100,11 +123,34 @@ class ProductController extends PNController
      * Display the specified resource.
      *
      * @param Product $product
-     * @return ProductResource
+     * @param Request $request
+     * @param string $lang
+     * @return AnonymousResourceCollection
      */
     public function show(Product $product)
     {
         return parent::show($product);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Product $product
+     * @param Request $request
+     * @param string $lang
+     * @return ProductResourceForUser
+     */
+    public function showToUser($lang, Product $product)
+    {
+        $product = $product->toArray();
+
+        if($product['title_' . $lang] == null ||
+            empty($product['title_' . $lang])
+        )
+            $lang = $product['default_lang'];
+
+        return ProductResourceForUser::customMake($product, $lang)
+            ->additional(['status' => 'ok']);
     }
 
     /**

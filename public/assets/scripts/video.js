@@ -8,6 +8,9 @@ $(document).ready(function () {
         },
         success: function (res) {
 
+            if(res.status !== "ok")
+                return;
+
             res = res.data;
 
             var html = renderFirstRow(res[0]);

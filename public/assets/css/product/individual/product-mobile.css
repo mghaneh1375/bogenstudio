@@ -1,0 +1,42 @@
+@media only screen and (max-width: 768px) {
+
+    #products {
+        margin-top: unset;
+    }
+
+    #products .card {
+        border-radius: unset;
+        margin-left: unset;
+        margin-right: unset;
+        width: 100%;
+        padding: unset;
+        padding-bottom: 10px;
+    }
+
+    #products .card  .date {
+        margin-left: 10px;
+    }
+
+    #products .card .img {
+        margin-left: unset;
+        margin-right: unset;
+        width: 100%;
+        margin-top: unset;
+        height: 200px;
+        border-radius: unset;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+
+    #products .card  p {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    #products .card  h1 {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+
+}

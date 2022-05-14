@@ -11,13 +11,9 @@
 
     <script>
         var locale = '{{\Illuminate\Support\Facades\App::getLocale()}}';
-        var fetchLimit = -1;
-        var newsFetchLimit = -1;
     </script>
 
-    @include('layouts.news')
-
-    @include('layouts.videos')
+    @include('layouts.solutions')
 
 
     @include('layouts.footer')

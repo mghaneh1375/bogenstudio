@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/footer-rtl.css')}}">
 @endif
 
-<footer>
+<footer id="desktop-footer">
 
     <div class="col">
         <h1>{{__('footer.monsterText')}}</h1>

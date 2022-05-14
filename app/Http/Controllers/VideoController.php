@@ -19,7 +19,7 @@ class VideoController extends Controller
      * @param Request $request
      * @return AnonymousResourceCollection
      */
-    public function index($lang = "en", $limit = -1, Request $request)
+    public function index(Request $request, $lang = "en", $limit = -1)
     {
 
         $videos = ($limit == -1 || $request->user() != null) ? Video::all() : Video::take($limit)->get();

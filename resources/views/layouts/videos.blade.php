@@ -8,7 +8,7 @@
 <div id="videos"></div>
 
 <script>
-    var playPic = '{{\Illuminate\Support\Facades\URL::asset('assets/images/play.svg')}}';var playPic = '{{\Illuminate\Support\Facades\URL::asset('assets/images/play.svg')}}';
+    var playPic = '{{\Illuminate\Support\Facades\URL::asset('assets/images/play.svg')}}';
     var fetchVideosUrl = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/videos')}}';
 </script>
 <script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/video.js')}}"></script>
