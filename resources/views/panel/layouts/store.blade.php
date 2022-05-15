@@ -2,6 +2,14 @@
 
 @section('header')
     @parent
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/decoupled-document/ckeditor.js"></script>
+    <script src="{{asset('panel/js/ckeditor.js')}}"></script>
+
+    <script>
+        var UploadURL = '{{route('uploadTest')}}';
+    </script>
+
 @stop
 
 @section('content')
@@ -24,6 +32,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            initCK();
+        });
+    </script>
 
     <script src="{{asset('panel/js/create_edit.js')}}"></script>
 

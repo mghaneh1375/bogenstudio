@@ -11,7 +11,10 @@
 </div>
 
 <div class="big-input editor">
-    <textarea name="description_en" id="description_en" placeholder="description(en)"></textarea>
+    <div id="toolbar-container_en"></div>
+    <div id="description_en">
+        description(en)
+    </div>
 </div>
 
 <div class="big-input fa">
@@ -27,7 +30,10 @@
 </div>
 
 <div class="big-input editor fa">
-    <textarea name="description_fa" id="description_fa" placeholder="description(fa)"></textarea>
+    <div id="toolbar-container_fa"></div>
+    <div id="description_fa">
+        description(fa)
+    </div>
 </div>
 
 <div class="big-input">
@@ -43,7 +49,10 @@
 </div>
 
 <div class="big-input editor">
-    <textarea name="description_gr" id="description_gr" placeholder="description(gr)"></textarea>
+    <div id="toolbar-container_gr"></div>
+    <div id="description_gr">
+        description(gr)
+    </div>
 </div>
 
 <div class="big-input fa">
@@ -59,7 +68,10 @@
 </div>
 
 <div class="big-input editor fa">
-    <textarea name="description_ar" id="description_ar" placeholder="description(ar)"></textarea>
+    <div id="toolbar-container_ar"></div>
+    <div id="description_ar">
+        description(ar)
+    </div>
 </div>
 
 <div class="big-input">
@@ -91,3 +103,5 @@
 <div class="big-input">
     <input name="pic_file" type="file" id="file">
 </div>
+
+<script src="{{asset('panel/js/initCKs.js')}}"></script>

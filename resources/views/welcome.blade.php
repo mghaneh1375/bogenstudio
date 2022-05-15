@@ -135,6 +135,11 @@
 
     <div id="intro">
 
+        <div class="scroll-arrows">
+            <img src="{{asset('assets/images/arrowleft.svg')}}">
+            <img src="{{asset('assets/images/arrowright.svg')}}">
+        </div>
+
         <div class="card">
             <h1>WebVirtualReality</h1>
             <p>

@@ -2,6 +2,12 @@
 
 @section('header')
     @parent
+    <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/decoupled-document/ckeditor.js"></script>
+    <script src="{{asset('panel/js/ckeditor.js')}}"></script>
+
+    <script>
+        var UploadURL = '{{route('uploadTest')}}';
+    </script>
 
 @stop
 
@@ -28,6 +34,13 @@
 
     <script src="{{asset('panel/js/fetchTableData.js')}}"></script>
     @yield('script')
+
+    <script>
+        $(document).ready(function () {
+            fetchFormData(editUrl, initCK);
+        });
+    </script>
+
     <script src="{{asset('panel/js/create_edit.js')}}"></script>
 
 @stop

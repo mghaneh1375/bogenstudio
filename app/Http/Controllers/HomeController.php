@@ -72,4 +72,15 @@ class HomeController extends Controller {
         return response()->json(["status" => "ok", "token" => $tokenResult->accessToken]);
     }
 
+    public function uploadTest(Request $request) {
+
+        $request->validate([
+            'upload' => 'required|image|max:4096'
+        ]);
+
+        if($request->hasFile("upload") && $request->upload != null) {
+            $name = str_replace("public/tmp/", "", $request->upload->store("public/tmp"));
+            return response()->json(['url' => asset('storage/tmp/' . $name)]);
+        }
+    }
 }

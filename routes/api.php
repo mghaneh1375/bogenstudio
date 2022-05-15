@@ -56,6 +56,10 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
     Route::apiResource('/video', VideoController::class)->except(['create', 'edit', 'update']);
 
     Route::post('/video/{video}', [VideoController::class, 'update']);
+
+
+    Route::post('uploadTest', [HomeController::class, 'uploadTest'])->name('uploadTest');
+
 });
 
 

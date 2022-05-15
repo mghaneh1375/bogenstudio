@@ -187,4 +187,13 @@
         display: none !important;
     }
 
+    #intro {
+        width: 100%;
+    }
+
+    #intro .card {
+        width: 200px;
+        min-width: 200px;
+    }
+
 }

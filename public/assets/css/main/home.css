@@ -291,6 +291,19 @@
     margin-top: 50px;
 }
 
+#intro .scroll-arrows {
+    width: 30px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#intro .scroll-arrows img {
+    width: 15px;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 #intro .card {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -334,9 +347,15 @@
 #intro .card h1 {
     font: normal normal bold var(--big-text-size)/20px var(--font-family);
     color: var(--main-color);
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
 }
 
 #intro .card p {
     font: normal normal normal var(--text-size)/20px var(--font-family);
     color: var(--silver);
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
 }
