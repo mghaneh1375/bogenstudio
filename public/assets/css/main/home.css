@@ -359,3 +359,12 @@
     word-break: break-all;
     white-space: normal;
 }
+
+#webgl-container .good {
+    color: var(--silver) !important;
+}
+
+#webgl-container canvas {
+    margin: 0 auto;
+    display: block;
+}

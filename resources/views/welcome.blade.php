@@ -161,15 +161,33 @@
             <p>
                 More accessible than ever. Rendering high-performance interactive 3D and 2D graphics within any compatible web browser without the use of plug-ins brings you a variety of features.
             </p>
-            <div class="webgl-hidden" id="have-javascript">
-                <canvas id="webgl-logo" style="width: 140px; height: 150px;"></canvas>
+
+            <div id="webgl-container">
+
+                <div class="hidden" id="have-javascript">
+                    <div class="hidden webgl-div" id="webgl-yes">
+                        <div id="logo-container">
+                            <canvas id="webgl-logo" style="width: 100px; height: 110px;" /></canvas>
+                        </div>
+                        <h1 class="good">Your browser supports WebGL</h1>
+                    </div>
+
+                    <div class="webgl-hidden webgl-div" id="webgl-disabled">
+                        <p>Hmm.  While your browser seems to support WebGL, it is disabled or unavailable.  If possible, please ensure that you are running the latest drivers for your video card.</p>
+                    </div>
+
+                    <div class="webgl-hidden webgl-div" id="webgl-no">
+                        <p>Oh no!  We are sorry, but your browser does not seem to support WebGL.</p>
+                    </div>
+
+                </div>
+
+                <div id="no-javascript">
+                    You must enable JavaScript to use WebGL.
+                </div>
+
             </div>
-            <div id="no-javascript">
-                You must enable JavaScript to use WebGL.
-            </div>
-            <div class="desc">
-                <span>Your browser supports WebGL</span>
-            </div>
+
         </div>
 
     </div>
