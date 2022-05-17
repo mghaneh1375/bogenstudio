@@ -115,11 +115,11 @@ Route::prefix('{locale}')->middleware('checkLang')->group(function () {
     Route::view('/solutions', 'solutions')->name('solutions');
 
     Route::get('/product/{productId}', function ($lang, $productId) {
-        return view('product', ['productId' => $productId]);
+        return view('product', compact('productId'));
     })->name('product');
 
-    Route::get('/news/{newsId}', function ($newsId) {
-        return view('news', ['newsId' => $newsId]);
-    })->name('news');
+    Route::get('/video/{videoId}', function ($newsId) {
+        return view('video', ['videoId' => $newsId]);
+    })->name('video');
 
 });

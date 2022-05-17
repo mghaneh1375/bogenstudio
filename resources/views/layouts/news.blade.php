@@ -15,6 +15,7 @@
 
 <script>
     var fetchNewsUrl = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/news')}}';
+    var redirectUrl = '{{url(\Illuminate\Support\Facades\App::getLocale() . '/product')}}';
 </script>
 
 <script src="{{asset('assets/scripts/slider.js')}}"></script>

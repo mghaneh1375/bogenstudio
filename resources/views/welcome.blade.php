@@ -3,11 +3,14 @@
 @section('head')
     @parent
     <link rel="stylesheet" href="{{asset("assets/css/main/home.css")}}"/>
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
+
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
         <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css')}}">
     @endif
 
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
     <link rel="stylesheet" href="{{asset("assets/css/main/home-mobile.css")}}"/>
 
     <title>Bogen Studio</title>
@@ -15,7 +18,7 @@
 
 @section('content')
 
-    <div id="slider">
+    <div id="top-banner">
 
         <div class="bigTexts">
             <div class="bigSliderText">We</div>
@@ -25,6 +28,9 @@
 
         <div id="sliderCanvas">
             <div id="bubblesDiv" class="bubbles">
+                <div id="hand" class="hidden">
+                    <img src="{{asset('assets/images/hand.svg')}}">
+                </div>
             </div>
         </div>
 

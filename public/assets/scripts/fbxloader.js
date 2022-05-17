@@ -142,11 +142,14 @@ function getModels(callBack) {
             if(response.status === "ok") {
 
                 models = response.data;
-                var bubbles = "";
+                var bubbles = "<div class='big-bubble'></div>";
                 for(var i = 0; i < models.length; i++)
                     bubbles += '<div data-idx="' + i +'" class="bubble"></div>';
 
+                bubbles += "<div class='big-bubble'></div>";
+
                 $("#bubblesDiv").append(bubbles);
+                $("#hand").removeClass('hidden');
 
                 $('.bubble').on('click', function () {
 

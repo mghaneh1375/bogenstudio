@@ -26,7 +26,7 @@ $(document).ready(function () {
                 if(i === 0 || i === 2)
                     html += "<div class='row'>";
 
-                html += '<div class="item" style="background: url(' + res[i].image + '); background-size: cover">';
+                html += '<div data-id="' + res[i].id + '" class="item" style="background: url(' + res[i].image + '); background-size: cover">';
                 html += "<h1>" + res[i].title + "</h1>";
                 html += "<p>" + res[i].digest + "</p>";
                 html += "</div>";
@@ -35,31 +35,34 @@ $(document).ready(function () {
                     html += "</div>";
             }
 
-            html += '<div id="slider" class="hidden-on-desktop">';
-            html += '<div class="images">';
+            if(newsFetchLimit == -1) {
 
-            for(i = 1; i <= limit; i++) {
-                if(i === 1)
-                    html += '<img data-title="' + res[i].title + '" data-text="' + res[i].digest +'" id="img-1" class="active imp" src="' + res[i].image + '">';
-                else
-                    html += '<img data-title="' + res[i].title + '" data-text="' + res[i].digest +'" id="img-' + i + '" src="' + res[i].image + '">';
+                html += '<div id="slider" class="hidden-on-desktop">';
+                html += '<div class="images">';
+
+                for (i = 1; i <= limit; i++) {
+                    if (i === 1)
+                        html += '<img data-title="' + res[i - 1].title + '" data-text="' + res[i - 1].digest + '" id="img-1" class="active imp" src="' + res[i - 1].image + '">';
+                    else
+                        html += '<img data-title="' + res[i - 1].title + '" data-text="' + res[i - 1].digest + '" id="img-' + i + '" src="' + res[i - 1].image + '">';
+                }
+
+                html += '</div>';
+                html += '<div class="texts">' +
+                    '            <div>' +
+                    '                <p id="slider-h"></p>' +
+                    '                <p id="slider-p"></p>' +
+                    '            </div>' +
+                    '        </div>';
+
+                html += '<div class="bubbles">';
+
+                for (i = 1; i <= limit; i++)
+                    html += '<div id="bubble-' + i + '" data-idx="' + i + '" class="bubble"></div>';
+
+                html += '</div>';
+                html += '</div>';
             }
-
-            html += '</div>';
-            html += '<div class="texts">' +
-                '            <div>' +
-                '                <p id="slider-h"></p>' +
-                '                <p id="slider-p"></p>' +
-                '            </div>' +
-                '        </div>';
-
-            html += '<div class="bubbles">';
-
-            for(i = 1; i <= limit; i++)
-                html += '<div id="bubble-' + i + '" data-idx="' + i + '" class="bubble"></div>';
-
-            html += '</div>';
-            html += '</div>';
 
             $("#topSection").append(html);
 
@@ -108,6 +111,10 @@ $(document).ready(function () {
 
                 currPage--;
                 paginate();
+            });
+
+            $(".row .item").on('click', function () {
+                document.location.href = redirectUrl + "/" + $(this).attr('data-id');
             });
         }
 

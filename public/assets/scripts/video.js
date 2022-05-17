@@ -40,6 +40,9 @@ $(document).ready(function () {
                 $(this).addClass('hidden');
             });
 
+            $(".more").on('click', function () {
+                document.location.href = videoRedirectUrl + "/" + $(this).attr('data-id');
+            });
 
         }
     });
@@ -61,8 +64,10 @@ function renderFirstRow(node) {
     html += '<div class="first-row-decs">';
     html += '<h1 class="title">' + node.title +'</h1>';
     html += '<h1 class="desc">' + node.desc + '</h1>';
+    html += '<p class="more">More</p>';
     html += '</div>';
     html += '</div>';
+
     return html;
 }
 
@@ -70,18 +75,17 @@ function renderSecondRow(node, idx) {
 
     var html = '<div class="second-row-img">';
     html += "<div class='video-container'>";
-    html += '<img data-idx="' + idx + '" class="play" src="' + playPic + '">';
+    // html += '<img data-idx="' + idx + '" class="play" src="' + playPic + '">';
     html += '<video id="video_' + idx + '" class="video" controls>';
     html += '<source src="' + node.file + '" type="video/mp4">';
     html += 'Your browser does not support the video tag.';
     html += '</video>';
-    // html += '<img id="img_preview_' + idx + '" src="' + node.preview + '">';
-    // hidden-on-desktop
     html += "<div id='div_img_preview_" + idx + "' style='background-image: url(" + node.preview  + ")' class='img-preview'></div>";
     html += '</div>';
     html += '<div class="txt">';
     html += '<h1>' + node.title + '</h1>';
     html += '<p>' + node.desc + '</p>';
+    html += '<span data-id="' + node.id + '" class="more">More</span>';
     html += '</div>';
     html += '</div>';
 
