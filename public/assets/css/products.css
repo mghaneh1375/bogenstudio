@@ -86,8 +86,8 @@
 }
 
 #products .card .desc  p {
-    width: calc(100% - 80px);
-    margin-right: 80px;
+    width: calc(100% - 95px);
+    margin-right: 95px;
     font: normal normal normal var(--text-size)/24px var(--font-family);
     color: var(--silver);
     word-break: break-all;

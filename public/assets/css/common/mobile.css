@@ -1,3 +1,19 @@
+@media only screen and (max-width: 950px) {
+    :root {
+        --bogen-logo-width: 122px;
+        --monster-text-size: 72px;
+        --text-size: 15px;
+        --little-big-text-size: 17px;
+        --big-text-size: 18px;
+        --very-big-text-size: 28px;
+
+        --tiny-text-size: 12px;
+        --medium-tiny-text-size: 14px;
+        --medium-big-text-size: 28px;
+    }
+}
+
+
 @media only screen and (max-width: 768px) {
     :root {
         --monster-text-size: 48px;

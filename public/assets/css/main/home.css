@@ -1,4 +1,4 @@
-#slider {
+#top-banner {
     height: calc(100vh - var(--navbar-height) - 50px);
     margin-left: 50px;
     margin-bottom: 30px;
@@ -11,19 +11,45 @@
     color: white;
 }
 
-#slider .bigTexts {
+.big-bubble {
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF85 0% 0% no-repeat padding-box;
+    border-radius: 50%;
+    align-self: center;
+}
+
+#bubblesDiv #hand {
+    position: absolute;
+    top: 20px;
+}
+
+#bubblesDiv #hand img {
+    width: 20px;
+}
+
+.big-bubble:first-child {
+    margin-right: 2px;
+}
+
+.big-bubble:last-child {
+    margin-left: 7px;
+}
+
+#top-banner .bigTexts {
     padding-top: 20px;
 }
 
-#slider .bigTexts .bigSliderText {
+#top-banner .bigTexts .bigSliderText {
     font: normal normal bold var(--monster-text-size)/85px var(--font-family);
 }
 
-#slider .smallText {
+#top-banner .smallText {
     position: absolute;
     width: 500px;
     bottom: 30px;
     font: normal normal normal var(--text-size)/20px var(--font-family);
+    margin-top: 50px;
 }
 
 #sliderCanvas {
@@ -70,7 +96,6 @@
 }
 
 .boxes {
-    height: 350px;
     display: flex;
     margin-bottom: 80px;
 }
@@ -82,7 +107,6 @@
     margin-right: 10px;
     width: calc(20% - 15px - 30px);
     padding: 35px 15px 20px;
-    float: left;
 }
 
 .boxes .box .title {
@@ -116,26 +140,29 @@
 .three-col {
     height: 80px;
     display: flex;
+    overflow: auto;
 }
 
 .three-col div {
-    width: 30%;
     align-self: center;
     display: flex;
     cursor: pointer;
+    padding-right: 20px;
+    height: 100%;
 }
 
-.three-col div:nth-child(1) {
-    width: 36% !important;
+.three-col > div:nth-child(1) {
+    max-width: 450px;
 }
 
-.three-col div img {
-    float: left;
+.three-col > div:nth-child(2) {
+    max-width: 270px;
 }
 
 .three-col div div {
     margin-left: 10px;
     display: block;
+    width: max-content;
 }
 
 .three-col div .title {

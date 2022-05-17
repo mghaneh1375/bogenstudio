@@ -1,3 +1,20 @@
+@media only screen and (max-width: 950px) {
+
+    footer .col:first-child h1 {
+        font: normal normal bold var(--very-big-text-size)/38px var(--font-family);
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+
+    footer .col {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: calc(17% - 10px);
+    }
+
+}
 @media only screen and (max-width: 768px) {
 
     #desktop-footer {

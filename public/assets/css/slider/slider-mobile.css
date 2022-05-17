@@ -21,7 +21,7 @@
     }
 
     #slider .texts p:last-child {
-        font-size: var(--medium-tiny-text-size);
+        font: normal normal normal var(--medium-tiny-text-size)/16px var(--font-family);
     }
 
     .innerContent {
