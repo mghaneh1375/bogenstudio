@@ -7,6 +7,7 @@
 
     @section('head')
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common.css")}}"/>
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common/mobile.css")}}"/>
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/font.css")}}"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -16,6 +17,25 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
+            function detectMob() {
+                const toMatch = [
+                    /Android/i,
+                    /webOS/i,
+                    /iPhone/i,
+                    /iPad/i,
+                    /iPod/i,
+                    /BlackBerry/i,
+                    /Windows Phone/i
+                ];
+
+                return toMatch.some((toMatchItem) => {
+                    return navigator.userAgent.match(toMatchItem);
+                });
+            }
+
+            window.mobileCheck = detectMob();
+
         </script>
 
     @show

@@ -72,7 +72,7 @@ function removeSelectedItem(baseUrl, id) {
     });
 }
 
-function fetchFormData(url) {
+function fetchFormData(url, callBack=undefined) {
 
     var token = localStorage.getItem('token');
     if(token == null)
@@ -109,8 +109,14 @@ function fetchFormData(url) {
                     texturePath = res['texture'];
                 }
 
-                $("#" + key).val(res[key]);
+                if(key.indexOf("description") !== -1)
+                    $("#" + key).empty().append(res[key]);
+                else
+                    $("#" + key).val(res[key]);
             }
+
+            if(callBack !== undefined)
+                callBack();
         }
     });
 

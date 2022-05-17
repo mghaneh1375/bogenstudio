@@ -182,6 +182,7 @@
                             <a href="{{route('admin.news')}}" class="dropdown-item">مدیریت اخبار</a>
                             <a href="{{route('admin.products')}}" class="dropdown-item">مدیریت محصولات</a>
                             <a href="{{route('admin.videos')}}" class="dropdown-item">مدیریت ویدیوها</a>
+                            <a href="{{route('admin.solutions')}}" class="dropdown-item">مدیریت راه حل ها</a>
                         </div>
                     </li>
 
@@ -285,9 +286,10 @@
             }
 
             $(document).ready(function() {
+
                 var token = localStorage.getItem('token');
                 if(token == null) {
-                    window.location.href = '/';
+                    window.location.href = '{{url('/login')}}';
                     return;
                 }
 

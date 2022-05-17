@@ -1,0 +1,120 @@
+@media only screen and (max-width: 768px) {
+
+    #navbar {
+        height: 65px !important;
+    }
+
+    #menu p {
+        display: none;
+    }
+
+    #bogenLogo {
+        width: 70px;
+    }
+
+    #bogenLogo span:first-child {
+        font-size: 18px;
+        margin-top: 2px !important;
+    }
+
+    #bogenLogo span:nth-child(2) {
+        margin-left: 20px !important;
+        margin-top: -6px !important;
+        font-size: 16px !important;
+    }
+
+    #secondLogo {
+        width: 45px !important;
+    }
+
+    #menuContainer {
+        left: calc(70px + 10px);
+        width: calc(100% - 80px);
+    }
+
+    #menu {
+        width: calc(100% - 45px - 5px);
+    }
+
+    #menu button {
+        width: 90px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #hamber-menu {
+        display: block !important;
+        width: 30px;
+        margin-left: 15px;
+    }
+
+    #open-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120vh;
+        background-color: white;
+        z-index: 1000001;
+    }
+
+    #close-hamber-menu {
+        float: right;
+        width: 60px;
+        margin-right: 40px;
+        margin-top: 20px;
+    }
+
+    #open-menu .banner {
+        margin-bottom: 80px;
+    }
+
+    #open-menu .banner span:first-child {
+        /* Layout Properties */
+        margin-top: 18px !important;
+        margin-left: 20px;
+        margin-bottom: -5px;
+        display: block !important;
+        /* UI Properties */
+        text-align: left;
+        font: normal normal bold 34px/40px var(--font-family);
+        letter-spacing: 0;
+        color: var(--silver);
+        opacity: 1;
+    }
+
+    #open-menu .banner span:last-child {
+        /* Layout Properties */
+        margin-left: 85px !important;
+        margin-top: -8px;
+        display: block !important;
+        /* UI Properties */
+        text-align: left;
+        font: normal normal normal var(--medium-tiny-text-size)/27px var(--font-family);
+        letter-spacing: 0;
+        color: var(--silver);
+        opacity: 1;
+    }
+
+    #open-menu p {
+        color: var(--main-color);
+        margin-left: 40px;
+        margin-top: 30px;;
+    }
+
+    #open-menu p a {
+        text-decoration: none;
+        font: normal normal normal var(--medium-big-text-size)/27px var(--font-family);
+        color: inherit;
+    }
+
+    #open-menu p:not(.selected) {
+        color: var(--silver);
+    }
+
+    #open-menu .img-logo {
+        display: block;
+        margin: 50px auto;
+    }
+
+}

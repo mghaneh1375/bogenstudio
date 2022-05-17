@@ -4,9 +4,12 @@
     --back-color: #F3F2F2;
     --bogen-logo-width: 122px;
     --silver: #5D5D5D;
+    --light-silver: #727272;
     --font-family: Segoe UI;
     --monster-text-size: 72px;
     --text-size: 16px;
+    --tiny-text-size: 12px;
+    --medium-tiny-text-size: 14px;
     --little-big-text-size: 18px;
     --big-text-size: 22px;
     --medium-big-text-size: 28px;
@@ -147,5 +150,17 @@ body {
 }
 
 .hidden {
+    display: none !important;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.ck-widget > img {
+    max-width: 100%;
+}
+
+.hidden-on-desktop {
     display: none !important;
 }

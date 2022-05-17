@@ -24,6 +24,14 @@ Route::get('/about', function () {
     return Redirect::to('/en/about');
 });
 
+Route::get('/news', function () {
+    return Redirect::to('/en/news');
+});
+
+Route::get('/solutions', function () {
+    return Redirect::to('/en/solutions');
+});
+
 Route::get('changeLang/{lang}', [HomeController::class, 'changeLanguage'])->name('changeLang');
 
 Route::view('/login', 'panel.login')->name('login');
@@ -41,6 +49,15 @@ Route::prefix('admin-panel')->group(function () {
 
     Route::get('news/{newsId}', function ($newsId) {
         return view('panel.news.show', compact('newsId'));
+    });
+
+
+    Route::view('solutions', 'panel.solution.index')->name('admin.solutions');
+
+    Route::view('addSolution', 'panel.solution.store')->name('admin.solution.store');
+
+    Route::get('solution/{solutionId}', function ($solutionId) {
+        return view('panel.solution.show', compact('solutionId'));
     });
 
 
@@ -97,7 +114,7 @@ Route::prefix('{locale}')->middleware('checkLang')->group(function () {
 
     Route::view('/solutions', 'solutions')->name('solutions');
 
-    Route::get('/product/{productId}', function ($productId) {
+    Route::get('/product/{productId}', function ($lang, $productId) {
         return view('product', ['productId' => $productId]);
     })->name('product');
 

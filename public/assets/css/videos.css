@@ -18,18 +18,26 @@
 
 #videos .first-row-img {
     width: 75%;
-    float: left;
+    /*float: left;*/
     z-index: 2;
+    position: relative;
 }
 
-#videos .first-row-img img {
+#videos .first-row-img .div-image-preview {
     width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
 }
 
 #videos .first-row-decs {
     padding-left: 20px;
     width: calc(25% - 20px);
     margin-top: 70px;
+    margin-bottom: 80px;
 }
 
 #videos .first-row-decs .title {
@@ -59,11 +67,13 @@
 #videos .second-row-img img {
     width: 300px;
     z-index: 2;
+    position: absolute;
 }
 
 #videos .second-row-img .txt {
     width: calc(100% - 300px - 40px);
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #videos .second-row-img h1 {
@@ -79,7 +89,7 @@
 #videos .first-row .play {
     width: 100px;
     position: absolute;
-    left: calc(75% / 2 - 50px);
+    left: calc(100% / 2 - 50px);
     top: calc(50% - 50px);
     cursor: pointer;
     z-index: 3;
@@ -88,7 +98,8 @@
 #videos .first-row .video {
     position: absolute;
     left: 0;
-    width: 75%;
+    width: 100%;
+    height: 100%;
     top: 0;
 }
 
@@ -97,6 +108,7 @@
     left: 0;
     width: 300px;
     top: 0;
+    height: 100%;
 }
 
 #videos .second-row .play {
@@ -106,4 +118,19 @@
     top: calc(50% - 25px);
     cursor: pointer;
     z-index: 3;
+}
+
+.video-container {
+    width: 300px;
+    position: relative;
+}
+
+#videos .second-row-img .img-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }

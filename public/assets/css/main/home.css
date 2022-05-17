@@ -42,10 +42,9 @@
     top: calc(100% + 30px);
     left: calc(50% - 100px);
     text-align: center;
-}
-
-#sliderCanvas .bubbles .bubble {
-    background: #FFFFFFC7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #sliderCanvas .bubbles .bubble {
@@ -53,9 +52,9 @@
     border-radius: 50%;
     width: 8px;
     height: 8px;
-    float: left;
     cursor: pointer;
     margin-left: 5px;
+    align-self: center;
 }
 
 #sliderCanvas .bubbles .selected-bubble {
@@ -284,3 +283,91 @@
     border-radius: 20px;
 }
 
+#intro {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 350px;
+    margin-top: 50px;
+}
+
+#intro .scroll-arrows {
+    width: 30px;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+#intro .scroll-arrows img {
+    width: 15px;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#intro .card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    width: calc((100% - 80px) / 3 - 50px);
+    margin-right: 50px;
+    padding: 10px;
+    height: 100%;
+}
+
+#intro .card img {
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    max-width: 80%;
+}
+
+#intro .card .desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#intro .card .desc span {
+    font: normal normal bold var(--medium-tiny-text-size)/20px var(--font-family);
+    align-self: center;
+}
+
+#intro .card:nth-child(2) .desc span {
+    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    color: var(--light-silver);
+}
+
+#intro .card .desc img {
+    height: 40px;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: center;
+}
+
+#intro .card h1 {
+    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    color: var(--main-color);
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#intro .card p {
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--silver);
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#webgl-container .good {
+    color: var(--light-silver) !important;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#webgl-container canvas {
+    margin: 0 auto;
+    display: block;
+}

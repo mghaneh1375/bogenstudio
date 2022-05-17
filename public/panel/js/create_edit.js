@@ -11,6 +11,10 @@ $(document).ready(function () {
         var form = $("#form");
 
         var formData = new FormData(form[0]);
+        formData.append("description_en", $("#description_en").html());
+        formData.append("description_fa", $("#description_fa").html());
+        formData.append("description_ar", $("#description_ar").html());
+        formData.append("description_gr", $("#description_gr").html());
 
         $.ajax({
             url: storeUrl,
@@ -45,8 +49,11 @@ $(document).ready(function () {
             return;
 
         var form = $("#editForm");
-
         var formData = new FormData(form[0]);
+        formData.append("description_en", $("#description_en").html());
+        formData.append("description_fa", $("#description_fa").html());
+        formData.append("description_ar", $("#description_ar").html());
+        formData.append("description_gr", $("#description_gr").html());
 
         $.ajax({
             url: editUrl,

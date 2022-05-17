@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/contact-rtl.css')}}">
 @endif
 
+<link rel="stylesheet" href="{{asset('/assets/css/contact-mobile.css')}}">
+
 <div id="contact">
     <input id="name" placeholder="{{__('contact.name')}}">
     <input id="mail" placeholder="{{__('contact.mail')}}">

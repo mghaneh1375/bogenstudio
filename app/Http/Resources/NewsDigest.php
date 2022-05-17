@@ -14,6 +14,18 @@ class NewsDigest extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $lang = $this['lang'];
+        if($this['title_' . $lang] == null ||
+            empty($this['title_' . $lang])
+        )
+            $lang = $this['default_lang'];
+
+        return [
+            'title' => $this['title_' . $lang],
+            'digest' => $this['digest_' . $lang],
+            'id' => $this['id'],
+            'image' => asset('storage/products/' . $this['pic']),
+            'created_at' => explode('T', $this['created_at'])[0],
+        ];
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\PN\ProductController;
 use App\Http\Controllers\PN\NewsController;
+use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,11 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
     Route::post('/news/{news}', [NewsController::class, 'update']);
 
 
+    Route::apiResource('/solution', SolutionController::class)->except(['create', 'edit', 'update']);
+
+    Route::post('/solution/{solution}', [SolutionController::class, 'update']);
+
+
     Route::apiResource('/model', ModelController::class)->except(['create', 'edit', 'update']);
 
     Route::post('/model/{model}', [ModelController::class, 'update']);
@@ -50,16 +56,24 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
     Route::apiResource('/video', VideoController::class)->except(['create', 'edit', 'update']);
 
     Route::post('/video/{video}', [VideoController::class, 'update']);
+
+
+    Route::post('uploadTest', [HomeController::class, 'uploadTest'])->name('uploadTest');
+
 });
 
 
 Route::prefix('/{lang}')->group(function () {
 
-    Route::apiResource('/product', ProductController::class)->only('index');
+    Route::get('/product/{organized?}', [ProductController::class, 'index']);
+
+    Route::get('/product/show/{product}', [ProductController::class, 'showToUser']);
 
     Route::get('videos/{limit?}', [VideoController::class, 'index']);
 
     Route::get('news/{limit?}', [NewsController::class, 'index']);
+
+    Route::get('solutions', [SolutionController::class, 'index']);
 
 });
 
