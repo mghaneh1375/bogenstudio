@@ -286,9 +286,10 @@
             }
 
             $(document).ready(function() {
+
                 var token = localStorage.getItem('token');
                 if(token == null) {
-                    window.location.href = '/';
+                    window.location.href = '{{url('/login')}}';
                     return;
                 }
 

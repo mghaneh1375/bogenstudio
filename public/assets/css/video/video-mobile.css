@@ -1,0 +1,101 @@
+@media only screen and (max-width: 768px) {
+
+    #videos {
+        border-radius: unset;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    #videos .first-row {
+        display: block;
+    }
+
+    #videos .first-row-img {
+        width: 100%;
+        float: unset;
+        position: relative;
+        height: 170px;
+    }
+
+    #videos .first-row-img img {
+        height: 170px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    #videos .first-row .play {
+        left: calc(50% - 30px);
+        top: 0;
+        width: 60px;
+    }
+
+    #videos .first-row-decs {
+        padding-left: 0;
+        padding-top: 15px;
+        width: 100%;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+
+    #videos .first-row .video {
+        position: initial;
+        width: 100%;
+        height: 100%;
+    }
+    #videos .first-row-decs .title {
+        font: normal normal bold var(--text-size)/18px var(--font-family);
+    }
+
+    #videos .first-row-decs .desc {
+        font: normal normal normal var(--medium-tiny-text-size)/16px var(--font-family);
+    }
+
+    #videos .second-row-img {
+        float: unset;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #videos .second-row-img:first-child {
+        margin-top: 0;
+    }
+
+    #videos .second-row-img .video-container {
+        width: 34%;
+        position: relative;
+    }
+
+    #videos .second-row-img img:not(.play) {
+        display: none;
+    }
+
+    #videos .second-row-img .video {
+        position: initial;
+        width: 100%;
+        height: 100%;
+    }
+
+    #videos .second-row-img .txt {
+        width: calc(66% - 20px);
+        padding: 0 10px 0 10px;
+    }
+
+    #videos .second-row-img h1 {
+        font: normal normal bold var(--medium-tiny-text-size)/16px var(--font-family);
+        margin-top: 0;
+        margin-right: 5px;
+    }
+
+    #videos .second-row-img p {
+        font: normal normal normal var(--tiny-text-size)/16px var(--font-family);
+        margin-top: 0;
+    }
+
+    #videos .second-row .play {
+        width: 30px;
+        left: calc(50% - 15px);
+        top: calc(50% - 15px);
+    }
+
+}

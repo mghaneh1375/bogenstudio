@@ -5,6 +5,9 @@
 
     <title>Bogen Studio</title>
 
+    <link rel="stylesheet" href="{{asset('assets/css/news/all-mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
 @stop
 
 @section('content')
@@ -21,5 +24,6 @@
 
 
     @include('layouts.footer')
+    @include('layouts.footer-mobile')
 
 @stop

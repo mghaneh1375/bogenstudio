@@ -172,11 +172,11 @@
                         <h1 class="good">Your browser supports WebGL</h1>
                     </div>
 
-                    <div class="webgl-hidden webgl-div" id="webgl-disabled">
+                    <div class="hidden webgl-div" id="webgl-disabled">
                         <p>Hmm.  While your browser seems to support WebGL, it is disabled or unavailable.  If possible, please ensure that you are running the latest drivers for your video card.</p>
                     </div>
 
-                    <div class="webgl-hidden webgl-div" id="webgl-no">
+                    <div class="hidden webgl-div" id="webgl-no">
                         <p>Oh no!  We are sorry, but your browser does not seem to support WebGL.</p>
                     </div>
 
@@ -188,6 +188,14 @@
 
             </div>
 
+        </div>
+
+        <div class="card">
+            <h1>Digital Twin, Let simulate reality</h1>
+            <p>
+                A digital twin is a virtual representation of an object or system that spans its lifecycle, is updated from real-time data, and uses simulation, machine learning and reasoning to help decision-making.
+            </p>
+            <img src="{{asset('assets/images/r2.svg')}}">
         </div>
 
     </div>

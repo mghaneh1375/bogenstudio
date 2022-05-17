@@ -3,6 +3,7 @@
     #slider {
         margin-left: 10px;
         padding-left: 25px;
+        height: calc(100vh - var(--navbar-height) - 30px);
     }
 
     #slider .bigTexts .bigSliderText {
@@ -23,6 +24,7 @@
         position: unset;
         width: 100%;
         font: normal normal normal var(--medium-tiny-text-size)/20px var(--font-family);
+        margin-top: 20px;
     }
 
     #sliderCanvas .bubbles {
@@ -179,21 +181,38 @@
         margin-left: 15px;
     }
 
-    #news {
-        display: none;
-    }
-
-    #videos {
-        display: none !important;
-    }
-
     #intro {
         width: 100%;
+    }
+
+    #intro .scroll-arrows {
+        padding-right: 20px;
     }
 
     #intro .card {
         width: 200px;
         min-width: 200px;
+        margin-right: 15px;
     }
 
+    #intro .card img {
+        height: 80px;
+    }
+
+    #intro .card:nth-child(2) .desc span {
+        font: normal normal bold var(--medium-tiny-text-size)/20px var(--font-family);
+    }
+
+    #intro .card .desc img {
+        height: 30px;
+        margin-right: -5px;
+    }
+
+    #intro .card h1 {
+        font: normal normal bold var(--text-size)/20px var(--font-family);
+    }
+
+    #intro .card p {
+        font: normal normal normal var(--medium-tiny-text-size)/20px var(--font-family);
+    }
 }

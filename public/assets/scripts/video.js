@@ -33,11 +33,11 @@ $(document).ready(function () {
 
 
             $(".play").on('click', function () {
-
                 var idx = $(this).attr('data-idx');
                 $("#video_" + idx).css('z-index', '4').trigger('play');
                 $("#img_preview_" + idx).css('visibility', 'hidden');
-
+                $("#div_img_preview_" + idx).addClass('hidden');
+                $(this).addClass('hidden');
             });
 
 
@@ -48,13 +48,15 @@ $(document).ready(function () {
 
 function renderFirstRow(node) {
     var html = '<div class="first-row">';
-    html += '<img data-idx="0" class="play" src="' + playPic +'">';
+    html += '<div class="first-row-img">';
+
     html += '<video id="video_0" class="video" controls>';
     html += '<source src="' + node.file + '" type="video/mp4">';
     html += 'Your browser does not support the video tag.';
     html += '</video>';
-    html += '<div class="first-row-img">';
-    html += '<img id="img_preview_0" src="' + node.preview +'">';
+
+    html += '<div id="img_preview_0" class="div-image-preview" style="background-image: url(' + node.preview +')"></div>';
+    html += '<img data-idx="0" class="play" src="' + playPic +'">';
     html += '</div>';
     html += '<div class="first-row-decs">';
     html += '<h1 class="title">' + node.title +'</h1>';
@@ -67,12 +69,16 @@ function renderFirstRow(node) {
 function renderSecondRow(node, idx) {
 
     var html = '<div class="second-row-img">';
+    html += "<div class='video-container'>";
     html += '<img data-idx="' + idx + '" class="play" src="' + playPic + '">';
     html += '<video id="video_' + idx + '" class="video" controls>';
     html += '<source src="' + node.file + '" type="video/mp4">';
     html += 'Your browser does not support the video tag.';
     html += '</video>';
-    html += '<img id="img_preview_' + idx + '" src="' + node.preview + '">';
+    // html += '<img id="img_preview_' + idx + '" src="' + node.preview + '">';
+    // hidden-on-desktop
+    html += "<div id='div_img_preview_" + idx + "' style='background-image: url(" + node.preview  + ")' class='img-preview'></div>";
+    html += '</div>';
     html += '<div class="txt">';
     html += '<h1>' + node.title + '</h1>';
     html += '<p>' + node.desc + '</p>';

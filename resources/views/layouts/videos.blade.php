@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/videos-rtl.css')}}">
 @endif
 
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/video/video-mobile.css?v=1.2')}}">
+
 <div id="videos"></div>
 
 <script>

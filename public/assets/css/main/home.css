@@ -294,7 +294,7 @@
 #intro .scroll-arrows {
     width: 30px;
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 40px;
 }
 
 #intro .scroll-arrows img {
@@ -307,8 +307,8 @@
 #intro .card {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
-    width: calc((100% - 50px) / 3 - 30px);
-    margin-right: 30px;
+    width: calc((100% - 80px) / 3 - 50px);
+    margin-right: 50px;
     padding: 10px;
     height: 100%;
 }
@@ -317,6 +317,7 @@
     height: 150px;
     margin: 0 auto;
     display: block;
+    max-width: 80%;
 }
 
 #intro .card .desc {
@@ -361,7 +362,9 @@
 }
 
 #webgl-container .good {
-    color: var(--silver) !important;
+    color: var(--light-silver) !important;
+    padding-top: 20px;
+    text-align: center;
 }
 
 #webgl-container canvas {

@@ -22,12 +22,6 @@ function launchLogo() {
     initializeLogo(canvas);
 }
 
-function log(msg) {
-    var d = document.createElement("div");
-    d.appendChild(document.createTextNode(msg));
-    document.body.appendChild(d);
-}
-
 function removeClass(element, clas) {
     // Does not work in IE var classes = element.getAttribute("class");
     var classes = element.className;
@@ -46,6 +40,7 @@ function addClass(element, clas) {
 }
 
 function pageLoaded() {
+
     removeClass($$("have-javascript"), "hidden");
     addClass($$("no-javascript"), "hidden");
 

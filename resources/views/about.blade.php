@@ -3,12 +3,14 @@
 @section('head')
     @parent
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/about.css")}}"/>
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
+
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/about-rtl.css')}}">
     @endif
 
-    <link rel="stylesheet" href="{{asset('/assets/css/slider-mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
 
     <title>Bogen Studio</title>
 @stop
@@ -17,16 +19,16 @@
 
     <div id="slider">
         <div class="images">
-            <img id="img-1" class="active imp" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-1.jpg')}}">
-            <img id="img-2" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-3.jpg')}}">
-            <img id="img-3" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-4.jpg')}}">
-            <img id="img-4" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-5.jpg')}}">
-            <img id="img-5" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-6.jpg')}}">
+            <img data-title="CREATIVITY" data-text="World-class solutions in 3D, VR, AR and Simulators" id="img-1" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-1.jpg')}}">
+            <img data-title="CREATIVITY2" data-text="World-class solutions in 3D, VR, AR and Simulators2" id="img-2" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-3.jpg')}}">
+            <img data-title="CREATIVITY3" data-text="World-class solutions in 3D, VR, AR and Simulators3" id="img-3" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-4.jpg')}}">
+            <img data-title="CREATIVITY4" data-text="World-class solutions in 3D, VR, AR and Simulators4" id="img-4" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-5.jpg')}}">
+            <img data-title="CREATIVITY5" data-text="World-class solutions in 3D, VR, AR and Simulators5" id="img-5" src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slide-6.jpg')}}">
         </div>
         <div class="texts">
             <div>
-                <p id="slider-h">CREATIVITY</p>
-                <p id="slider-p">World-class solutions in 3D, VR, AR and Simulators</p>
+                <p id="slider-h"></p>
+                <p id="slider-p"></p>
             </div>
         </div>
         <div class="bubbles">
@@ -57,6 +59,7 @@
     @include('layouts.footer')
     @include('layouts.footer-mobile')
 
-    <script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/about.js')}}"></script>
+    <script src="{{asset('assets/scripts/slider.js')}}"></script>
+    <script src="{{asset('assets/scripts/about.js')}}"></script>
 
 @stop

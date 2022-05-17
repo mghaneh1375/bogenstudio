@@ -1,0 +1,61 @@
+@media only screen and (max-width: 768px) {
+
+    #news {
+        margin: 20px 0 0 0 !important;
+    }
+
+    #news #topSection {
+        background: unset;
+        padding: unset;
+        box-shadow: unset;
+    }
+
+    #news #topSection .row {
+        width: 100%;
+        padding: unset;
+    }
+
+    #topSection .item h1 {
+        font: normal normal bold var(--text-size)/24px var(--font-family) !important;
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    #topSection .item p {
+        font: normal normal normal var(--medium-tiny-text-size)/16px var(--font-family) !important;
+        bottom: 0 !important;
+    }
+
+    #all {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #all .item {
+        width: 100%;
+        margin: 120px 0 0 0 ;
+    }
+
+    .paginator {
+        width: calc(100% - 40px);
+        margin-right: 20px;
+        margin-left: 20px;
+        height: 50px;
+    }
+
+    .paginator p {
+        display: inline-block;
+        color: var(--main-color);
+        cursor: pointer;
+        font: normal normal bold var(--text-size)/24px var(--font-family) !important;
+    }
+
+    .paginator p:first-child {
+        float: right;
+    }
+
+    .paginator p:last-child {
+        float: left;
+    }
+
+}

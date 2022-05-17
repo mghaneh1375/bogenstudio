@@ -1,3 +1,9 @@
-:root {
-    --monster-text-size: 48px;
+@media only screen and (max-width: 768px) {
+    :root {
+        --monster-text-size: 48px;
+    }
+
+    .hidden-on-desktop {
+        display: block !important;
+    }
 }

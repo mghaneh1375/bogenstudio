@@ -1,0 +1,30 @@
+@media only screen and (max-width: 768px) {
+
+    #topSection .row {
+        display: none !important;
+    }
+
+    #slider {
+        height: 30vh !important;
+    }
+
+    #slider .texts {
+        background: unset !important;
+        box-shadow: unset !important;
+        border-top-left-radius: unset !important;
+        border-bottom-left-radius: unset !important;
+        top: calc(100% - 100px) !important;
+        right: unset !important;
+        left: 20px;
+        width: calc(100% - 20px) !important;
+        padding: unset !important;
+    }
+
+    #slider-h {
+        color: white !important;
+    }
+
+    #slider-p {
+        color: white !important;
+    }
+}

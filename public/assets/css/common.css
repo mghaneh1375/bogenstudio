@@ -160,3 +160,7 @@ body {
 .ck-widget > img {
     max-width: 100%;
 }
+
+.hidden-on-desktop {
+    display: none !important;
+}
