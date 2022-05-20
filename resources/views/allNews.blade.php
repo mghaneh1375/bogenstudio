@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="{{asset('assets/css/news/all-mobile.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
+
+    @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+            \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/slider/slider-mobile-rtl.css')}}">
+    @endif
+
 @stop
 
 @section('content')

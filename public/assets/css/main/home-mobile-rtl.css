@@ -1,0 +1,8 @@
+#intro {
+    flex-direction: row-reverse;
+}
+
+#intro .card {
+    margin-left: 15px;
+    margin-right: unset;
+}

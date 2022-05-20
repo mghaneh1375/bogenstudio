@@ -1,0 +1,11 @@
+#all {
+    flex-direction: row-reverse;
+}
+
+#all .item h1, #all .item p, #topSection .item h1, #topSection .item p {
+    direction: rtl;
+}
+
+#topSection .item h1, #topSection .item p {
+    right: 10px;
+}

@@ -1,0 +1,4 @@
+#videos .first-row .play {
+    right: calc(50% - 30px);
+    left: unset;
+}

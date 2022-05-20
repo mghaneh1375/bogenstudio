@@ -3,11 +3,12 @@
     #contact {
         margin-left: 40px;
         margin-right: 40px;
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     #contact input {
-        width: 100%;
+        width: auto;
         display: block;
         margin-top: 20px;
     }
@@ -18,4 +19,8 @@
         margin-top: 20px;
     }
 
+    #contact input {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

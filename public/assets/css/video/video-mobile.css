@@ -13,6 +13,7 @@
     #videos {
         border-radius: unset;
         margin-right: 0;
+        margin-left: unset;
         padding: 20px;
     }
 

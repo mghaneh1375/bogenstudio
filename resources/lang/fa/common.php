@@ -2,6 +2,9 @@
 
 return [
 
-    "bogenStudio" => "بوگن دیزاین"
+    "bogenStudio" => "بوگن دیزاین",
+    "more" => "بیشتر",
+    "next" => "بعدی",
+    "previous" => "قبلی",
 
 ];

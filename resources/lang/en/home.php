@@ -1,0 +1,33 @@
+<?php
+
+return [
+    "top-slider.monster.line1" => "We",
+    "top-slider.monster.line2" => "Program",
+    "top-slider.monster.line3" => "Dreams",
+    "top-slider.text" => "Unique capabilities and Astonishing Art design meet together to give you tools to fulfill what needs in your business, industry, or operations. Our visual and interactive solutions let you be more efficient, productive, and innovative.",
+    "boxes.card1.title" => "Based on your needs.",
+    "boxes.card1.desc" => "Fully customized features to your needs. If it works for you, it works for us too.",
+    "boxes.card2.title" => "New Technologies, new solutions",
+    "boxes.card2.desc" => "We use new technologies like AR, VR, WebVR, WebGL to provide you with more effective and practical solutions,",
+    "boxes.card3.title" => "Complicated scenarios",
+    "boxes.card3.desc" => "Ready to be in digital words. We take care of complex scenarios of your industry or need.",
+    "boxes.card4.title" => "New Technologies, new solutions",
+    "boxes.card4.desc" => "We use new technologies like AR, VR, WebVR, WebGL to provide you with more effective and practical solutions,",
+    "boxes.card5.title" => "From beginning to end",
+    "boxes.card5.desc" => "We stand by you with our experts from starting a project till the end of it. We guarantee the outcome will be helpful.",
+    "blink.card1.title" => "Blink",
+    "blink.card1.desc" => "virtual exhibition , art gallery, and product showroom",
+    "three-col.card1.title" => "Blink",
+    "three-col.card1.desc" => "virtual exhibition , art gallery, and product showroom",
+    "three-col.card2.title" => "Fire Studio",
+    "three-col.card2.desc" => "Fire and Rescue Training VR studio",
+    "three-col.card3.title" => "Solar Cyberium",
+    "three-col.card3.desc" => "Live in the Space",
+    "intro.card1.title" => "WebVirtualReality",
+    "intro.card1.desc" => "Easies than ever. Use your Web Browser to experience our product in Virtual Reality. No need to install any software. accessible from every ever, any time",
+    "intro.card2.title" => "Web-Based Graphic software",
+    "intro.card2.desc" => "More accessible than ever. Rendering high-performance interactive 3D and 2D graphics within any compatible web browser without the use of plug-ins brings you a variety of features.",
+    "intro.card3.title" => "Digital Twin, Let simulate reality",
+    "intro.card3.desc" => "A digital twin is a virtual representation of an object or system that spans its lifecycle, is updated from real-time data, and uses simulation, machine learning and reasoning to help decision-making.",
+    "intro.vr" => "Gear VR"
+];

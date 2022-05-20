@@ -8,10 +8,15 @@
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
             \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/products-rtl.css')}}">
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/product/list/products-rtl.css')}}">
     @endif
 
     <link rel="stylesheet" href="{{asset('assets/css/products-mobile.css')}}">
+
+    @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+            \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/product/list/products-mobile-rtl.css')}}">
+    @endif
 
 @stop
 
