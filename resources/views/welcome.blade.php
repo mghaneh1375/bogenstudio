@@ -32,6 +32,9 @@
         </div>
 
         <div id="sliderCanvas">
+
+            <img id="modelLoader" src="{{asset('assets/images/loading.gif')}}" style="display: block; margin: 0 auto; width: 100px">
+
             <div id="bubblesDiv" class="bubbles">
                 <div id="hand" class="hidden">
                     <img src="{{asset('assets/images/hand.svg')}}">
@@ -107,7 +110,9 @@
 
     <div id="products">
 
-        <div class="left">
+        <img id="productLoader" src="{{asset('assets/images/loading.gif')}}" style="display: block; margin: 0 auto; width: 100px">
+
+        <div class="left hidden">
 
             <div class="nav">
 
@@ -139,7 +144,7 @@
         </div>
 
         <div class="right">
-            <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slider.jpg')}}">
+            <img id="productSlider">
         </div>
 
     </div>

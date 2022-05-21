@@ -6,6 +6,7 @@ function selectProduct(idx) {
     $("#productBubble_" + idx).addClass('selected-bubble');
     $("#productTitle").text(selectedTag.products[idx].title);
     $("#productDigest").text(selectedTag.products[idx].digest);
+    $("#productSlider").attr('src', selectedTag.products[idx].pic);
 }
 
 function changeProductTag(idx) {
@@ -108,6 +109,8 @@ function getArticles() {
             else
                 scrollProductTagsLtr();
 
+            $("#productLoader").remove();
+            $("#products .left").removeClass('hidden');
         }
     });
 

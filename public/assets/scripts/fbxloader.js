@@ -53,9 +53,13 @@ function loadFBX(modelPath, texturePath) {
                     const loader = new THREE.TextureLoader();
 
                     loader.load(texturePath, function (texture) {
+
+                            $("#modelLoader").remove();
+
                             child.material = new THREE.MeshBasicMaterial({
                                 map: texture
                             });
+
                         },
                         undefined,
                         function (err) {
