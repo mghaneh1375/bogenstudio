@@ -34,7 +34,7 @@ $(document).ready(function () {
                 html += "<div class='tags'>";
 
                 for(j = 0; j < res[i].tags.length; j++) {
-                    html += "<span>" + res[i].tags[j] + "</span>";
+                    html += "<span>" + res[i].tags[j] + "</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>";
                 }
 
                 html += "</div>";
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
                 html += "<div class='img'>";
                 html += '<img src="' + res[i].image + '">';
-                html += '<div data-id="' + res[i].id + '" class="more"><span>More</span></div>';
+                html += '<div data-id="' + res[i].id + '" class="more"><span>' + JSTranslate['more'] + '</span></div>';
                 html += "</div>";
 
                 html += "</div>";

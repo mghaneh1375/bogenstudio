@@ -75,10 +75,9 @@
     margin-top: 70px;
 }
 
-#products .card .desc  .tags span {
+#products .card .desc .tags span {
     color: var(--main-color);
     font: normal normal normal var(--text-size)/24px var(--font-family);
-    margin-left: 10px;
 }
 
 #products .card .desc  .tags span:first-child {

@@ -55,4 +55,8 @@
     #products .card .img .more span {
         margin-right: 20px;
     }
+
+    #products #all-tags .tag {
+        flex: none;
+    }
 }

@@ -1,0 +1,15 @@
+#all {
+    flex-direction: row-reverse;
+}
+
+#all > div {
+    flex-direction: row-reverse;
+}
+
+#all .item h1, #all .item p {
+    direction: rtl;
+}
+
+#all > div:nth-child(1) h1 {
+    direction: rtl;
+}

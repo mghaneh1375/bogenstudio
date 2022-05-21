@@ -2,6 +2,9 @@
 
 return [
 
-    "bogenStudio" => "Bogen studio"
+    "bogenStudio" => "Bogen studio",
+    "more" => "More",
+    "next" => "Next",
+    "previous" => "Previous",
 
 ];

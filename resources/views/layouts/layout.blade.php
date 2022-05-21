@@ -6,6 +6,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     @section('head')
+
+        @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+            \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+            <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common/rtl.css")}}"/>
+        @endif
+
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common.css")}}"/>
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common/mobile.css")}}"/>
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/font.css")}}"/>
@@ -35,6 +41,12 @@
             }
 
             window.mobileCheck = detectMob();
+
+            var JSTranslate = {
+                "more": '{{__('common.more')}}',
+                "next": '{{__('common.next')}}',
+                "previous": '{{__('common.previous')}}',
+            }
 
         </script>
 

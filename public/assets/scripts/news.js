@@ -83,8 +83,8 @@ $(document).ready(function () {
                 }
 
                 html += '<div class="paginator hidden-on-desktop">';
-                html += '<p id="nextPage">Next</p>';
-                html += '<p id="prevPage">Previous</p>';
+                html += '<p id="nextPage">' + JSTranslate['next'] + '</p>';
+                html += '<p id="prevPage">' + JSTranslate['previous'] + '</p>';
                 html += '</div>';
 
                 $("#all").removeClass('hidden').append(html);

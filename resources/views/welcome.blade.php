@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
     <link rel="stylesheet" href="{{asset("assets/css/main/home-mobile.css")}}"/>
 
+    @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+        \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css')}}">
+    @endif
+
     <title>Bogen Studio</title>
 @stop
 
@@ -21,12 +26,15 @@
     <div id="top-banner">
 
         <div class="bigTexts">
-            <div class="bigSliderText">We</div>
-            <div class="bigSliderText">Program</div>
-            <div class="bigSliderText">Dreams</div>
+            <div class="bigSliderText">{{__('home.top-slider.monster.line1')}}</div>
+            <div class="bigSliderText">{{__('home.top-slider.monster.line2')}}</div>
+            <div class="bigSliderText">{{__('home.top-slider.monster.line3')}}</div>
         </div>
 
         <div id="sliderCanvas">
+
+            <img id="modelLoader" src="{{asset('assets/images/loading.gif')}}" style="display: block; margin: 0 auto; width: 100px">
+
             <div id="bubblesDiv" class="bubbles">
                 <div id="hand" class="hidden">
                     <img src="{{asset('assets/images/hand.svg')}}">
@@ -35,7 +43,7 @@
         </div>
 
         <p class="smallText">
-            Unique capabilities and Astonishing Art design meet together to give you tools to fulfill what needs in your business, industry, or operations. Our visual and interactive solutions let you be more efficient, productive, and innovative.
+            {{__('home.top-slider.text')}}
         </p>
 
     </div>
@@ -45,54 +53,54 @@
         <div class="boxes">
             <div class="box">
                 <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/1.svg')}}">
-                <p class="title">Based on your needs.</p>
-                <p class="desc">Fully customized features to your needs. If it works for you, it works for us too.</p>
+                <p class="title">{{__('home.boxes.card1.title')}}</p>
+                <p class="desc">{{__('home.boxes.card1.desc')}}</p>
             </div>
             <div class="box">
-                <p class="title">New Technologies, new soloutins</p>
-                <p class="desc">We use new technologies like AR, VR, WebVR, WebGL to provide you with more effective and practical solutions,</p>
+                <p class="title">{{__('home.boxes.card2.title')}}</p>
+                <p class="desc">{{__('home.boxes.card2.desc')}}</p>
                 <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/2.svg')}}">
             </div>
             <div class="box">
                 <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/3.svg')}}">
-                <p class="title">Complicated scenarios</p>
-                <p class="desc">Ready to be in digital words. We take care of complex scenarios of your industry or need.</p>
+                <p class="title">{{__('home.boxes.card3.title')}}</p>
+                <p class="desc">{{__('home.boxes.card3.desc')}}</p>
             </div>
             <div class="box">
-                <p class="title">New Technologies, new solutions</p>
-                <p class="desc">We use new technologies like AR, VR, WebVR, WebGL to provide you with more effective and practical solutions,</p>
+                <p class="title">{{__('home.boxes.card4.title')}}</p>
+                <p class="desc">{{__('home.boxes.card4.desc')}}</p>
                 <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/4.svg')}}">
             </div>
             <div class="box">
                 <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/layer.png')}}">
-                <p class="title">From beginning to end</p>
-                <p class="desc">We stand by you with our experts from starting a project till the end of it. We guarantee the outcome will be helpful.</p>
+                <p class="title">{{__('home.boxes.card5.title')}}</p>
+                <p class="desc">{{__('home.boxes.card5.desc')}}</p>
             </div>
         </div>
 
         <div class="three-col">
 
             <div data-nth="1" class="three-col-item">
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/blinkgray.png')}}">
+                <img src="{{asset('assets/images/blinkgray.png')}}">
                 <div>
-                    <p class="title">Blink</p>
-                    <p class="desc">virtual exhibition , art gallery, and product showroom</p>
+                    <p class="title">{{__('home.three-col.card1.title')}}</p>
+                    <p class="desc">{{__('home.three-col.card1.desc')}}</p>
                 </div>
             </div>
 
             <div data-nth="2" class="three-col-item">
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/firegray.svg')}}">
+                <img src="{{asset('assets/images/firegray.svg')}}">
                 <div>
-                    <p class="title">Fire Studio</p>
-                    <p class="desc">Fire and Rescue Training VR studio</p>
+                    <p class="title">{{__('home.three-col.card2.title')}}</p>
+                    <p class="desc">{{__('home.three-col.card2.desc')}}</p>
                 </div>
             </div>
 
             <div data-nth="3" class="three-col-item">
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/firegray.svg')}}">
+                <img src="{{asset('assets/images/firegray.svg')}}">
                 <div>
-                    <p class="title">Solar Cyberium</p>
-                    <p class="desc">Live in the Space</p>
+                    <p class="title">{{__('home.three-col.card3.title')}}</p>
+                    <p class="desc">{{__('home.three-col.card3.desc')}}</p>
                 </div>
             </div>
 
@@ -102,7 +110,9 @@
 
     <div id="products">
 
-        <div class="left">
+        <img id="productLoader" src="{{asset('assets/images/loading.gif')}}" style="display: block; margin: 0 auto; width: 100px">
+
+        <div class="left hidden">
 
             <div class="nav">
 
@@ -134,7 +144,7 @@
         </div>
 
         <div class="right">
-            <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/slider.jpg')}}">
+            <img id="productSlider">
         </div>
 
     </div>
@@ -147,25 +157,29 @@
         </div>
 
         <div class="card">
-            <h1>WebVirtualReality</h1>
+
+            <h1>{{__('home.intro.card1.title')}}</h1>
             <p>
-                Easies than ever. Use your Web Browser to experience our product in Virtual Reality. No need to install any software. accessible from every ever, any time
+                {{__('home.intro.card1.desc')}}
             </p>
-            <img src="{{asset('assets/images/r1.svg')}}">
-            <div class="desc">
-                <span>Gear VR</span>
-                <img src="{{asset('assets/images/day-dream.png')}}">
-                <img src="{{asset('assets/images/google-cardboard.png')}}">
-                <img src="{{asset('assets/images/htc.png')}}">
-                <img src="{{asset('assets/images/microsoft.png')}}">
-                <img src="{{asset('assets/images/oculus.png')}}">
+
+            <div>
+                <img src="{{asset('assets/images/r1.svg')}}">
+                <div class="desc">
+                    <span>{{__('home.intro.vr')}}</span>
+                    <img src="{{asset('assets/images/day-dream.png')}}">
+                    <img src="{{asset('assets/images/google-cardboard.png')}}">
+                    <img src="{{asset('assets/images/htc.png')}}">
+                    <img src="{{asset('assets/images/microsoft.png')}}">
+                    <img src="{{asset('assets/images/oculus.png')}}">
+                </div>
             </div>
         </div>
 
         <div class="card">
-            <h1>Web-Based Graphic software</h1>
+            <h1>{{__('home.intro.card2.title')}}</h1>
             <p>
-                More accessible than ever. Rendering high-performance interactive 3D and 2D graphics within any compatible web browser without the use of plug-ins brings you a variety of features.
+                {{__('home.intro.card2.desc')}}
             </p>
 
             <div id="webgl-container">
@@ -197,11 +211,13 @@
         </div>
 
         <div class="card">
-            <h1>Digital Twin, Let simulate reality</h1>
+            <h1>{{__('home.intro.card3.title')}}</h1>
             <p>
-                A digital twin is a virtual representation of an object or system that spans its lifecycle, is updated from real-time data, and uses simulation, machine learning and reasoning to help decision-making.
+                {{__('home.intro.card3.desc')}}
             </p>
-            <img src="{{asset('assets/images/r2.svg')}}">
+            <div>
+                <img src="{{asset('assets/images/r2.svg')}}">
+            </div>
         </div>
 
     </div>

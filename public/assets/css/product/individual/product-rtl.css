@@ -1,0 +1,5 @@
+#products .card h1, #products .card p {
+    direction: rtl;
+    margin-right: unset;
+    margin-left: 20px;
+}

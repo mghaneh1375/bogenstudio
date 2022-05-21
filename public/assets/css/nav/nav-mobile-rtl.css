@@ -1,0 +1,50 @@
+@media only screen and (max-width: 768px) {
+
+    #menuContainer {
+        left: unset;
+        right: calc(70px + 10px);
+    }
+
+    #bogenLogo span:nth-child(2) {
+        margin-right: 20px !important;
+        margin-left: unset;
+    }
+
+    #hamber-menu {
+        margin-right: 15px;
+        margin-left: unset;
+    }
+
+    #top-banner .smallText {
+        padding-right: 50px;
+    }
+
+    #top-banner {
+        padding-right: 25px;
+        padding-left: unset;
+    }
+
+    #top-banner .bigTexts {
+        padding-right: 15px;
+    }
+
+    #products .left {
+        width: 100%;
+    }
+
+    .boxes .box {
+        margin-right: unset;
+        margin-left: 5px;
+    }
+
+    #products .content .bubbles {
+        padding-right: 20px;
+        padding-left: unset;
+    }
+
+    #open-menu p {
+        margin-left: unset;
+        margin-right: 40px;
+        direction: rtl;
+    }
+}

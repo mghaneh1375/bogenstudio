@@ -5,6 +5,11 @@
 
 <link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css')}}">
 
+@if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
+    \Illuminate\Support\Facades\App::getLocale() == 'ar' )
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css')}}">
+@endif
+
 <nav id="navbar">
 
     <div id="bogenLogo">

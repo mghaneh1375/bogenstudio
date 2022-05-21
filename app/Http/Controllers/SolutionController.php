@@ -124,7 +124,7 @@ class SolutionController extends Controller
                 return $a['priority'] - $b['priority'];
             });
 
-            array_push($all_tags, ['tag' => $tag, 'items' => $tag_items, 'lang' => $lang]);
+            array_push($all_tags, ['tag' => $tag, 'items' => $tag_items, 'lang' => $org_lang]);
         }
 
         return SolutionDigest::collection($all_tags)->additional(

@@ -24,7 +24,7 @@ class SolutionDigest extends JsonResource
 
             $lang = $org_lang;
             if($item['title_' . $lang] == null ||
-                empty($product['title_' . $lang])
+                empty($item['title_' . $lang])
             )
                 $lang = $item['default_lang'];
 

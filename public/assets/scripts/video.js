@@ -64,7 +64,7 @@ function renderFirstRow(node) {
     html += '<div class="first-row-decs">';
     html += '<h1 class="title">' + node.title +'</h1>';
     html += '<h1 class="desc">' + node.desc + '</h1>';
-    html += '<p class="more">More</p>';
+    html += '<p class="more">' + JSTranslate['more'] + '</p>';
     html += '</div>';
     html += '</div>';
 
@@ -85,7 +85,7 @@ function renderSecondRow(node, idx) {
     html += '<div class="txt">';
     html += '<h1>' + node.title + '</h1>';
     html += '<p>' + node.desc + '</p>';
-    html += '<span data-id="' + node.id + '" class="more">More</span>';
+    html += '<span data-id="' + node.id + '" class="more">' + JSTranslate['more'] + '</span>';
     html += '</div>';
     html += '</div>';
 

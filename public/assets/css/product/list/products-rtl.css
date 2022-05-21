@@ -1,0 +1,32 @@
+#products .card .desc .tags span:first-child {
+    margin-left: unset;
+    margin-right: 0;
+}
+
+#products #all-tags {
+    flex-direction: row-reverse;
+}
+
+#products .card {
+    flex-direction: row-reverse;
+}
+
+#products .card .img .more {
+    left: unset;
+    right: -60px;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#products .card .img .more span {
+    margin-left: 20px;
+    margin-right: unset;
+    text-align: left;
+}
+
+#products .card .desc h1, #products .card .desc p {
+    margin-left: 80px;
+    margin-right: unset;
+}

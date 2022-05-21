@@ -1,0 +1,8 @@
+@media only screen and (max-width: 768px) {
+
+    #products .card .img .more {
+        left: 0;
+        right: unset;
+    }
+
+}
