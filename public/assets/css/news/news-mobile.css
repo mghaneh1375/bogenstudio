@@ -17,7 +17,7 @@
 
     #topSection .item h1 {
         font: normal normal bold var(--text-size)/24px var(--font-family) !important;
-        word-break: break-all;
+        word-break: break-word;
         white-space: normal;
     }
 
@@ -56,6 +56,15 @@
 
     .paginator p:last-child {
         float: left;
+    }
+
+}
+
+@media only screen and (max-height: 400px),
+        only screen and (min-width: 650px) {
+
+    #news {
+        margin-top: 0 !important;
     }
 
 }

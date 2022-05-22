@@ -3,14 +3,18 @@
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/news/news-rtl.css')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/news/news-rtl.css?v=1.1')}}">
 @endif
 
 <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news/news-mobile.css?v=1.1')}}">
 
 <div id="news">
-    <div id="topSection"></div>
-    <div id="all" class="hidden"></div>
+    <div id="topSection">
+        <img class="bogen-loader" id="newsLoader" src="{{asset('assets/images/loading.gif')}}">
+    </div>
+    <div id="all" class="hidden">
+        @include('layouts.filter')
+    </div>
 </div>
 
 <script>

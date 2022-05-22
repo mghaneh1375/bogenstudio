@@ -51,6 +51,7 @@ $(document).ready(function () {
                 html += "</div>";
             }
 
+            $("#productLoader").remove();
             $("#products").append(html);
 
             $(document).ready(function () {

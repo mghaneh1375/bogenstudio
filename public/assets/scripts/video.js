@@ -29,6 +29,7 @@ $(document).ready(function () {
             if(res.length % 2 === 1)
                 html += '</div>';
 
+            $("#videoLoader").remove();
             $("#videos").append(html);
 
 
@@ -63,8 +64,8 @@ function renderFirstRow(node) {
     html += '</div>';
     html += '<div class="first-row-decs">';
     html += '<h1 class="title">' + node.title +'</h1>';
-    html += '<h1 class="desc">' + node.desc + '</h1>';
-    html += '<p class="more">' + JSTranslate['more'] + '</p>';
+    html += '<h1 class="desc">' + node.description + '</h1>';
+    html += '<p data-id="' + node['id'] + '" class="more">' + JSTranslate['more'] + '</p>';
     html += '</div>';
     html += '</div>';
 
@@ -84,7 +85,7 @@ function renderSecondRow(node, idx) {
     html += '</div>';
     html += '<div class="txt">';
     html += '<h1>' + node.title + '</h1>';
-    html += '<p>' + node.desc + '</p>';
+    html += '<p>' + node.description + '</p>';
     html += '<span data-id="' + node.id + '" class="more">' + JSTranslate['more'] + '</span>';
     html += '</div>';
     html += '</div>';

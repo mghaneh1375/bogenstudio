@@ -4,14 +4,14 @@
     @parent
 
     <title>Bogen Studio</title>
-    <link rel="stylesheet" href="{{asset('assets/css/product/individual/product.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/product/individual/product.css?v=1.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
             \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/product/individual/product-rtl.css')}}">
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/product/individual/product-rtl.css?v=1.1')}}">
     @endif
 
-    <link rel="stylesheet" href="{{asset('assets/css/product/individual/product-mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/product/individual/product-mobile.css?v=1.1')}}">
 
 @stop
 
@@ -23,6 +23,8 @@
     </script>
 
     <div id="products">
+        @include('layouts.filter')
+        <img class="bogen-loader" id="loader" src="{{asset('assets/images/loading.gif')}}">
     </div>
 
     @include('layouts.footer')

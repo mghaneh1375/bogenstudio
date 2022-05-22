@@ -27,6 +27,7 @@ class ProductController extends PNController
         if($request->user() != null)
             return AdminProductDigest::collection(Product::whereIsNews(false)->get())->additional(['status' => 'ok']);
 
+        sleep(2);
         $products = Product::whereIsNews(false)->visible()->orderBy('priority', 'desc')->get()->toArray();
 
         $distinct_tags = [];
@@ -142,6 +143,7 @@ class ProductController extends PNController
      */
     public function showToUser($lang, Product $product)
     {
+        sleep(2);
         $product = $product->toArray();
 
         if($product['title_' . $lang] == null ||

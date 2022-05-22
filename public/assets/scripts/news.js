@@ -64,6 +64,7 @@ $(document).ready(function () {
                 html += '</div>';
             }
 
+            $("#newsLoader").remove();
             $("#topSection").append(html);
 
             if(res.length > 4) {

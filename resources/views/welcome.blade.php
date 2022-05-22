@@ -3,19 +3,19 @@
 @section('head')
     @parent
     <link rel="stylesheet" href="{{asset("assets/css/main/home.css")}}"/>
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=1.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css')}}">
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css?v=1.1')}}">
     @endif
 
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=1.1')}}">
     <link rel="stylesheet" href="{{asset("assets/css/main/home-mobile.css")}}"/>
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css')}}">
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css?v=1.1')}}">
     @endif
 
     <title>Bogen Studio</title>
@@ -33,7 +33,7 @@
 
         <div id="sliderCanvas">
 
-            <img id="modelLoader" src="{{asset('assets/images/loading.gif')}}" style="display: block; margin: 0 auto; width: 100px">
+            <img class="bogen-loader" id="modelLoader" src="{{asset('assets/images/loading.gif')}}">
 
             <div id="bubblesDiv" class="bubbles">
                 <div id="hand" class="hidden">
@@ -52,27 +52,27 @@
 
         <div class="boxes">
             <div class="box">
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/1.svg')}}">
+                <img src="{{asset('assets/images/1.svg')}}">
                 <p class="title">{{__('home.boxes.card1.title')}}</p>
                 <p class="desc">{{__('home.boxes.card1.desc')}}</p>
             </div>
             <div class="box">
                 <p class="title">{{__('home.boxes.card2.title')}}</p>
                 <p class="desc">{{__('home.boxes.card2.desc')}}</p>
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/2.svg')}}">
+                <img src="{{asset('assets/images/2.svg')}}">
             </div>
             <div class="box">
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/3.svg')}}">
+                <img src="{{asset('assets/images/3.svg')}}">
                 <p class="title">{{__('home.boxes.card3.title')}}</p>
                 <p class="desc">{{__('home.boxes.card3.desc')}}</p>
             </div>
             <div class="box">
                 <p class="title">{{__('home.boxes.card4.title')}}</p>
                 <p class="desc">{{__('home.boxes.card4.desc')}}</p>
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/4.svg')}}">
+                <img src="{{asset('assets/images/4.svg')}}">
             </div>
             <div class="box">
-                <img src="{{\Illuminate\Support\Facades\URL::asset('assets/images/layer.png')}}">
+                <img src="{{asset('assets/images/layer.png')}}">
                 <p class="title">{{__('home.boxes.card5.title')}}</p>
                 <p class="desc">{{__('home.boxes.card5.desc')}}</p>
             </div>
@@ -110,7 +110,7 @@
 
     <div id="products">
 
-        <img id="productLoader" src="{{asset('assets/images/loading.gif')}}" style="display: block; margin: 0 auto; width: 100px">
+        <img class="bogen-loader" id="productLoader" src="{{asset('assets/images/loading.gif')}}">
 
         <div class="left hidden">
 
@@ -247,8 +247,8 @@
       }
     </script>
 
-    <script type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/home.js?v=1.3')}}"></script>
-    <script async type="module" src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/fbxloader.js')}}"></script>
+    <script type="module" src="{{asset('assets/scripts/home.js?v=1.3')}}"></script>
+    <script async type="module" src="{{asset('assets/scripts/fbxloader.js')}}"></script>
     <script src="{{asset('assets/scripts/webgl-need.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/scripts/logo4.js')}}"></script>
     <script src="{{asset('assets/scripts/webgl.js')}}"></script>

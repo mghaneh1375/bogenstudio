@@ -69,6 +69,8 @@ Route::prefix('/{lang}')->group(function () {
 
     Route::get('/product/show/{product}', [ProductController::class, 'showToUser']);
 
+    Route::get('/video/show/{video}', [VideoController::class, 'show']);
+
     Route::get('videos/{limit?}', [VideoController::class, 'index']);
 
     Route::get('news/{limit?}', [NewsController::class, 'index']);

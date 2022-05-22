@@ -2,17 +2,19 @@
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/videos-rtl.css')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/videos-rtl.css?v=1.1')}}">
 @endif
 
 <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/video/video-mobile.css?v=1.2')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/video/video-mobile-rtl.css')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/video/video-mobile-rtl.css?v=1.1')}}">
 @endif
 
-<div id="videos"></div>
+<div id="videos">
+    <img class="bogen-loader" id="videoLoader" src="{{asset('assets/images/loading.gif')}}">
+</div>
 
 <script>
     var playPic = '{{\Illuminate\Support\Facades\URL::asset('assets/images/play.svg')}}';

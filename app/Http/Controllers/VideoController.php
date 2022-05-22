@@ -22,6 +22,7 @@ class VideoController extends Controller
     public function index(Request $request, $lang = "en", $limit = -1)
     {
 
+        sleep(2);
         $videos = ($limit == -1 || $request->user() != null) ? Video::all() : Video::take($limit)->get();
         foreach ($videos as $video)
             $video->lang = $lang;
@@ -66,12 +67,18 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param $lang
      * @param Video $video
-     * @return VideoResource
+     * @param Request $request
+     * @return VideoResource|VideoDigest
      */
-    public function show(Video $video)
+    public function show($lang, Video $video, Request $request)
     {
-        return VideoResource::make($video)->additional(['status' => 'ok']);
+        if($request->user() != null)
+            return VideoResource::make($video)->additional(['status' => 'ok']);
+
+        $video->lang = $lang;
+        return VideoDigest::make($video)->additional(['status' => 'ok']);
     }
 
 

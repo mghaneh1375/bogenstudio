@@ -1,0 +1,41 @@
+@media only screen and (max-width: 768px) {
+
+    #filter-box {
+        width: 100%;
+        margin: 0 0 20px 0;
+        border-radius: 0;
+    }
+
+    #filter-box > #videoFilter {
+        margin-right: 30px;
+    }
+
+    #filter-box ul {
+        width: unset;
+        margin: 0 auto 0 10px;
+        padding-right: 0;
+    }
+
+    #filter-box ul li {
+        width: unset;
+        padding-right: 15px;
+    }
+
+    #filter-box ul img {
+        width: 15px;
+    }
+
+}
+
+@media screen and (max-height: 400px),
+screen and (min-width: 650px) and (max-width: 768px) {
+
+    #filter-box ul {
+        width: 200px;
+    }
+
+    #filter-box ul li {
+        width: calc(100% - 40px);
+        padding-right: 15px;
+    }
+}

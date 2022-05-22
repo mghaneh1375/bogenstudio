@@ -19,52 +19,52 @@
 
         <!-- Bootstrap CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/bootstrap.min.css?v=1.1')}}">
 
-        <link rel="stylesheet" href="{{URL::asset('assets/css/font.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/font.css?v=1.1')}}">
 
         <!-- Bootstrap CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/font-awesome.min.css?v=1.1')}}">
 
         <!-- adminpro icon CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/adminpro-custon-icon.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/adminpro-custon-icon.css?v=1.1')}}">
 
         <!-- meanmenu icon CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/meanmenu.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/meanmenu.min.css?v=1.1')}}">
 
         <!-- mCustomScrollbar CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/jquery.mCustomScrollbar.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/jquery.mCustomScrollbar.min.css?v=1.1')}}">
 
         <!-- animate CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/animate.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/animate.css?v=1.1')}}">
 
         <!-- jvectormap CSS
             ============================================ -->
-        {{--        <link rel="stylesheet" href="{{URL::asset('panel/css/jvectormap/jquery-jvectormap-2.0.3.css')}}">--}}
+        {{--        <link rel="stylesheet" href="{{URL::asset('panel/css/jvectormap/jquery-jvectormap-2.0.3.css?v=1.1')}}">--}}
 
     <!-- normalize CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-table.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-editable.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-table.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-editable.css?v=1.1')}}">
 
         <!-- normalize CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/normalize.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/normalize.css?v=1.1')}}">
         <!-- charts CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/c3.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/c3.min.css?v=1.1')}}">
         <!-- style CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/style.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/style.css?v=1.1')}}">
         <!-- responsive CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/responsive.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('panel/css/commonCSS.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/responsive.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/commonCSS.css?v=1.1')}}">
 
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- modernizr JS
