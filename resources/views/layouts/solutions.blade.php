@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/solution/solutions-rtl.css')}}">
 @endif
 
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/solution/solution-mobile.css')}}">
+
 <div id="solutions">
     <div id="all">
         <div>

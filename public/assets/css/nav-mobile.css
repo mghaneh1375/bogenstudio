@@ -130,3 +130,15 @@
         margin: 50px auto;
     }
 }
+
+@media only screen and (max-height: 400px),
+       only screen and (min-width: 650px) {
+
+    #open-menu p {
+        margin-top: 25px;
+    }
+
+    #open-menu .banner {
+        margin-bottom: 0;
+    }
+}

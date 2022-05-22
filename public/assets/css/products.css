@@ -89,7 +89,7 @@
     margin-right: 95px;
     font: normal normal normal var(--text-size)/24px var(--font-family);
     color: var(--silver);
-    word-break: break-all;
+    word-break: break-word;
     white-space: normal;
 }
 
@@ -98,6 +98,6 @@
     margin-right: 80px;
     font: normal normal bold var(--big-text-size)/24px var(--font-family);
     color: var(--silver);
-    word-break: break-all;
+    word-break: break-word;
     white-space: normal;
 }

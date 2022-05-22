@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/video/video-mobile-rtl.css')}}">
 @endif
 
-<div id="videos"></div>
+<div id="videos">
+    <img class="bogen-loader" id="videoLoader" src="{{asset('assets/images/loading.gif')}}">
+</div>
 
 <script>
     var playPic = '{{\Illuminate\Support\Facades\URL::asset('assets/images/play.svg')}}';

@@ -1,5 +1,10 @@
 @media only screen and (max-width: 768px) {
 
+    #slider-h, #slider-p {
+        word-break: break-word;
+        white-space: normal;
+    }
+
     #slider .images {
         margin-right: 0;
         width: 100%;
@@ -47,6 +52,15 @@
 
     .content {
         overflow-x: hidden;
+    }
+
+}
+
+@media only screen and (max-height: 400px),
+only screen and (min-width: 650px) {
+
+    #slider {
+        height: calc(100vh - 120px) !important;
     }
 
 }

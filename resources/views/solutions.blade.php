@@ -17,5 +17,6 @@
 
 
     @include('layouts.footer')
+    @include('layouts.footer-mobile')
 
 @stop

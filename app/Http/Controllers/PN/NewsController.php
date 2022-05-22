@@ -25,6 +25,8 @@ class NewsController extends PNController
         if($request->user() != null)
             return AdminProductDigest::collection(Product::whereIsNews(true)->get())->additional(['status' => 'ok']);
 
+        sleep(2);
+
         if($limit == -1)
             $news = Product::whereIsNews(true)->visible()->get()->toArray();
         else

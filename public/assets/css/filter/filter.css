@@ -1,0 +1,52 @@
+#filter-box {
+    display: flex;
+    background-color: white;
+    direction: ltr;
+    margin: 30px auto;
+    height: 50px;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 80%;
+    border-radius: 20px;
+    justify-content: end;
+}
+
+#filter-box ul {
+    align-self: center;
+    padding: 10px 10px 5px 10px;
+    width: 200px;
+    list-style: none;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--light-silver);
+    border-bottom: 2px solid var(--light-silver);
+    cursor: pointer;
+    margin: 0 auto 0 30px;
+}
+
+#filter-box ul img {
+    color: var(--main-color);
+    width: 20px;
+}
+
+#filter-box ul li {
+    width: calc(100% - 30px);
+    display: inline-block;
+    padding-right: 5px;
+}
+
+#filter-box  > #videoFilter {
+    align-self: center;
+    display: inline-block;
+    margin-right: 100px;
+    font: normal normal normal var(--text-size)/20px var(--font-family);
+    color: var(--light-silver);
+    cursor: pointer;
+}
+
+#filter-box  > #back {
+    align-self: center;
+    display: inline-block;
+    margin-right: 30px;
+    font: normal normal bold var(--text-size)/20px var(--font-family);
+    color: var(--main-color);
+    cursor: pointer;
+}

@@ -29,6 +29,9 @@
     </script>
 
     <div id="products">
+
+        <img class="bogen-loader" id="productLoader" src="{{asset('assets/images/loading.gif')}}">
+
         <div id="all-tags"></div>
     </div>
 

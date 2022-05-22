@@ -165,3 +165,10 @@ body {
 .hidden-on-desktop {
     display: none !important;
 }
+
+.bogen-loader {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: max-content;
+}
