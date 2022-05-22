@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title>ورود</title>
 
-    <link rel="stylesheet" href="{{asset('assets/css/font.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('panel/css/loginCss.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/font.css?v=1.1')}}">
+    <link type="text/css" rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('panel/css/loginCss.css?v=1.1')}}">
     <script src="{{asset('panel/js/jquery.min.js')}}"></script>
 
 </head>

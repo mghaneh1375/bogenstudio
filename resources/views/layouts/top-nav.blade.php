@@ -1,13 +1,13 @@
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav-rtl.css')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav-rtl.css?v=1.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css')}}">
+<link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css?v=1.1')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css?v=1.1')}}">
 @endif
 
 <nav id="navbar">

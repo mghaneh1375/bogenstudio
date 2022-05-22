@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="{{asset('assets/css/filter/filter.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/filter/filter-mobile.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/filter/filter.css?v=1.1')}}">
+<link rel="stylesheet" href="{{asset('assets/css/filter/filter-mobile.css?v=1.1')}}">
 <div id="filter-box">
 
 <ul>

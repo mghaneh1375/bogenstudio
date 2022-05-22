@@ -3,19 +3,19 @@
 @section('head')
     @parent
     <link rel="stylesheet" href="{{asset("assets/css/main/home.css")}}"/>
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=1.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css')}}">
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css?v=1.1')}}">
     @endif
 
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=1.1')}}">
     <link rel="stylesheet" href="{{asset("assets/css/main/home-mobile.css")}}"/>
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css')}}">
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css?v=1.1')}}">
     @endif
 
     <title>Bogen Studio</title>

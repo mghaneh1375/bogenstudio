@@ -5,13 +5,13 @@
 
     <title>Bogen Studio</title>
 
-    <link rel="stylesheet" href="{{asset('assets/css/news/all-mobile.css')}}">
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css')}}">
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/news/all-mobile.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=1.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
             \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/slider/slider-mobile-rtl.css')}}">
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/slider/slider-mobile-rtl.css?v=1.1')}}">
     @endif
 
 @stop
