@@ -27,13 +27,13 @@
     }
 
     #all {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     #all .item {
         width: 100%;
-        margin: 120px 0 0 0 ;
+        margin: 120px 10px 0 10px;
     }
 
     .paginator {

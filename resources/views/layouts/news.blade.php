@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/news/news-rtl.css?v=1.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news/news-mobile.css?v=1.1')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news/news-mobile.css?v=1.2')}}">
 
 <div id="news">
     <div id="topSection">
