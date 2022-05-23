@@ -46,6 +46,9 @@ function loadFBX(modelPath, texturePath) {
     fbxLoader.load(
         modelPath,
         (object) => {
+
+            $("#modelLoader").remove();
+
             object.traverse(function (child) {
 
                 if(texturePath !== '') {
@@ -53,8 +56,6 @@ function loadFBX(modelPath, texturePath) {
                     const loader = new THREE.TextureLoader();
 
                     loader.load(texturePath, function (texture) {
-
-                            $("#modelLoader").remove();
 
                             child.material = new THREE.MeshBasicMaterial({
                                 map: texture
