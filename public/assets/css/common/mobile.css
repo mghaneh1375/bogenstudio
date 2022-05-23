@@ -19,7 +19,7 @@
         --monster-text-size: 48px;
     }
 
-    .hidden-on-desktop {
+    .hidden-on-desktop:not(.hidden) {
         display: block !important;
     }
 }

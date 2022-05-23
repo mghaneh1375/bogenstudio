@@ -20,8 +20,9 @@
 <script>
     var fetchNewsUrl = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/news')}}';
     var redirectUrl = '{{url(\Illuminate\Support\Facades\App::getLocale() . '/product')}}';
+    var totalSliders = 4;
 </script>
 
-<script src="{{asset('assets/scripts/slider.js')}}"></script>
-<script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/news.js')}}"></script>
+<script src="{{asset('assets/scripts/slider.js?v=2.2')}}"></script>
+<script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/news.js?v=2.1')}}"></script>
 
