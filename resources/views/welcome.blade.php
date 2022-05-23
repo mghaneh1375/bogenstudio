@@ -248,7 +248,7 @@
     </script>
 
     <script type="module" src="{{asset('assets/scripts/home.js?v=1.3')}}"></script>
-    <script async type="module" src="{{asset('assets/scripts/fbxloader.js')}}"></script>
+    <script async type="module" src="{{asset('assets/scripts/fbxloader.js?v=1.2')}}"></script>
     <script src="{{asset('assets/scripts/webgl-need.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/scripts/logo4.js')}}"></script>
     <script src="{{asset('assets/scripts/webgl.js')}}"></script>

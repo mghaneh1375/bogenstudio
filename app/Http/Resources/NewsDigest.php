@@ -26,6 +26,7 @@ class NewsDigest extends JsonResource
             'id' => $this['id'],
             'image' => asset('storage/products/' . $this['pic']),
             'created_at' => explode('T', $this['created_at'])[0],
+            'tags' => explode('_', $this['tags_' . $lang])
         ];
     }
 }

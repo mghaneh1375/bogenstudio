@@ -21,6 +21,8 @@ $(document).ready(function () {
             if(res.length < 4)
                 limit = res.length;
 
+            var cats = [];
+
             for(var i = 0; i < limit; i++) {
 
                 if(i === 0 || i === 2)
@@ -62,6 +64,7 @@ $(document).ready(function () {
 
                 html += '</div>';
                 html += '</div>';
+
             }
 
             $("#newsLoader").remove();
@@ -72,7 +75,21 @@ $(document).ready(function () {
                 html = "";
 
                 for(i = 4; i < res.length; i++) {
-                    html += '<div class="item page-' + parseInt((i - 4) / 2) + '">';
+
+                    var catsStr = "";
+
+                    for(j = 0; j < res[i - 1].tags.length; j++) {
+
+                        catsStr += "_" + res[i - 1].tags[j];
+
+                        if(cats.indexOf(res[i - 1].tags[j]) === -1)
+                            cats.push(res[i - 1].tags[j])
+
+                    }
+
+                    catsStr += "_";
+
+                    html += '<div data-cats="' + catsStr + '" class="item page-' + parseInt((i - 4) / 2) + '">';
                     html += "<img src='" + res[i].image + "'>";
                     html += "<p class='date'>" + res[i].created_at + "</p>";
                     html += "<h1>" + res[i].title + "</h1>";
@@ -117,6 +134,21 @@ $(document).ready(function () {
             $(".row .item").on('click', function () {
                 document.location.href = redirectUrl + "/" + $(this).attr('data-id');
             });
+
+            if(newsFetchLimit == -1) {
+                html = "";
+                for(i = 0; i < cats.length; i++) {
+                    html += "<li data-cat='" + cats[i] + "' class='choice'>" + cats[i] + "</li>";
+                }
+
+                $("#choices").append(html);
+
+                $(".choice").on('click', function () {
+                    filter($(this).attr('data-cat'));
+                });
+
+            }
+
         }
 
     });
