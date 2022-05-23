@@ -1,10 +1,9 @@
 var oldIdx = -1;
 var changing = false;
 
-var slider_time_out = 20000;
+var slider_time_out = 5000;
 var slider_transition_time = 2000;
 var currIdx = 1;
-var totalSliders = 5;
 
 var timer;
 

@@ -59,7 +59,10 @@
     @include('layouts.footer')
     @include('layouts.footer-mobile')
 
-    <script src="{{asset('assets/scripts/slider.js')}}"></script>
+    <script>
+        var totalSliders = 5;
+    </script>
+    <script src="{{asset('assets/scripts/slider.js?v=2.2')}}"></script>
     <script src="{{asset('assets/scripts/about.js')}}"></script>
 
 @stop
