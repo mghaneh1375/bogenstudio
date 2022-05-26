@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <script src="{{asset('panel/js/fetchTableData.js')}}"></script>
+    <script src="{{asset('panel/js/fetchTableData.js?v=2.1')}}"></script>
 
     @yield('script')
 

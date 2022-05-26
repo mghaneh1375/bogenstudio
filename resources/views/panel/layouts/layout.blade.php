@@ -19,59 +19,59 @@
 
         <!-- Bootstrap CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/bootstrap.min.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/bootstrap.min.css?v=2.1')}}">
 
-        <link rel="stylesheet" href="{{URL::asset('assets/css/font.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/font.css?v=2.1')}}">
 
         <!-- Bootstrap CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/font-awesome.min.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/font-awesome.min.css?v=2.1')}}">
 
         <!-- adminpro icon CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/adminpro-custon-icon.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/adminpro-custon-icon.css?v=2.1')}}">
 
         <!-- meanmenu icon CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/meanmenu.min.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/meanmenu.min.css?v=2.1')}}">
 
         <!-- mCustomScrollbar CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/jquery.mCustomScrollbar.min.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/jquery.mCustomScrollbar.min.css?v=2.1')}}">
 
         <!-- animate CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/animate.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/animate.css?v=2.1')}}">
 
         <!-- jvectormap CSS
             ============================================ -->
-        {{--        <link rel="stylesheet" href="{{URL::asset('panel/css/jvectormap/jquery-jvectormap-2.0.3.css?v=1.1')}}">--}}
+        {{--        <link rel="stylesheet" href="{{URL::asset('panel/css/jvectormap/jquery-jvectormap-2.0.3.css?v=2.1')}}">--}}
 
     <!-- normalize CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-table.css?v=1.1')}}">
-        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-editable.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-table.css?v=2.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/data-table/bootstrap-editable.css?v=2.1')}}">
 
         <!-- normalize CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/normalize.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/normalize.css?v=2.1')}}">
         <!-- charts CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/c3.min.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/c3.min.css?v=2.1')}}">
         <!-- style CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/style.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/style.css?v=2.1')}}">
         <!-- responsive CSS
             ============================================ -->
-        <link rel="stylesheet" href="{{URL::asset('panel/css/responsive.css?v=1.1')}}">
-        <link rel="stylesheet" href="{{URL::asset('panel/css/commonCSS.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/responsive.css?v=2.1')}}">
+        <link rel="stylesheet" href="{{URL::asset('panel/css/commonCSS.css?v=2.1')}}">
 
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- modernizr JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/vendor/modernizr-2.8.3.min.js?v=2.1')}}"></script>
 
-        <script src="{{URL::asset('panel/js/jquery.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/jquery.min.js?v=2.1')}}"></script>
 
         <style>
 
@@ -210,64 +210,64 @@
 @section('reminder')
     <!-- jquery
         ============================================ -->
-        <script src="{{URL::asset('panel/js/vendor/jquery-1.11.3.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/vendor/jquery-1.11.3.min.js?v=2.1')}}"></script>
         <!-- bootstrap JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/bootstrap.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/bootstrap.min.js?v=2.1')}}"></script>
         <!-- meanmenu JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/jquery.meanmenu.js')}}"></script>
+        <script src="{{URL::asset('panel/js/jquery.meanmenu.js?v=2.1')}}"></script>
         <!-- mCustomScrollbar JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/jquery.mCustomScrollbar.concat.min.js?v=2.1')}}"></script>
         <!-- sticky JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/jquery.sticky.js')}}"></script>
+        <script src="{{URL::asset('panel/js/jquery.sticky.js?v=2.1')}}"></script>
         <!-- scrollUp JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/jquery.scrollUp.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/jquery.scrollUp.min.js?v=2.1')}}"></script>
         <!-- scrollUp JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/wow/wow.min.js')}}"></script>
+        <script src="{{URL::asset('panel/js/wow/wow.min.js?v=2.1')}}"></script>
         <!-- counterup JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/counterup/jquery.counterup.min.js')}}"></script>
-        <script src="{{URL::asset('panel/js/counterup/waypoints.min.js')}}"></script>
-        <script src="{{URL::asset('panel/js/counterup/counterup-active.js')}}"></script>
+        <script src="{{URL::asset('panel/js/counterup/jquery.counterup.min.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/counterup/waypoints.min.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/counterup/counterup-active.js?v=2.1')}}"></script>
         <!-- jvectormap JS
             ============================================ -->
 
     <!-- peity JS
                 ============================================ -->
-        <script src="{{URL::asset('panel/js/peity/jquery.peity.min.js')}}"></script>
-        <script src="{{URL::asset('panel/js/peity/peity-active.js')}}"></script>
+        <script src="{{URL::asset('panel/js/peity/jquery.peity.min.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/peity/peity-active.js?v=2.1')}}"></script>
         <!-- sparkline JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/sparkline/jquery.sparkline.min.js')}}"></script>
-        <script src="{{URL::asset('panel/js/sparkline/sparkline-active.js')}}"></script>
+        <script src="{{URL::asset('panel/js/sparkline/jquery.sparkline.min.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/sparkline/sparkline-active.js?v=2.1')}}"></script>
         <!-- flot JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/flot/Chart.min.js')}}"></script>
-        <script src="{{URL::asset('panel/js/flot/dashtwo-flot-active.js')}}"></script>
+        <script src="{{URL::asset('panel/js/flot/Chart.min.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/flot/dashtwo-flot-active.js?v=2.1')}}"></script>
         <!-- data table JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/data-table/bootstrap-table.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/tableExport.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/data-table-active.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/bootstrap-table-editable.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/bootstrap-editable.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/bootstrap-table-resizable.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/colResizable-1.5.source.js')}}"></script>
-        <script src="{{URL::asset('panel/js/data-table/bootstrap-table-export.js')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/bootstrap-table.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/tableExport.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/data-table-active.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/bootstrap-table-editable.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/bootstrap-editable.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/bootstrap-table-resizable.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/colResizable-1.5.source.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/data-table/bootstrap-table-export.js?v=2.1')}}"></script>
 
-        <script src="{{URL::asset('panel/js/dropzone.js')}}"></script>
-        <script src="{{URL::asset('panel/js/multiple-email-active.js')}}"></script>
-        <script src="{{URL::asset('panel/js/summernote.min.js')}}"></script>
-        <script src="{{URL::asset('panel/js/summernote-active.js')}}"></script>
+        <script src="{{URL::asset('panel/js/dropzone.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/multiple-email-active.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/summernote.min.js?v=2.1')}}"></script>
+        <script src="{{URL::asset('panel/js/summernote-active.js?v=2.1')}}"></script>
 
         <!-- main JS
             ============================================ -->
-        <script src="{{URL::asset('panel/js/main.js')}}"></script>
+        <script src="{{URL::asset('panel/js/main.js?v=2.1')}}"></script>
 
         <script type="text/javascript">
             $.ajaxSetup({

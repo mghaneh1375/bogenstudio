@@ -2,15 +2,15 @@
 
 @section('head')
     @parent
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/about.css")}}"/>
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/about.css?v=2.1")}}"/>
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=2.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/about-rtl.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/about-rtl.css?v=2.1')}}">
     @endif
 
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=2.1')}}">
 
     <title>Bogen Studio</title>
 @stop
@@ -63,6 +63,6 @@
         var totalSliders = 5;
     </script>
     <script src="{{asset('assets/scripts/slider.js?v=2.2')}}"></script>
-    <script src="{{asset('assets/scripts/about.js')}}"></script>
+    <script src="{{asset('assets/scripts/about.js?v=2.1')}}"></script>
 
 @stop

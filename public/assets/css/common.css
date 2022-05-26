@@ -166,6 +166,10 @@ body {
     display: none !important;
 }
 
+.hidden-on-mobile:not(.hidden) {
+    display: flex;
+}
+
 .bogen-loader {
     display: block;
     margin: 0 auto;

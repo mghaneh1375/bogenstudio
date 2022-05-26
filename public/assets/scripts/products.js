@@ -44,7 +44,7 @@ $(document).ready(function () {
                 html += "</div>";
 
                 html += "<div class='img'>";
-                html += '<img src="' + res[i].image + '">';
+                html += '<div style="background-image: url(' + res[i].image + ')"></div>';
                 html += '<div data-id="' + res[i].id + '" class="more"><span>' + JSTranslate['more'] + '</span></div>';
                 html += "</div>";
 

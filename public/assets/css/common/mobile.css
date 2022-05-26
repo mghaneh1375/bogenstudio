@@ -22,4 +22,8 @@
     .hidden-on-desktop:not(.hidden) {
         display: block !important;
     }
+
+    .hidden-on-mobile {
+        display: none !important;
+    }
 }
