@@ -8,6 +8,9 @@ $(document).ready(function () {
         },
         success: function (res) {
 
+            $("#categories-container").removeClass('hidden');
+            $("#loader").remove();
+
             if(res.status !== "ok")
                 return;
 
