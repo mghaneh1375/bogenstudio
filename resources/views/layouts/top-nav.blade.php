@@ -1,13 +1,13 @@
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav-rtl.css?v=2.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css?v=1.1')}}">
+<link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css?v=2.1')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css?v=2.1')}}">
 @endif
 
 <nav id="navbar">
@@ -62,4 +62,4 @@
     <img class="img-logo" src="{{asset('assets/images/layer.png')}}">
 </div>
 
-<script src="{{asset('assets/scripts/hamber-menu.js')}}"></script>
+<script src="{{asset('assets/scripts/hamber-menu.js?v=2.1')}}"></script>

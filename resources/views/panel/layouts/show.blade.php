@@ -3,7 +3,7 @@
 @section('header')
     @parent
     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/decoupled-document/ckeditor.js"></script>
-    <script src="{{asset('panel/js/ckeditor.js')}}"></script>
+    <script src="{{asset('panel/js/ckeditor.js?v=2.1')}}"></script>
 
     <script>
         var UploadURL = '{{route('uploadTest')}}';
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <script src="{{asset('panel/js/fetchTableData.js')}}"></script>
+    <script src="{{asset('panel/js/fetchTableData.js?v=2.1')}}"></script>
     @yield('script')
 
     <script>
@@ -41,6 +41,6 @@
         });
     </script>
 
-    <script src="{{asset('panel/js/create_edit.js')}}"></script>
+    <script src="{{asset('panel/js/create_edit.js?v=2.1')}}"></script>
 
 @stop

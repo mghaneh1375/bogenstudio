@@ -70,4 +70,4 @@
     <input name="video_file" type="file" id="video_file">
 </div>
 
-<script src="{{asset('panel/js/initCKs.js')}}"></script>
+<script src="{{asset('panel/js/initCKs.js?v=2.1')}}"></script>

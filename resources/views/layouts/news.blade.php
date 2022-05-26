@@ -1,12 +1,12 @@
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news.css?v=1.1')}}">
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/card.css?v=1.1')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news.css?v=2.1')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/card.css?v=2.1')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/news/news-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/news/news-rtl.css?v=2.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news/news-mobile.css?v=1.2')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/news/news-mobile.css?v=2.1')}}">
 
 <div id="news">
     <div id="topSection">

@@ -30,5 +30,5 @@
 
     </script>
 
-    <script type="module" src="{{asset('panel/js/fbxloaderOneModel.js')}}"></script>
+    <script type="module" src="{{asset('panel/js/fbxloaderOneModel.js?v=2.1')}}"></script>
 @stop

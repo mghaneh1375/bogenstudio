@@ -104,4 +104,4 @@
     <input name="pic_file" type="file" id="file">
 </div>
 
-<script src="{{asset('panel/js/initCKs.js')}}"></script>
+<script src="{{asset('panel/js/initCKs.js?v=2.1')}}"></script>

@@ -19,14 +19,19 @@
     align-self: center;
 }
 
-#bubblesDiv #hand {
-    position: absolute;
-    top: 20px;
+#sliderCanvas #hand {
+    /*position: absolute;*/
+    /*top: 20px;*/
+    margin-top: 5px;
 }
 
-#bubblesDiv #hand img {
+#sliderCanvas #hand img {
     width: 20px;
 }
+
+/*.table-row {*/
+/*    display: contents;*/
+/*}*/
 
 .big-bubble:first-child {
     margin-right: 2px;
@@ -49,6 +54,8 @@
     width: 500px;
     bottom: 30px;
     font: normal normal normal var(--text-size)/20px var(--font-family);
+    text-align: justify;
+    word-break: break-word;
     margin-top: 50px;
 }
 
@@ -59,14 +66,17 @@
     bottom: 200px;
     width: calc(100% - 500px - 50px - 60px - 30px - 50px);
     height: calc(100% - 80px - 200px);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 #sliderCanvas .bubbles {
     height: 20px;
-    width: 200px;
-    position: absolute;
-    top: calc(100% + 30px);
-    left: calc(50% - 100px);
+    /*width: 200px;*/
+    /*position: absolute;*/
+    /*top: calc(100% + 30px);*/
+    /*left: calc(50% - 100px);*/
     text-align: center;
     display: flex;
     justify-content: center;
@@ -331,8 +341,9 @@
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 350px;
+    /*height: 350px;*/
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #intro .scroll-arrows {
@@ -359,19 +370,15 @@
 }
 
 #intro .card img {
-    height: calc(100% - 110px);
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    max-width: 190px;
 }
 
 #intro .card > div {
     margin-top: auto;
-    margin-bottom: 20px;
-}
-
-#intro .card img {
-    height: 150px;
-    margin: 0 auto;
-    display: block;
-    max-width: 80%;
 }
 
 #intro .card .desc {
@@ -393,7 +400,7 @@
 
 #intro .card .desc img {
     height: 40px;
-    display: inline-block;
+    max-width: 40px;
     margin-left: 0;
     margin-right: 0;
     align-self: center;
@@ -413,6 +420,7 @@
     max-width: 100%;
     word-break: break-word;
     white-space: normal;
+    text-align: justify;
 }
 
 #webgl-container .good {

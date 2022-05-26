@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/footer.css?v=1.1')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/footer.css?v=2.1')}}">
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/footer-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/footer-rtl.css?v=2.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{asset('/assets/css/footer-mobile.css?v=1.1')}}">
+<link rel="stylesheet" href="{{asset('/assets/css/footer-mobile.css?v=2.1')}}">
 
 <footer id="phone-footer" class="hidden">
 

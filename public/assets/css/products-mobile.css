@@ -26,15 +26,21 @@
         width: 100%;
     }
 
+    #products .card .desc p {
+        width: calc(100% - 5px);
+        margin-right: 5px;
+    }
+
     #products .card .img {
         width: 100%;
         position: unset;
     }
 
-    #products .card .img img {
-        height: unset;
+    #products .card .img > div {
+        height: 200px;
         margin: unset;
         padding: 10px;
+        position: unset;
     }
 
     #products .card .desc {
@@ -50,6 +56,7 @@
         left: unset;
         right: 0;
         width: 100px;
+        padding: 0;
     }
 
     #products .card .img .more span {
