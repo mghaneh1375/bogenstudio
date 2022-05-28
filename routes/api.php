@@ -77,6 +77,9 @@ Route::prefix('/{lang}')->group(function () {
 
     Route::get('solutions', [SolutionController::class, 'index']);
 
+    Route::get('solution/show/{solution}', [SolutionController::class, 'show']);
+
+
 });
 
 Route::post('contactMe', [ContactController::class, 'store'])->name('contactMe');

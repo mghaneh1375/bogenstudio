@@ -30,9 +30,9 @@
             ?>
 
             <p {{($routeName == "home") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale())}}">{{__('footer.home')}}</a></p>
-            <p {{($routeName == "solutions") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/solutions')}}">{{__('footer.solutions')}}</a></p>
+            <p {{($routeName == "solutions" || $routeName == "solution") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/solutions')}}">{{__('footer.solutions')}}</a></p>
             <p {{($routeName == "products" || $routeName == "product") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/products')}}">{{__('footer.products')}}</a></p>
-            <p {{($routeName == "allNews") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/news')}}">{{__('footer.news')}}</a></p>
+            <p {{($routeName == "allNews" || $routeName == "news") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/news')}}">{{__('footer.news')}}</a></p>
             <p {{($routeName == "about") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/about')}}">{{__('footer.about')}}</a></p>
 
             <img id="hamber-menu" class="hidden" src="{{asset('assets/images/mobile-menu.svg')}}">

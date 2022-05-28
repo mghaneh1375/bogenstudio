@@ -24,7 +24,6 @@
     @yield('fetch')
 
     <div id="products">
-        @include('layouts.filter')
         <img class="bogen-loader" id="loader" src="{{asset('assets/images/loading.gif')}}">
     </div>
 

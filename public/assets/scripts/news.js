@@ -90,10 +90,11 @@ $(document).ready(function () {
                     catsStr += "_";
 
                     html += '<div data-cats="' + catsStr + '" class="item page-' + parseInt((i - 4) / 2) + '">';
-                    html += "<img src='" + res[i].image + "'>";
+                    html += "<div class='img' style='background-image: url(" + res[i].image + ")'></div>";
                     html += "<p class='date'>" + res[i].created_at + "</p>";
                     html += "<h1>" + res[i].title + "</h1>";
-                    html += "<p>" + res[i].digest + "</p>";
+                    html += "<p class='desc'>" + res[i].digest + "</p>";
+                    html += '<p data-id="' + res[i].id + '" class="more">' + JSTranslate['more'] + '</p>';
                     html += "</div>";
 
                     if(i === res.length - 1)
@@ -131,7 +132,7 @@ $(document).ready(function () {
                 paginate();
             });
 
-            $(".row .item").on('click', function () {
+            $("#news .more").on('click', function () {
                 document.location.href = redirectUrl + "/" + $(this).attr('data-id');
             });
 

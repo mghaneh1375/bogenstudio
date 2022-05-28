@@ -1,3 +1,30 @@
+@media only screen and (max-width: 1200px) {
+
+    #all .item {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 1040px) {
+
+    #all .item {
+        width: calc(50% - 60px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #all {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    #topSection .item p {
+        font: normal normal normal var(--tiny-text-size)/16px var(--font-family);
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
     #news {
@@ -21,7 +48,7 @@
         white-space: normal;
     }
 
-    #topSection .item p {
+    #topSection .item > p {
         font: normal normal normal var(--medium-tiny-text-size)/16px var(--font-family) !important;
         bottom: 0 !important;
     }
