@@ -118,6 +118,10 @@ Route::prefix('{locale}')->middleware('checkLang')->group(function () {
         return view('product', compact('productId'));
     })->name('product');
 
+    Route::get('/solution/{solutionId}', function ($lang, $solutionId) {
+        return view('solution', compact('solutionId'));
+    })->name('solution');
+
     Route::get('/video/{videoId}', function ($lang, $videoId) {
         return view('video', compact('videoId'));
     })->name('video');

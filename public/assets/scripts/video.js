@@ -41,7 +41,7 @@ $(document).ready(function () {
                 $(this).addClass('hidden');
             });
 
-            $(".more").on('click', function () {
+            $("#videos .more").on('click', function () {
                 document.location.href = videoRedirectUrl + "/" + $(this).attr('data-id');
             });
 

@@ -29,6 +29,7 @@ class SolutionDigest extends JsonResource
                 $lang = $item['default_lang'];
 
             array_push($items, [
+                'id' => $item['id'],
                 'title' => $item['title_' . $lang],
                 'digest' => $item['digest_' . $lang],
                 'image' => asset('storage/solutions/' . $item['pic']),

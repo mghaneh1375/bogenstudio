@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\AdminSolutionDigest;
 use App\Http\Resources\SolutionDigest;
+use App\Http\Resources\SolutionDigestUser;
 use App\Http\Resources\SolutionResource;
+use App\Http\Resources\VideoDigest;
 use App\Models\Solution;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -182,12 +184,18 @@ class SolutionController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param $lang
      * @param Solution $solution
-     * @return SolutionResource
+     * @param Request $request
+     * @return SolutionResource|SolutionDigestUser
      */
-    public function show(Solution $solution)
+    public function show($lang, Solution $solution, Request $request)
     {
-        return SolutionResource::make($solution)->additional(['status' => 'ok']);
+        if($request->user() != null)
+            return SolutionResource::make($solution)->additional(['status' => 'ok']);
+
+        $solution->lang = $lang;
+        return SolutionDigestUser::make($solution)->additional(['status' => 'ok']);
     }
 
     /**

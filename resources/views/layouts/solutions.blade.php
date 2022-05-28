@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/solution/solutions.css?v=2.2')}}">
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/card.css?v=2.1')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/card.css?v=2.2')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
@@ -22,7 +22,8 @@
 
 <script>
     var fetchNewsUrl = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/solutions')}}';
+    var redirectUrl = '{{url(\Illuminate\Support\Facades\App::getLocale() . '/solution/')}}';
 </script>
 
-<script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/solutions.js?v=2.2')}}"></script>
+<script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/solutions.js?v=2.3')}}"></script>
 

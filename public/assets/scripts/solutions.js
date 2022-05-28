@@ -49,9 +49,10 @@ $(document).ready(function () {
 
                 for(var j = 0; j < res[i].items.length; j++) {
                     html += '<div class="item">';
-                    html += "<img src='" + res[i].items[j].image + "'>";
+                    html += "<div class='img' style='background-image: url(" + res[i].items[j].image + ")'></div>";
                     html += "<h1>" + res[i].items[j].title + "</h1>";
-                    html += "<p>" + res[i].items[j].digest + "</p>";
+                    html += "<p class='desc'>" + res[i].items[j].digest + "</p>";
+                    html += '<p data-id="' + res[i].items[j].id + '" class="more">' + JSTranslate['more'] + '</p>';
                     html += "</div>";
                 }
 
@@ -69,6 +70,10 @@ $(document).ready(function () {
                 $(".cats .cat").removeClass('selected');
                 $(this).addClass('selected');
 
+            });
+
+            $(".more").on('click', function () {
+                document.location.href = redirectUrl + "/" + $(this).attr('data-id');
             });
 
         }
