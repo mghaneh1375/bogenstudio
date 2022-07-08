@@ -183,6 +183,7 @@
                             <a href="{{route('admin.products')}}" class="dropdown-item">مدیریت محصولات</a>
                             <a href="{{route('admin.videos')}}" class="dropdown-item">مدیریت ویدیوها</a>
                             <a href="{{route('admin.solutions')}}" class="dropdown-item">مدیریت راه حل ها</a>
+                            <a href="{{route('admin.seo')}}" class="dropdown-item">مدیریت تگ های سئو</a>
                         </div>
                     </li>
 

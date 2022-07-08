@@ -35,10 +35,11 @@ class SolutionDigest extends JsonResource
                 'image' => asset('storage/solutions/' . $item['pic']),
             ]);
         }
+        
 
         return [
             'tag' => $this['tag'],
-            'items' => $items
+            'items' => $items,
         ];
     }
 }

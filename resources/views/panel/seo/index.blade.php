@@ -2,16 +2,15 @@
 
 @section('table')
     <div style="margin: 10px">
-        <a href="{{route('admin.model.store')}}" class="btn btn-default">Add Item</a>
     </div>
 
     <table>
         <thead>
             <tr>
-                <th>texture</th>
-                <td>priority</td>
-                <td>visibility</td>
-                <td>created at</td>
+                <th>page</th>
+                <th>article:tag</th>
+                <td>keywords</td>
+                <td>description</td>
                 <td>updated at</td>
                 <td>op</td>
             </tr>
@@ -25,10 +24,11 @@
     <script>
 
         $(document).ready(function () {
-            fetchData('{{url('api/admin-panel/model')}}', 'table-body',
-                '{{url('admin-panel/model')}}',
+            fetchData('{{url('api/admin-panel/seo')}}', 'table-body',
                 undefined,
-                ['texture', 'priority', 'visibility', 'created_at', 'updated_at']
+                '{{url('admin-panel/seo/general')}}',
+                ['page', 'article_tag', 'keyword', 'description', 'updated_at'],
+                false
             );
         });
 

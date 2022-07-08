@@ -1,123 +1,145 @@
-function fetchData(url, nodeId,
-                   showUrl, keys) {
-
-    var token = localStorage.getItem('token');
-    if(token == null)
-        return;
+function fetchData(url, nodeId, showUrl, seoUrl, keys, canRemove = true) {
+    var token = localStorage.getItem("token");
+    if (token == null) return;
 
     $.ajax({
-        type: 'get',
+        type: "get",
         url: url,
         headers: {
-            'Authorization': "Bearer " + token,
-            'accept': 'application/json'
+            Authorization: "Bearer " + token,
+            accept: "application/json",
         },
         success: function (res) {
-
-            if(res.status !== "ok")
-                return;
+            if (res.status !== "ok") return;
 
             res = res.data;
-            var html = '';
+            var html = "";
 
-            for(var i = 0; i < res.length; i++) {
-
+            for (var i = 0; i < res.length; i++) {
                 html += '<tr id="row_' + res[i].id + '">';
 
-                for(var j = 0; j < keys.length; j++) {
-
-                    if(keys[j] === "image" || keys[j] === "texture" || keys[j] === "preview")
+                for (var j = 0; j < keys.length; j++) {
+                    if (
+                        keys[j] === "image" ||
+                        keys[j] === "texture" ||
+                        keys[j] === "preview"
+                    )
                         html += '<td><img src="' + res[i][keys[j]] + '"></td>';
-                    else
-                        html += '<td>' + res[i][keys[j]] + '</td>';
-
+                    else html += "<td>" + res[i][keys[j]] + "</td>";
                 }
 
-                html += '<td>';
+                html += "<td>";
+                if (seoUrl !== undefined) {
+                    if (
+                        res[i].seo_id == null ||
+                        res[i].seo_id === undefined ||
+                        res[i].seo_id === ""
+                    )
+                        html +=
+                            '<a href="' +
+                            seoUrl +
+                            "/add/" +
+                            res[i].id +
+                            '" class="btn btn-default">مدیریت تگ های سئو</a>';
+                    else
+                        html +=
+                            '<a href="' +
+                            seoUrl +
+                            "/edit/" +
+                            res[i].seo_id +
+                            '" class="btn btn-default">مدیریت تگ های سئو</a>';
+                }
 
-                if(showUrl != null)
-                    html += '<a href="' + showUrl + '/' + res[i].id +'" class="btn btn-info glyphicon glyphicon-eye-open"></a>';
+                if (showUrl != null)
+                    html +=
+                        '<a href="' +
+                        showUrl +
+                        "/" +
+                        res[i].id +
+                        '" class="btn btn-info glyphicon glyphicon-eye-open"></a>';
 
-                html += '<button onclick="removeSelectedItem(\'' + url + '\', ' + res[i].id + ')" class="btn btn-danger glyphicon glyphicon-trash"></button>';
-                html += '</td>';
-                html += '</tr>';
+                if (canRemove)
+                    html +=
+                        "<button onclick=\"removeSelectedItem('" +
+                        url +
+                        "', " +
+                        res[i].id +
+                        ')" class="btn btn-danger glyphicon glyphicon-trash"></button>';
+                html += "</td>";
+                html += "</tr>";
             }
 
-            $("#" + nodeId).empty().append(html);
-        }
+            $("#" + nodeId)
+                .empty()
+                .append(html);
+        },
     });
-
 }
 
 function removeSelectedItem(baseUrl, id) {
-
-    var token = localStorage.getItem('token');
-    if(token == null)
-        return;
+    var token = localStorage.getItem("token");
+    if (token == null) return;
 
     $.ajax({
-        type: 'delete',
-        url: baseUrl + '/' + id,
+        type: "delete",
+        url: baseUrl + "/" + id,
         headers: {
-            'Authorization': "Bearer " + token,
-            'accept': 'application/json'
+            Authorization: "Bearer " + token,
+            accept: "application/json",
         },
         success: function (res) {
-
-            if (res.status !== "ok")
-                return;
+            if (res.status !== "ok") return;
 
             $("#row_" + id).remove();
-        }
+        },
     });
 }
 
-function fetchFormData(url, callBack=undefined) {
-
-    var token = localStorage.getItem('token');
-    if(token == null)
-        return;
+function fetchFormData(url, callBack = undefined) {
+    var token = localStorage.getItem("token");
+    if (token == null) return;
 
     $.ajax({
-        type: 'get',
+        type: "get",
         url: url,
         headers: {
-            'Authorization': "Bearer " + token,
-            'accept': 'application/json'
+            Authorization: "Bearer " + token,
+            accept: "application/json",
         },
         success: function (res) {
-
-            if(res.status !== "ok")
-                return;
+            if (res.status !== "ok") return;
 
             res = res.data;
             for (var key in res) {
-
-                if(key === "pic" || key === "preview" || key === "texture") {
-                    $("#" + key).removeClass('hidden').attr('src', res[key]);
+                if (key === "pic" || key === "preview" || key === "texture") {
+                    $("#" + key)
+                        .removeClass("hidden")
+                        .attr("src", res[key]);
                     continue;
                 }
 
-                if(key === "default_lang" || key === "visibility") {
-                    $("#" + key).removeClass('hidden').val(res[key]).change();
+                if (key === "default_lang" || key === "visibility") {
+                    $("#" + key)
+                        .removeClass("hidden")
+                        .val(res[key])
+                        .change();
                     continue;
                 }
 
-                if(key === "model") {
-                    $("#sliderCanvas").removeClass('hidden');
-                    modelPath = res['model'];
-                    texturePath = res['texture'];
+                if (key === "model") {
+                    $("#sliderCanvas").removeClass("hidden");
+                    modelPath = res["model"];
+                    texturePath = res["texture"];
                 }
 
-                if(key.indexOf("description") !== -1)
-                    $("#" + key).empty().append(res[key]);
-                else
-                    $("#" + key).val(res[key]);
+                if (key.indexOf("description") !== -1)
+                    $("#" + key)
+                        .empty()
+                        .append(res[key]);
+                else $("#" + key).val(res[key]);
             }
 
-            if(callBack !== undefined)
-                callBack();
-        }
+            if (callBack !== undefined) callBack();
+        },
     });
-
 }

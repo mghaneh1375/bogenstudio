@@ -31,6 +31,7 @@
         $(document).ready(function () {
             fetchData('{{url('api/admin-panel/news')}}', 'table-body',
                 '{{url('admin-panel/news')}}',
+                '{{url('admin-panel/seo/news/')}}',
                 [
                     'title', 'image', 'default_lang', 'priority',
                     'visibility', 'created_at', 'updated_at'

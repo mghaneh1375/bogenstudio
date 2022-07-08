@@ -3,7 +3,6 @@
 @section('head')
     @parent
 
-    <title>Bogen Studio</title>
     <link rel="stylesheet" href="{{asset('assets/css/product/individual/product.css?v=2.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
@@ -13,6 +12,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/product/individual/product-mobile.css?v=2.1')}}">
 
+    @yield('seo')
 @stop
 
 @section('content')

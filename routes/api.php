@@ -7,6 +7,7 @@ use App\Http\Controllers\PN\ProductController;
 use App\Http\Controllers\PN\NewsController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,12 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
 
     Route::get('/contact/unseen', [ContactController::class, 'getCountUnSeen'])->name('contact.unseen');
 
+
+    Route::apiResource('/seo', SeoController::class)->only(['index', 'show']);
+
+    Route::post('/seo/{seo}', [SeoController::class, 'update']);
+    
+    Route::post('/seo/{section}/{additionalId}', [SeoController::class, 'store']);
 
 
     Route::apiResource('/product', ProductController::class)->except(['create', 'edit', 'update']);
