@@ -10,6 +10,9 @@ function fetchData(url, nodeId, showUrl, seoUrl, keys, canRemove = true) {
             accept: "application/json",
         },
         success: function (res) {
+            $("#tableItems").removeClass("hidden");
+            $("#loader").remove();
+
             if (res.status !== "ok") return;
 
             res = res.data;

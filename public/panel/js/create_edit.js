@@ -62,7 +62,17 @@ $(document).ready(function () {
                     return;
                 }
 
-                alert(data.msg);
+                $("#apiErr").empty().append(data.msg);
+            },
+            error: function (jqXHR, exception) {
+                var err = jqXHR.responseJSON.message + "<br/>";
+
+                for (const [key, value] of Object.entries(
+                    jqXHR.responseJSON.errors
+                )) {
+                    err += value + "<br/>";
+                }
+                $("#apiErr").empty().append(err);
             },
             cache: false,
             contentType: false,
