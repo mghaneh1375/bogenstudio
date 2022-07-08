@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,6 +68,9 @@
             }
 
         </script>
+
+        <meta property="article:author " content="Bogen studio" />
+        <meta property="article:section" content="article" />
 
     @show
 

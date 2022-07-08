@@ -43,6 +43,12 @@ Route::prefix('admin-panel')->group(function () {
     })->name('admin.home');
 
 
+    Route::view('seo', 'panel.seo.index')->name('admin.seo');
+    
+    Route::get('seo/{section}/{mode}/{seoId}', function ($section, $mode, $seoId) {
+        return view('panel.seo.show', compact('seoId', 'mode', 'section'));
+    });
+
     Route::view('news', 'panel.news.index')->name('admin.news');
 
     Route::view('addNews', 'panel.news.store')->name('admin.news.store');
@@ -104,26 +110,20 @@ Route::prefix('{locale}')->middleware('checkLang')->group(function () {
         return Redirect::to($locale . '/home');
     });
 
-    Route::view('/home', 'welcome')->name('home');
+    Route::get('/home', [HomeController::class, 'home'])->name('home');
 
     Route::view('/about', 'about')->name('about');
 
-    Route::view('/products', 'products')->name('products');
+    Route::get('/products', [HomeController::class, 'products'])->name('products');
+    
+    Route::get('/news', [HomeController::class, 'news'])->name('allNews');
+    
+    Route::get('/solutions', [HomeController::class, 'solutions'])->name('solutions');
 
-    Route::view('/news', 'allNews')->name('allNews');
+    Route::get('/product/{productId}', [HomeController::class, 'product'])->name('product');
 
-    Route::view('/solutions', 'solutions')->name('solutions');
+    Route::get('/solution/{solutionId}', [HomeController::class, 'solution'])->name('solution');
 
-    Route::get('/product/{productId}', function ($lang, $productId) {
-        return view('product', compact('productId'));
-    })->name('product');
-
-    Route::get('/solution/{solutionId}', function ($lang, $solutionId) {
-        return view('solution', compact('solutionId'));
-    })->name('solution');
-
-    Route::get('/video/{videoId}', function ($lang, $videoId) {
-        return view('video', compact('videoId'));
-    })->name('video');
+    Route::get('/video/{videoId}', [HomeController::class, 'video'])->name('video');
 
 });

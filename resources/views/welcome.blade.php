@@ -18,7 +18,65 @@
         <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css?v=2.1')}}">
     @endif
 
-    <title>Bogen Studio</title>
+    <title>Bogen studio | Virtual reality and Augmented Reality Solutions</title>
+    
+    <meta property="og:title" content="Bogen studio | Virtual reality and Augmented Reality Solutions" />
+    <meta name="twitter:title" content="Bogen studio | Virtual reality and Augmented Reality Solutions" />
+    <meta property="og:site_name" content="Bogen studio | Virtual reality and Augmented Reality Solutions" />
+
+    <meta property="og:image" content="https://bogenstudio.com/assets/images/layer.png"/>
+    <meta property="og:image:secure_url" content="https://bogenstudio.com/assets/images/layer.png"/>
+    <meta property="og:image:width" content="53"/>
+    <meta property="og:image:height" content="70"/>
+    <meta name="twitter:image" content="https://bogenstudio.com/assets/images/layer.png"/>
+
+    @if($seo['article_tag'] != null && !empty($seo['article_tag']))
+        <meta name="article:tag" content="{{$seo['article_tag']}}" />
+    @endif
+    
+    @if($seo['keyword'] != null && !empty($seo['keyword']))
+        <meta name="keywords" content="{{$seo['keyword']}}" />
+    @endif
+
+    <?php 
+    $description = 
+    ($seo['description'] != null && !empty($seo['description'])) ? 
+    $seo['description'] : 
+    "In Bogen Studio. unique capabilities and Astonishing Art design meet together to give you tools to fulfill what needs in your business, industry, or operations with Virtual Reality, Augmented Reality, Cloud solutions, and Web-based Simulators. Our visual and interactive solutions let you be more efficient, productive, and innovative.";
+    ?>
+
+    <meta name="description" content="{{$description}}" />
+    <meta name="twitter:description" content="{{$description}}" />
+    <meta property="og:description" content="{{$description}}" />
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/", 
+          "@type": "BreadcrumbList", 
+          "itemListElement": [{
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Solutions",
+            "item": " https://bogenstudio.com/en/solutions"  
+          },{
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": "Products",
+            "item": " https://bogenstudio.com/en/products"  
+          },{
+            "@type": "ListItem", 
+            "position": 3, 
+            "name": "News",
+            "item": " https://bogenstudio.com/en/news"  
+          },{
+            "@type": "ListItem", 
+            "position": 4, 
+            "name": "About",
+            "item": " https://bogenstudio.com/en/about"  
+          } ]
+        }
+        </script>
+        
 @stop
 
 @section('content')
