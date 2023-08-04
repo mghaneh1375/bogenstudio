@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\PN;
 
 use App\Http\Resources\NewsDigest;
-use App\Http\Resources\ProductDigest;
 use App\Models\Product;
 use App\Http\Resources\AdminProductDigest;
 use Illuminate\Http\Request;
@@ -25,12 +24,10 @@ class NewsController extends PNController
         if($request->user() != null)
             return AdminProductDigest::collection(Product::whereIsNews(true)->get())->additional(['status' => 'ok']);
 
-        sleep(2);
-
         if($limit == -1)
-            $news = Product::whereIsNews(true)->visible()->get()->toArray();
+            $news = Product::whereIsNews(true)->visible()->orderBy('priority', 'desc')->get()->toArray();
         else
-            $news = Product::whereIsNews(true)->visible()->take($limit)->get()->toArray();
+            $news = Product::whereIsNews(true)->visible()->orderBy('priority', 'desc')->take($limit)->get()->toArray();
 
         $output = [];
 

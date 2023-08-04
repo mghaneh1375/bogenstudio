@@ -20,12 +20,17 @@
 #all > div:nth-child(1) {
     width: 25%;
     display: block;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 20px;
     position: relative;
     height: max-content;
     padding: 10px 10px 20px;
+    position: sticky;
+    top: 40px;
+}
+
+#all #categories {
 }
 
 #all #categories .cats {
@@ -34,14 +39,15 @@
 }
 
 #all #categories .cats .cat {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 20px;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
-    font: normal normal bold var(--text-size)/24px var(--font-family);
+    font: normal normal bold var(--text-size) / 24px var(--font-family);
     color: var(--silver);
+    border: none;
 }
 
 #all #categories .cats .selected {
@@ -51,14 +57,14 @@
 
 #all #categories p {
     margin-left: 10px;
-    font: normal normal normal var(--text-size)/24px var(--font-family);
+    font: normal normal normal var(--text-size) / 24px var(--font-family);
     color: var(--silver);
     margin-top: 5px !important;
     margin-bottom: 0 !important;
 }
 
-#all > div:nth-child(1) h1 {
-    font: normal normal normal var(--big-text-size)/24px var(--font-family);
+#all > div > div:nth-child(1) h1 {
+    font: normal normal normal var(--big-text-size) / 24px var(--font-family);
     color: var(--silver);
 }
 
