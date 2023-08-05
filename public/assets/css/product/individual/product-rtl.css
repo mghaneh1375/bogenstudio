@@ -1,5 +1,7 @@
-#products .card h1,
-#products .card p {
+#products .card h1, 
+#products .card p,
+#products .card h3,
+#products .card h2 {
     direction: rtl;
     margin-right: unset;
     margin-left: 20px;
@@ -10,4 +12,5 @@
     direction: rtl;
     margin-right: unset;
     margin-left: 20px;
+    font-family: var(--font-family);
 }

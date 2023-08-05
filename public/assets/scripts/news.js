@@ -21,7 +21,10 @@ $(document).ready(function () {
 
             for (var i = 0; i < limit; i++) {
                 if (i === 0 || i === 2) html += "<div class='row'>";
-
+                html += '<div style="position:relative">';
+                html +=
+                    '<div style="position:absolute;background: transparent linear-gradient(180deg, #ffffff 0%, #00000096 100%)0% 0% no-repeat padding-box;width:100%;height:100%">';
+                html += "</div>";
                 html +=
                     '<div data-id="' +
                     res[i].id +
@@ -31,7 +34,7 @@ $(document).ready(function () {
                 html += "<h1>" + res[i].title + "</h1>";
                 html += "<p>" + res[i].digest + "</p>";
                 html += "</div>";
-
+                html += "</div>";
                 if (i === 1 || i === 3) html += "</div>";
             }
 

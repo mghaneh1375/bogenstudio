@@ -232,7 +232,7 @@
                     <p id="productTitle" class="title"></p>
                     <p id="productDigest" class="desc"></p>
 
-                    <div style="display: flex;align-items: center;">
+                    <div style="display: flex;align-items: center;margin-left: 10px;">
                         <div id="bubbleBackArrow" class="backArrow">
                             <img src="{{ asset('assets/images/arrowright.svg') }}">
                         </div>
