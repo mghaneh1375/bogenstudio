@@ -261,7 +261,6 @@
         <script src="{{URL::asset('panel/js/data-table/colResizable-1.5.source.js?v=2.1')}}"></script>
         <script src="{{URL::asset('panel/js/data-table/bootstrap-table-export.js?v=2.1')}}"></script>
 
-        <script src="{{URL::asset('panel/js/dropzone.js?v=2.1')}}"></script>
         <script src="{{URL::asset('panel/js/multiple-email-active.js?v=2.1')}}"></script>
         <script src="{{URL::asset('panel/js/summernote.min.js?v=2.1')}}"></script>
         <script src="{{URL::asset('panel/js/summernote-active.js?v=2.1')}}"></script>
@@ -274,6 +273,27 @@
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+                    var errs = JSON.parse(XMLHttpRequest.responseText).errors;
+
+                    if (errs instanceof Object) {
+                        var errsText = '';
+
+                        Object.keys(errs).forEach(function(key) {
+                            errsText += errs[key] + "<br />";
+                        });
+
+                        $("#errMsgBox").append(errsText);
+                    } else {
+                        var errsText = '';
+
+                        for (let i = 0; i < errs.length; i++)
+                            errsText += errs[i].value;
+
+                        $("#errMsgBox").append(errsText);
+                    }
                 }
             });
 

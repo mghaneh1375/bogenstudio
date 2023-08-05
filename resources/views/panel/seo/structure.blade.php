@@ -7,7 +7,7 @@
 </div>
 
 <div class="big-input">
-    <textarea name="description_en" type="text" id="description_en" placeholder="description(en)"></textarea>
+    <textarea name="description_en" type="text" id="description_en" placeholder="description(en) (max 150 char)"></textarea>
 </div>
 
 <div class="big-input fa">
@@ -19,7 +19,7 @@
 </div>
 
 <div class="big-input fa">
-    <textarea name="description_fa" type="text" id="description_fa" placeholder="description(fa)"></textarea>
+    <textarea name="description_fa" type="text" id="description_fa" placeholder="description(fa) (max 150 char)"></textarea>
 </div>
 
 <div class="big-input">
@@ -31,7 +31,7 @@
 </div>
 
 <div class="big-input">
-    <textarea name="description_gr" type="text" id="description_gr" placeholder="description(gr)"></textarea>
+    <textarea name="description_gr" type="text" id="description_gr" placeholder="description(gr) (max 150 char)"></textarea>
 </div>
 
 <div class="big-input fa">
@@ -43,7 +43,7 @@
 </div>
 
 <div class="big-input fa">
-    <textarea name="description_ar" type="text" id="description_ar" placeholder="description(ar)"></textarea>
+    <textarea name="description_ar" type="text" id="description_ar" placeholder="description(ar) (max 150 char)"></textarea>
 </div>
 
 <div class="big-input">

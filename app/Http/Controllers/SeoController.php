@@ -50,16 +50,16 @@ class SeoController extends Controller
             'default_lang' => ['required', Rule::in(['fa', 'ar', 'en', 'gr'])],
             'article_tag_en' => 'nullable|string',
             'keyword_en' => 'nullable|string',
-            'description_en' => 'nullable|string',
+            'description_en' => 'nullable|string|max:150|min:2',
             'article_tag_fa' => 'nullable|string',
             'keyword_fa' => 'nullable|string',
-            'description_fa' => 'nullable|string',
+            'description_fa' => 'nullable|string|max:150|min:2',
             'article_tag_gr' => 'nullable|string',
             'keyword_gr' => 'nullable|string',
-            'description_gr' => 'nullable|string',
+            'description_gr' => 'nullable|string|max:150|min:2',
             'article_tag_ar' => 'nullable|string',
             'keyword_ar' => 'nullable|string',
-            'description_ar' => 'nullable|string',
+            'description_ar' => 'nullable|string|max:150|min:2',
         ]);
 
         $seo = new Seo();
@@ -101,16 +101,16 @@ class SeoController extends Controller
             'article_tag_en' => 'nullable|string',
             'default_lang' => ['nullable', Rule::in(['fa', 'ar', 'en', 'gr'])],
             'keyword_en' => 'nullable|string',
-            'description_en' => 'nullable|string',
+            'description_en' => 'nullable|string|max:150|min:2',
             'article_tag_fa' => 'nullable|string',
             'keyword_fa' => 'nullable|string',
-            'description_fa' => 'nullable|string',
+            'description_fa' => 'nullable|string|max:150|min:2',
             'article_tag_gr' => 'nullable|string',
             'keyword_gr' => 'nullable|string',
-            'description_gr' => 'nullable|string',
+            'description_gr' => 'nullable|string|max:150|min:2',
             'article_tag_ar' => 'nullable|string',
             'keyword_ar' => 'nullable|string',
-            'description_ar' => 'nullable|string',
+            'description_ar' => 'nullable|string|max:150|min:2',
         ]);
 
         $seo->article_tag_en = ($request->has('article_tag_en')) ? $request['article_tag_en'] : $seo->article_tag_en;

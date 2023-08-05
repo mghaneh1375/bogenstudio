@@ -2,7 +2,9 @@
     height: calc(100vh - var(--navbar-height) - 50px);
     margin-left: 50px;
     margin-bottom: 30px;
-    background: transparent linear-gradient(64deg, var(--green-color) 0%, #193020 48%, #080F0B 100%) 0% 0% no-repeat padding-box;
+    background: transparent
+        linear-gradient(64deg, var(--green-color) 0%, #193020 48%, #080f0b 100%)
+        0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -14,7 +16,7 @@
 .big-bubble {
     width: 10px;
     height: 10px;
-    background: #FFFFFF85 0% 0% no-repeat padding-box;
+    background: #ffffff85 0% 0% no-repeat padding-box;
     border-radius: 50%;
     align-self: center;
 }
@@ -46,14 +48,14 @@
 }
 
 #top-banner .bigTexts .bigSliderText {
-    font: normal normal bold var(--monster-text-size)/85px var(--font-family);
+    font: normal normal bold var(--monster-text-size) / 85px var(--font-family);
 }
 
 #top-banner .smallText {
     position: absolute;
     width: 500px;
     bottom: 30px;
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     text-align: justify;
     word-break: break-word;
     margin-top: 50px;
@@ -111,7 +113,7 @@
 }
 
 .boxes .box {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 20px;
     margin-right: 10px;
@@ -122,14 +124,15 @@
 .boxes .box .title {
     color: var(--silver);
     display: block;
-    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--little-big-text-size) / 20px
+        var(--font-family);
     margin: 0 !important;
 }
 
 .boxes .box .desc {
     color: var(--silver);
     display: block;
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     margin-top: 10px !important;
     text-align: justify;
 }
@@ -144,7 +147,8 @@
     margin-top: 10px !important;
 }
 
-.boxes .box:nth-child(4) img, .boxes .box:nth-child(5) img {
+.boxes .box:nth-child(4) img,
+.boxes .box:nth-child(5) img {
     width: 100px !important;
 }
 
@@ -177,13 +181,14 @@
 }
 
 .three-col div .title {
-    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--little-big-text-size) / 20px
+        var(--font-family);
     margin-bottom: 10px !important;
     margin-top: 5px !important;
 }
 
 .three-col div .desc {
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     margin-top: 0 !important;
     color: var(--light-silver);
 }
@@ -230,13 +235,15 @@
 }
 
 #products .left .nav .item {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    white-space: nowrap;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 6px #00000029;
     border-radius: 20px 20px 0px 0px;
     padding-left: 20px;
     padding-right: 20px;
     float: left;
-    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--little-big-text-size) / 20px
+        var(--font-family);
     color: var(--silver);
     cursor: pointer;
     height: 100%;
@@ -248,8 +255,9 @@
     color: white;
 }
 
-#products .left .nav .backArrow, #products .nav .nextArrow {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+#products .left .nav .backArrow,
+#products .nav .nextArrow {
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 6px #00000029;
     border-radius: 20px 20px 0px 0px;
     width: 60px;
@@ -264,7 +272,8 @@
     clear: right;
 }
 
-#products .left .nav .backArrow img, #products .nav .nextArrow img {
+#products .left .nav .backArrow img,
+#products .nav .nextArrow img {
     height: 25px;
     margin-top: 15px;
 }
@@ -276,7 +285,12 @@
 #products .left .nav .nextArrow img {
     margin-left: 25px;
 }
-
+.nextArrow {
+    cursor: pointer;
+}
+.backArrow {
+    cursor: pointer;
+}
 #products .content {
     width: 100%;
     position: absolute;
@@ -285,7 +299,7 @@
 }
 
 #products .content .title {
-    font: normal normal bold var(--tiny-big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--tiny-big-text-size) / 20px var(--font-family);
     color: var(--silver);
     margin-top: 50px;
     padding-left: 20px;
@@ -293,7 +307,8 @@
 }
 
 #products .content .desc {
-    font: normal normal bold var(--medium-tiny-text-size)/20px var(--font-family);
+    font: normal normal bold var(--medium-tiny-text-size) / 20px
+        var(--font-family);
     color: var(--silver);
     padding-left: 20px;
     padding-right: 20px;
@@ -302,9 +317,9 @@
     white-space: normal;
 }
 
-#products .content .bubbles  {
+#products .content .bubbles {
     padding-left: 5px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     display: flex;
 }
 
@@ -360,7 +375,7 @@
 }
 
 #intro .card {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     width: calc((100% - 80px) / 3 - 50px);
     margin-right: 50px;
@@ -389,12 +404,13 @@
 }
 
 #intro .card .desc span {
-    font: normal normal bold var(--medium-tiny-text-size)/20px var(--font-family);
+    font: normal normal bold var(--medium-tiny-text-size) / 20px
+        var(--font-family);
     align-self: center;
 }
 
 #intro .card:nth-child(2) .desc span {
-    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--big-text-size) / 20px var(--font-family);
     color: var(--light-silver);
 }
 
@@ -407,7 +423,7 @@
 }
 
 #intro .card h1 {
-    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--big-text-size) / 20px var(--font-family);
     color: var(--main-color);
     max-width: 100%;
     word-break: break-word;
@@ -415,7 +431,7 @@
 }
 
 #intro .card p {
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     color: var(--silver);
     max-width: 100%;
     word-break: break-word;

@@ -2,7 +2,7 @@
 
 return [
     "home" => "Home",
-    "products" => "Product",
+    "products" => "Products",
     "solutions" => "Solutions",
     "news" => "News",
     "about" => "About us",

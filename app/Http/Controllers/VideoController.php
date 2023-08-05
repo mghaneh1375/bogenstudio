@@ -30,6 +30,82 @@ class VideoController extends Controller
         return VideoDigest::collection($videos)->additional(['status' => 'ok']);
     }
 
+    
+    public function addFile(Request $request) {
+
+        if(
+            $request->hasFile("file") &&
+            $request->has("dzchunkindex") &&
+            $request->has("dztotalchunkcount") &&
+            $request->has("id")
+        ) {
+
+            $idx = $request->get("dzchunkindex");
+            $total = $request->get("dztotalchunkcount");
+
+            if($idx >= $total)
+                return response()->json(["status" => "nok"], 401);
+
+            $b = Video::find($request['id']);
+
+            if($b == null || $b->file_status == 1)
+                return response()->json(["status" => "nok"], 401);
+
+            if($idx == 0) {
+
+                $path = $request->file->storeAs("public/videos",
+                    time() . "." .
+                    $request->file("file")->getClientOriginalExtension()
+                );
+
+                $b->file = str_replace("public/videos/", "", $path);
+                $b->start_uploading = time();
+
+                if($idx == $total - 1)
+                    $b->file_status = true;
+
+                $b->save();
+            }
+            else {
+
+                $path = __DIR__ . '/../../../storage/app/public/videos/' . $b->file;
+                if(!file_exists($path))
+                    return response()->json(["status" => "nok"], 401);
+
+                file_put_contents($path, $request->file("file")->get(), FILE_APPEND);
+
+                if($idx == $total - 1) {
+                    $b->file_status = true;
+                    $b->save();
+                }
+
+            }
+
+            return "ok";
+        }
+
+        return response()->json(["status" => "nok"], 401);
+    }
+
+    public function isValid(Request $request)
+    {
+        $request->validate([
+            'preview_file' => 'required|image',
+            'priority' => 'required|integer|min:1',
+            'title_fa' => 'required|string|min:2',
+            'description_fa' => 'nullable|string|min:3',
+            'title_en' => 'required|string|min:2',
+            'description_en' => 'nullable|string|min:3',
+            'title_ar' => 'required|string|min:2',
+            'description_ar' => 'nullable|string|min:3',
+            'title_gr' => 'required|string|min:2',
+            'description_gr' => 'nullable|string|min:3'
+        ]);
+        
+        return response()->json(['status' => 'ok']);
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,30 +114,27 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'preview_file' => 'required|image',
-            'video_file' => 'required|file|mimes:mp4',
             'priority' => 'required|integer|min:1',
-            'title_fa' => 'required|string|min:1',
-            'description_fa' => 'required|string|min:1',
-            'title_en' => 'required|string|min:1',
-            'description_en' => 'required|string|min:1',
-            'title_ar' => 'required|string|min:1',
-            'description_ar' => 'required|string|min:1',
-            'title_gr' => 'required|string|min:1',
-            'description_gr' => 'required|string|min:1'
+            'title_fa' => 'required|string|min:2',
+            'description_fa' => 'nullable|string|min:3',
+            'title_en' => 'nullable|string|min:2',
+            'description_en' => 'nullable|string|min:3',
+            'title_ar' => 'nullable|string|min:2',
+            'description_ar' => 'nullable|string|min:3',
+            'title_gr' => 'nullable|string|min:2',
+            'description_gr' => 'nullable|string|min:3'
         ]);
-
-        if($request->hasFile("video_file") && $request->video_file != null)
-            $request["file"] = str_replace("public/videos/", "", $request->video_file->store("public/videos"));
 
         if($request->hasFile("preview_file") && $request->preview_file != null)
             $request["preview"] = str_replace("public/videos/", "", $request->preview_file->store("public/videos"));
 
         $request["visibility"] = true;
 
-        Video::create($request->toArray());
-        return response()->json(['status' => 'ok']);
+        $video = Video::create($request->toArray());
+        return response()->json(['status' => 'ok', 'id' => $video->id]);
     }
 
     /**
