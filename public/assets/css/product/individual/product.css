@@ -58,3 +58,8 @@
     margin-right: unset;
     margin-left: 20px;
 }
+#products .card ol li {
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
+    margin-right: unset;
+    margin-left: 20px;
+}
