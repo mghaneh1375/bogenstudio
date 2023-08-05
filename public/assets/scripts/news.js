@@ -29,9 +29,9 @@ $(document).ready(function () {
                     res[i].image +
                     '); background-size: cover">';
                 html +=
-                    '<div style="background: transparent linear-gradient(180deg, #ffffff 0%, #00000096 100%)0% 0% no-repeat padding-box;width:100;height:100%">';
-                html += "<h1>" + res[i].title + "</h1>";
-                html += "<p>" + res[i].digest + "</p>";
+                    '<div style="background: transparent linear-gradient(180deg, #00000000 0%, #00000096 100%)0% 0% no-repeat padding-box;height:100%">';
+                html += "<h1 padding-left: 10px;>" + res[i].title + "</h1>";
+                html += "<p padding-left: 10px;>" + res[i].digest + "</p>";
                 html += "</div>";
                 html += "</div>";
 
