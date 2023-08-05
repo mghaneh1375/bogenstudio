@@ -3,10 +3,9 @@
 }
 
 #products .card {
-
     margin-top: 320px;
 
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 20px;
     position: relative;
@@ -16,11 +15,9 @@
     width: calc(100% - 120px);
 
     padding: 10px;
-
 }
 
 #products .card .img {
-
     margin-left: 20px;
     margin-right: 20px;
     width: calc(100% - 40px);
@@ -32,27 +29,32 @@
     background-repeat: no-repeat !important;
 }
 
-#products .card  .date {
-    font: normal normal bold var(--tiny-text-size)/20px var(--font-family);
+#products .card .date {
+    font: normal normal bold var(--tiny-text-size) / 20px var(--font-family);
     color: var(--main-color);
     margin-top: 20px;
 }
 
-#products .card  p {
+#products .card p {
     width: calc(100% - 20px);
     margin-right: 20px;
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     color: var(--silver);
     word-break: break-word;
     white-space: normal;
 }
 
-#products .card  h1 {
+#products .card h1 {
     width: calc(100% - 20px);
     margin-right: 20px;
-    font: normal normal bold var(--big-text-size)/24px var(--font-family);
+    font: normal normal bold var(--big-text-size) / 24px var(--font-family);
     color: var(--silver);
     word-break: break-word;
     white-space: normal;
     margin-top: 0 !important;
+}
+#products .card ul li {
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
+    margin-right: unset;
+    margin-left: 20px;
 }

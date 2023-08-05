@@ -1,4 +1,12 @@
-#products .card h1, #products .card p {
+#products .card h1,
+#products .card p {
+    direction: rtl;
+    margin-right: unset;
+    margin-left: 20px;
+}
+
+#products .card h1,
+#products .card ul {
     direction: rtl;
     margin-right: unset;
     margin-left: 20px;

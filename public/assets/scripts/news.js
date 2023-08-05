@@ -113,7 +113,7 @@ $(document).ready(function () {
                         "<div class='img' style='background-image: url(" +
                         res[i].image +
                         ")'></div>";
-                    html += "<p class='date'>" + res[i].created_at + "</p>";
+                    // html += "<p class='date'>" + res[i].created_at + "</p>";
                     html += "<h1>" + res[i].title + "</h1>";
                     html += "<p class='desc'>" + res[i].digest + "</p>";
                     html +=
