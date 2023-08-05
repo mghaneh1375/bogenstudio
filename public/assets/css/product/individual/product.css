@@ -38,6 +38,13 @@
     margin-top: 20px;
 }
 
+#products .card  h2,
+#products .card  h3 {
+    font-family: var(--font-family);
+
+}
+
+
 #products .card  p {
     width: calc(100% - 20px);
     margin-right: 20px;
