@@ -3,7 +3,7 @@
 </div>
 
 <div class="big-input">
-    <textarea name="digest_en" id="digest_en" placeholder="digest(en), at max 1000 char"></textarea>
+    <textarea name="digest_en" id="digest_en" placeholder="digest(en), at max 150 words"></textarea>
 </div>
 
 <div class="big-input">
@@ -22,7 +22,7 @@
 </div>
 
 <div class="big-input fa">
-    <textarea name="digest_fa" id="digest_fa" placeholder="digest(fa), at max 1000 char"></textarea>
+    <textarea name="digest_fa" id="digest_fa" placeholder="digest(fa), at max 150 words"></textarea>
 </div>
 
 <div class="big-input fa">
@@ -41,7 +41,7 @@
 </div>
 
 <div class="big-input">
-    <textarea name="digest_gr" id="digest_gr" placeholder="digest(gr), at max 1000 char"></textarea>
+    <textarea name="digest_gr" id="digest_gr" placeholder="digest(gr), at max 150 words"></textarea>
 </div>
 
 <div class="big-input">
@@ -60,7 +60,7 @@
 </div>
 
 <div class="big-input fa">
-    <textarea name="digest_ar" id="digest_ar" placeholder="digest(ar), at max 1000 char"></textarea>
+    <textarea name="digest_ar" id="digest_ar" placeholder="digest(ar), at max 150 words"></textarea>
 </div>
 
 <div class="big-input fa">
@@ -104,4 +104,4 @@
     <input name="pic_file" type="file" id="file">
 </div>
 
-<script src="{{asset('panel/js/initCKs.js')}}"></script>
+<script src="{{asset('panel/js/initCKs.js?v=2.1')}}"></script>

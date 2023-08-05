@@ -27,6 +27,7 @@
         $(document).ready(function () {
             fetchData('{{url('api/admin-panel/model')}}', 'table-body',
                 '{{url('admin-panel/model')}}',
+                undefined,
                 ['texture', 'priority', 'visibility', 'created_at', 'updated_at']
             );
         });

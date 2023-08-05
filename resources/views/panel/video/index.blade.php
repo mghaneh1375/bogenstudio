@@ -28,6 +28,7 @@
         $(document).ready(function () {
             fetchData('{{url('api/admin-panel/video')}}', 'table-body',
                 '{{url('admin-panel/video')}}',
+                '{{url('admin-panel/seo/video')}}',
                 ['title', 'preview', 'priority', 'visibility', 'created_at', 'updated_at']
             );
         });

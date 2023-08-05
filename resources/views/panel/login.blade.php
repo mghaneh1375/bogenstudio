@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title>ورود</title>
 
-    <link rel="stylesheet" href="{{asset('assets/css/font.css?v=1.1')}}">
-    <link type="text/css" rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('panel/css/loginCss.css?v=1.1')}}">
-    <script src="{{asset('panel/js/jquery.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('assets/css/font.css?v=2.1')}}">
+    <link type="text/css" rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('panel/css/loginCss.css?v=2.1')}}">
+    <script src="{{asset('panel/js/jquery.min.js?v=2.1')}}"></script>
 
 </head>
 
@@ -79,7 +79,7 @@
     var loginPath = '{{route('doLogin')}}';
     var homePath = '{{route('admin.home')}}';
 </script>
-<script src="{{asset('panel/js/login.js')}}"></script>
+<script src="{{asset('panel/js/login.js?v=2.1')}}"></script>
 
 </body>
 

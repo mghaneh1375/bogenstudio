@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/videos.css?v=1.2')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/videos.css?v=2.1')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/videos-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/videos-rtl.css?v=2.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/video/video-mobile.css?v=1.2')}}">
+<link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('assets/css/video/video-mobile.css?v=2.1')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/video/video-mobile-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/video/video-mobile-rtl.css?v=2.1')}}">
 @endif
 
 <div id="videos">
@@ -21,4 +21,4 @@
     var fetchVideosUrl = '{{url('api/' . \Illuminate\Support\Facades\App::getLocale() . '/videos')}}';
     var videoRedirectUrl = '{{url(\Illuminate\Support\Facades\App::getLocale() . '/video')}}';
 </script>
-<script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/video.js')}}"></script>
+<script src="{{\Illuminate\Support\Facades\URL::asset('assets/scripts/video.js?v=2.1')}}"></script>

@@ -37,7 +37,7 @@
 
     .boxes .box {
         width: calc(33% - 15px - 30px);
-        min-height: 240px;
+        /*min-height: 240px;*/
     }
 
     #intro .scroll-arrows {
@@ -65,6 +65,8 @@
         margin-left: 10px;
         padding-left: 25px;
         height: calc(100vh - var(--navbar-height) - 5px);
+        display: flex;
+        flex-direction: column;
     }
 
     #top-banner .bigTexts .bigSliderText {
@@ -74,18 +76,18 @@
     #sliderCanvas {
         position: relative;
         width: 100%;
-        height: 200px;
         top: unset;
         bottom: unset;
         left: unset;
         right: unset;
+        height: unset;
     }
 
     #top-banner .smallText {
         position: unset;
-        width: 100%;
+        width: 90%;
+        margin-top: auto;
         font: normal normal normal var(--medium-tiny-text-size)/20px var(--font-family);
-        margin-top: 50px;
     }
 
     #sliderCanvas .bubbles {
@@ -97,34 +99,42 @@
         margin-right: 10px;
     }
 
-    .boxes {
+    .boxes.mobile {
         flex-wrap: wrap;
+        display: table !important;
         height: unset;
         margin-bottom: 20px;
         gap: unset;
     }
 
-    .boxes .box:nth-child(even) {
-        margin-top: 20px;
-        width: calc(50% - 10px - 10px);
-        padding: 15px 5px 15px;
-    }
-
-    .boxes .box:nth-child(odd) {
-        margin-top: 20px;
-        margin-right: unset;
-        width: calc(50% - 10px);
-        padding: 15px 5px 15px;
-    }
-
-    .boxes .box:first-child {
-        width: 100%;
+    .boxes.mobile > .box:first-child {
+        width: calc(100% - 20px);
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         margin-top: unset;
     }
 
-    .boxes .box:first-child p {
-        float: left;
-        width: calc(100% - 105px);
+    .boxes.mobile > .table-row {
+        display: flex;
+        margin-top: 10px;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .boxes.mobile > .table-row .box {
+        width: calc(50% - 20px);
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        margin: unset;
+    }
+
+    .boxes .box img {
+        width: 75%;
+        max-width: 100px;
+        align-self: center;
     }
 
     .boxes .box:first-child .title {
@@ -136,13 +146,10 @@
         margin-left: 10px !important;
     }
 
-    .boxes .box:first-child img {
-        float: right;
-        margin: 0 !important;
-    }
-
-    .boxes .box:nth-child(4) img, .boxes .box:nth-child(5) img {
-        width: 80px !important;
+    /*.boxes .box:nth-child(4) img,*/
+    .boxes .table-row:last-child .box:last-child img {
+        width: 50% !important;
+        margin-bottom: 20px;
     }
 
     .boxes .box .title {
@@ -150,11 +157,7 @@
     }
 
     .boxes .box .desc {
-        font: normal normal normal var(--tiny-text-size)/20px var(--font-family);
-    }
-
-    .boxes .box img {
-        width: 90px;
+        font: normal normal normal var(--tiny-text-size)/18px var(--font-family);
     }
 
     .three-col {
@@ -298,19 +301,29 @@
     #top-banner {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         height: auto;
     }
 
     #top-banner .smallText {
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     #sliderCanvas {
         width: 60%;
         top: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
+    }
+
+    .boxes.mobile > .table-row {
+        gap: 10px;
+    }
+
+    .boxes.mobile > .table-row .box {
+        width: calc(50% - 30px);
+        padding: 10px;
     }
 
 }

@@ -2,23 +2,81 @@
 
 @section('head')
     @parent
-    <link rel="stylesheet" href="{{asset("assets/css/main/home.css")}}"/>
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{asset("assets/css/main/home.css?v=2.1")}}"/>
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider.css?v=2.1')}}">
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-rtl.css?v=2.1')}}">
     @endif
 
-    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=1.1')}}">
-    <link rel="stylesheet" href="{{asset("assets/css/main/home-mobile.css")}}"/>
+    <link rel="stylesheet" href="{{asset('/assets/css/slider/slider-mobile.css?v=2.1')}}">
+    <link rel="stylesheet" href="{{asset("assets/css/main/home-mobile.css?v=2.1")}}"/>
 
     @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
         \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css?v=1.1')}}">
+        <link rel="stylesheet" href="{{asset('/assets/css/main/home-mobile-rtl.css?v=2.1')}}">
     @endif
 
-    <title>Bogen Studio</title>
+    <title>Bogen studio | Virtual reality and Augmented Reality Solutions</title>
+    
+    <meta property="og:title" content="Bogen studio | Virtual reality and Augmented Reality Solutions" />
+    <meta name="twitter:title" content="Bogen studio | Virtual reality and Augmented Reality Solutions" />
+    <meta property="og:site_name" content="Bogen studio | Virtual reality and Augmented Reality Solutions" />
+
+    <meta property="og:image" content="https://bogenstudio.com/assets/images/layer.png"/>
+    <meta property="og:image:secure_url" content="https://bogenstudio.com/assets/images/layer.png"/>
+    <meta property="og:image:width" content="53"/>
+    <meta property="og:image:height" content="70"/>
+    <meta name="twitter:image" content="https://bogenstudio.com/assets/images/layer.png"/>
+
+    @if($seo['article_tag'] != null && !empty($seo['article_tag']))
+        <meta name="article:tag" content="{{$seo['article_tag']}}" />
+    @endif
+    
+    @if($seo['keyword'] != null && !empty($seo['keyword']))
+        <meta name="keywords" content="{{$seo['keyword']}}" />
+    @endif
+
+    <?php 
+    $description = 
+    ($seo['description'] != null && !empty($seo['description'])) ? 
+    $seo['description'] : 
+    "In Bogen Studio. unique capabilities and Astonishing Art design meet together to give you tools to fulfill what needs in your business, industry, or operations with Virtual Reality, Augmented Reality, Cloud solutions, and Web-based Simulators. Our visual and interactive solutions let you be more efficient, productive, and innovative.";
+    ?>
+
+    <meta name="description" content="{{$description}}" />
+    <meta name="twitter:description" content="{{$description}}" />
+    <meta property="og:description" content="{{$description}}" />
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/", 
+          "@type": "BreadcrumbList", 
+          "itemListElement": [{
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Solutions",
+            "item": " https://bogenstudio.com/en/solutions"  
+          },{
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": "Products",
+            "item": " https://bogenstudio.com/en/products"  
+          },{
+            "@type": "ListItem", 
+            "position": 3, 
+            "name": "News",
+            "item": " https://bogenstudio.com/en/news"  
+          },{
+            "@type": "ListItem", 
+            "position": 4, 
+            "name": "About",
+            "item": " https://bogenstudio.com/en/about"  
+          } ]
+        }
+        </script>
+        
 @stop
 
 @section('content')
@@ -35,11 +93,12 @@
 
             <img class="bogen-loader" id="modelLoader" src="{{asset('assets/images/loading.gif')}}">
 
-            <div id="bubblesDiv" class="bubbles">
-                <div id="hand" class="hidden">
-                    <img src="{{asset('assets/images/hand.svg')}}">
-                </div>
+            <div id="hand" class="hidden">
+                <img src="{{asset('assets/images/hand.svg')}}">
             </div>
+
+            <div id="bubblesDiv" class="bubbles"></div>
+
         </div>
 
         <p class="smallText">
@@ -50,12 +109,53 @@
 
     <div class="innerContent">
 
-        <div class="boxes">
+        <div class="boxes mobile hidden-on-desktop">
+
+            <div class="box">
+                <div>
+                    <p class="title">{{__('home.boxes.card1.title')}}</p>
+                    <p class="desc">{{__('home.boxes.card1.desc')}}</p>
+                </div>
+                <img src="{{asset('assets/images/1.svg')}}">
+            </div>
+
+            <div class="table-row">
+                <div class="box">
+                    <p class="title">{{__('home.boxes.card2.title')}}</p>
+                    <p class="desc">{{__('home.boxes.card2.desc')}}</p>
+                    <img src="{{asset('assets/images/2.svg')}}">
+                </div>
+                <div class="box">
+                    <img src="{{asset('assets/images/3.svg')}}">
+                    <p class="title">{{__('home.boxes.card3.title')}}</p>
+                    <p class="desc">{{__('home.boxes.card3.desc')}}</p>
+                </div>
+            </div>
+
+            <div class="table-row">
+
+                <div class="box">
+                    <p class="title">{{__('home.boxes.card4.title')}}</p>
+                    <p class="desc">{{__('home.boxes.card4.desc')}}</p>
+                    <img src="{{asset('assets/images/4.svg')}}">
+                </div>
+
+                <div class="box">
+                    <img src="{{asset('assets/images/layer.png')}}">
+                    <p class="title">{{__('home.boxes.card5.title')}}</p>
+                    <p class="desc">{{__('home.boxes.card5.desc')}}</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="boxes hidden-on-mobile">
             <div class="box">
                 <img src="{{asset('assets/images/1.svg')}}">
                 <p class="title">{{__('home.boxes.card1.title')}}</p>
                 <p class="desc">{{__('home.boxes.card1.desc')}}</p>
             </div>
+
             <div class="box">
                 <p class="title">{{__('home.boxes.card2.title')}}</p>
                 <p class="desc">{{__('home.boxes.card2.desc')}}</p>
@@ -66,6 +166,7 @@
                 <p class="title">{{__('home.boxes.card3.title')}}</p>
                 <p class="desc">{{__('home.boxes.card3.desc')}}</p>
             </div>
+
             <div class="box">
                 <p class="title">{{__('home.boxes.card4.title')}}</p>
                 <p class="desc">{{__('home.boxes.card4.desc')}}</p>
@@ -247,11 +348,11 @@
       }
     </script>
 
-    <script type="module" src="{{asset('assets/scripts/home.js?v=1.3')}}"></script>
-    <script async type="module" src="{{asset('assets/scripts/fbxloader.js?v=1.2')}}"></script>
-    <script src="{{asset('assets/scripts/webgl-need.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/scripts/logo4.js')}}"></script>
-    <script src="{{asset('assets/scripts/webgl.js')}}"></script>
+    <script type="module" src="{{asset('assets/scripts/home.js?v=2.1')}}"></script>
+    <script async type="module" src="{{asset('assets/scripts/fbxloader.js?v=2.1')}}"></script>
+    <script src="{{asset('assets/scripts/webgl-need.min.js?v=2.1')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/scripts/logo4.js?v=2.1')}}"></script>
+    <script src="{{asset('assets/scripts/webgl.js?v=2.1')}}"></script>
 
     <script id="modelVertexShader" type="text/something-not-javascript">
 uniform mat4 worldViewProjection;

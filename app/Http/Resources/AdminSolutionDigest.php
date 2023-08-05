@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\Seo;
 
 class AdminSolutionDigest extends JsonResource
 {
@@ -14,6 +15,10 @@ class AdminSolutionDigest extends JsonResource
      */
     public function toArray($request)
     {
+        
+        $seo = Seo::whereAdditionalId($this->id)->first();
+        $seoId = ($seo == null) ? '' : $seo->id;  
+        
         return [
             'title' => $this->title_en,
             'visibility' => $this->visibility,
@@ -22,7 +27,8 @@ class AdminSolutionDigest extends JsonResource
             'default_lang' => $this->default_lang,
             'created_at' => explode('T', $this->created_at)[0],
             'updated_at' => explode('T', $this->updated_at)[0],
-            'id' => $this->id
+            'id' => $this->id,
+            'seo_id' => $seoId,
         ];
     }
 }

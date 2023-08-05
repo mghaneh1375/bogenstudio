@@ -7,11 +7,20 @@ import {FBXLoader} from 'https://unpkg.com/three@0.139.2/examples/jsm/loaders/FB
 
 // scene.add(new THREE.AxesHelper(5))
 
-const light = new THREE.PointLight();
+// const light = new THREE.PointLight();
 
 var node = $("#sliderCanvas");
-var w = node.width();
-var h = node.height();
+var w, h;
+
+if(window.innerWidth < 600) {
+    w = 200;
+    h = 200;
+}
+else {
+    w = node.width();
+    h = node.height();
+}
+
 
 // light.position.set(223, 173, 471);
 // scene.add(light);
@@ -32,7 +41,6 @@ const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setClearColor( 0xffffff, 0 ); // second param is opacity, 0 => transparent
 
 renderer.setSize(w, h);
-node.append(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -48,6 +56,7 @@ function loadFBX(modelPath, texturePath) {
         (object) => {
 
             $("#modelLoader").remove();
+            node.append(renderer.domElement);
 
             object.traverse(function (child) {
 

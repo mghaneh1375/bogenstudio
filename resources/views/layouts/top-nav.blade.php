@@ -1,13 +1,13 @@
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav-rtl.css?v=2.1')}}">
 @endif
 
-<link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css?v=1.1')}}">
+<link rel="stylesheet" href="{{asset('/assets/css/nav-mobile.css?v=2.1')}}">
 
 @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
     \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css?v=1.1')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('/assets/css/nav/nav-mobile-rtl.css?v=2.1')}}">
 @endif
 
 <nav id="navbar">
@@ -30,9 +30,9 @@
             ?>
 
             <p {{($routeName == "home") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale())}}">{{__('footer.home')}}</a></p>
-            <p {{($routeName == "solutions") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/solutions')}}">{{__('footer.solutions')}}</a></p>
+            <p {{($routeName == "solutions" || $routeName == "solution") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/solutions')}}">{{__('footer.solutions')}}</a></p>
             <p {{($routeName == "products" || $routeName == "product") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/products')}}">{{__('footer.products')}}</a></p>
-            <p {{($routeName == "allNews") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/news')}}">{{__('footer.news')}}</a></p>
+            <p {{($routeName == "allNews" || $routeName == "news") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/news')}}">{{__('footer.news')}}</a></p>
             <p {{($routeName == "about") ? 'class=selected' : ''}}><a href="{{url(\Illuminate\Support\Facades\App::getLocale() . '/about')}}">{{__('footer.about')}}</a></p>
 
             <img id="hamber-menu" class="hidden" src="{{asset('assets/images/mobile-menu.svg')}}">
@@ -62,4 +62,4 @@
     <img class="img-logo" src="{{asset('assets/images/layer.png')}}">
 </div>
 
-<script src="{{asset('assets/scripts/hamber-menu.js')}}"></script>
+<script src="{{asset('assets/scripts/hamber-menu.js?v=2.1')}}"></script>

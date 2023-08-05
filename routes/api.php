@@ -7,6 +7,7 @@ use App\Http\Controllers\PN\ProductController;
 use App\Http\Controllers\PN\NewsController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,12 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
 
     Route::get('/contact/unseen', [ContactController::class, 'getCountUnSeen'])->name('contact.unseen');
 
+
+    Route::apiResource('/seo', SeoController::class)->only(['index', 'show']);
+
+    Route::post('/seo/{seo}', [SeoController::class, 'update']);
+    
+    Route::post('/seo/{section}/{additionalId}', [SeoController::class, 'store']);
 
 
     Route::apiResource('/product', ProductController::class)->except(['create', 'edit', 'update']);
@@ -56,7 +63,10 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
     Route::apiResource('/video', VideoController::class)->except(['create', 'edit', 'update']);
 
     Route::post('/video/{video}', [VideoController::class, 'update']);
+    
+    Route::post('isValidVideo', [VideoController::class, 'isValid'])->name('video.isValid');
 
+    Route::post('addVideoFile', [VideoController::class, 'addFile'])->name('video.addVideo');
 
     Route::post('uploadTest', [HomeController::class, 'uploadTest'])->name('uploadTest');
 
@@ -76,6 +86,9 @@ Route::prefix('/{lang}')->group(function () {
     Route::get('news/{limit?}', [NewsController::class, 'index']);
 
     Route::get('solutions', [SolutionController::class, 'index']);
+
+    Route::get('solution/show/{solution}', [SolutionController::class, 'show']);
+
 
 });
 

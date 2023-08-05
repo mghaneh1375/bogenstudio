@@ -4,12 +4,10 @@ namespace App\Http\Controllers\PN;
 
 use App\Http\Controllers\Controller;
 
-use App\Http\Resources\AdminProductDigest;
-use App\Http\Resources\ProductDigest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\Rules\MaxWords;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Validation\Rule;
 
 class PNController extends Controller
@@ -20,19 +18,19 @@ class PNController extends Controller
         $request->validate([
             'tags_en' => 'nullable|string',
             'title_en' => 'nullable|string',
-            'digest_en' => 'nullable|string',
+            'digest_en' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_en' => 'nullable|string',
             'tags_fa' => 'nullable|string',
             'title_fa' => 'nullable|string',
-            'digest_fa' => 'nullable|string',
+            'digest_fa' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_fa' => 'nullable|string',
             'tags_ar' => 'nullable|string',
             'title_ar' => 'nullable|string',
-            'digest_ar' => 'nullable|string',
+            'digest_ar' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_ar' => 'nullable|string',
             'tags_gr' => 'nullable|string',
             'title_gr' => 'nullable|string',
-            'digest_gr' => 'nullable|string',
+            'digest_gr' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_gr' => 'nullable|string',
             'priority' => 'required|integer|min:1',
             'pic_file' => 'required|file',
@@ -58,19 +56,19 @@ class PNController extends Controller
         $request->validate([
             'tags_en' => 'nullable|string',
             'title_en' => 'nullable|string',
-            'digest_en' => 'nullable|string',
+            'digest_en' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_en' => 'nullable|string',
             'tags_fa' => 'nullable|string',
             'title_fa' => 'nullable|string',
-            'digest_fa' => 'nullable|string',
+            'digest_fa' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_fa' => 'nullable|string',
             'tags_ar' => 'nullable|string',
             'title_ar' => 'nullable|string',
-            'digest_ar' => 'nullable|string',
+            'digest_ar' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_ar' => 'nullable|string',
             'tags_gr' => 'nullable|string',
             'title_gr' => 'nullable|string',
-            'digest_gr' => 'nullable|string',
+            'digest_gr' => ['nullable', 'string', 'max:1000', new MaxWords()],
             'description_gr' => 'nullable|string',
             'priority' => 'nullable|integer|min:1',
             'pic_file' => 'nullable|file',

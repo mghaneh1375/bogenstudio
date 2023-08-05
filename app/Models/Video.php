@@ -22,10 +22,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $file
  * @property integer $priority
  * @property boolean $visibility
- * @method static Builder|Product newModelQuery()
- * @method static Builder|Product newQuery()
- * @method static Builder|Product query()
- * @method static Builder|Product whereId($value)
+ * @property boolean $file_status
+ * @property boolean $start_uploading
+ * @method static Builder|Video newModelQuery()
+ * @method static Builder|Video newQuery()
+ * @method static Builder|Video query()
+ * @method static Builder|Video whereId($value)
  * @mixin Eloquent
  */
 
@@ -46,7 +48,9 @@ class Video extends Model
         'title_ar',
         'description_ar',
         'title_gr',
-        'description_gr'
+        'description_gr',
+        'file_status',
+        'start_uploading'
     ];
 
     protected $hidden = [

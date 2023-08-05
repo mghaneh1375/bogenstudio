@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +10,12 @@
 
         @if(\Illuminate\Support\Facades\App::getLocale() == 'fa' ||
             \Illuminate\Support\Facades\App::getLocale() == 'ar' )
-            <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common/rtl.css")}}"/>
+            <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common/rtl.css?v=2.1")}}"/>
         @endif
 
-        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common.css")}}"/>
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common.css?v=2.1")}}"/>
         <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/common/mobile.css?v=2.1")}}"/>
-        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/font.css")}}"/>
+        <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset("assets/css/font.css?v=2.1")}}"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <link rel="apple-touch-icon" sizes="57x57" href="{{asset('assets/images/fav/apple-icon-57x57.png')}}">
@@ -67,6 +68,9 @@
             }
 
         </script>
+
+        <meta property="article:author " content="Bogen studio" />
+        <meta property="article:section" content="article" />
 
     @show
 
