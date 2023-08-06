@@ -19,7 +19,7 @@
             width: calc(100% - 60px);
             height: 100%;
             top: -290px;
-            z-index: -1;
+            /* z-index: -1; */
         }
 
         iframe {
@@ -37,7 +37,7 @@
         }
 
         #products .card h1 {
-            margin-top: 20px !important;
+            margin-top: 220px !important;
         }
     </style>
 
