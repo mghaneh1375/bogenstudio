@@ -28,10 +28,11 @@ $(document).ready(function () {
                     '" class="item redirector" style="background: url(' +
                     res[i].image +
                     '); background-size: cover">';
+                html += '<div class="backGround">';
                 html +=
-                    '<div style="background: transparent linear-gradient(180deg, #00000000 0%, #00000096 100%)0% 0% no-repeat padding-box;height:100%">';
-                html += "<h1 padding-left: 10px;>" + res[i].title + "</h1>";
-                html += "<p padding-left: 10px;>" + res[i].digest + "</p>";
+                    '<h1 style="padding-left: 10px;">' + res[i].title + "</h1>";
+                html +=
+                    '<p style="padding-left: 10px;">' + res[i].digest + "</p>";
                 html += "</div>";
                 html += "</div>";
 

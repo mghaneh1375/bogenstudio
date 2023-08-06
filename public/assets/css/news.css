@@ -33,6 +33,16 @@
     justify-content: end;
 }
 
+.backGround {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: transparent
+        linear-gradient(180deg, #00000000 0%, #00000096 100%) 0% 0% no-repeat
+        padding-box;
+    height: 100%;
+}
+
 #topSection .item h1 {
     color: white;
     font: normal normal bold var(--big-text-size) / 24px var(--font-family);
