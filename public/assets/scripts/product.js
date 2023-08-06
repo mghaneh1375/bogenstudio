@@ -32,7 +32,6 @@ $(document).ready(function () {
             $("#products").append(html);
             $("figcaption").attr("contenteditable", "false");
             $(".image").addClass("dispalyFlexProduct");
-            console.log("sag");
         },
     });
 });

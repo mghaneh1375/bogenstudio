@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description_ar
  * @property string $preview
  * @property string $file
+ * @property string $link
  * @property integer $priority
  * @property boolean $visibility
  * @property boolean $file_status
@@ -39,6 +40,7 @@ class Video extends Model
     protected $fillable = [
         'preview',
         'file',
+        'link',
         'priority',
         'visibility',
         'title_en',

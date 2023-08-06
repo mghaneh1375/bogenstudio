@@ -66,8 +66,36 @@
 </div>
 
 <div class="big-input">
+    <label for="video_type"></label>
+    <select onchange="changeVideoType($(this).val())" id="video_type">
+        <option value="file">file</option>
+        <option value="link">link</option>
+    </select>
+</div>
+
+
+<div id="file-container" class="big-input">
     <label for="video_file">video file</label>
     <input name="video_file" type="file" id="video_file">
 </div>
 
-<script src="{{asset('panel/js/initCKs.js?v=2.1')}}"></script>
+<div id="link-container" class="big-input hidden">
+    <label for="video_link">video link</label>
+    <input name="video_link" type="text" id="video_link">
+</div>
+
+<script src="{{ asset('panel/js/initCKs.js?v=2.1') }}"></script>
+
+<script>
+    function changeVideoType(val) {
+
+        if (val === 'file') {
+            $("#file-container").removeClass('hidden');
+            $("#link-container").addClass('hidden');
+        } else {
+            $("#file-container").addClass('hidden');
+            $("#link-container").removeClass('hidden');
+        }
+
+    }
+</script>

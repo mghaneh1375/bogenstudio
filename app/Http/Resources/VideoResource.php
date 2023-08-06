@@ -16,7 +16,8 @@ class VideoResource extends JsonResource
     {
         return [
             'preview' => asset('storage/videos/' . $this->preview),
-            'file' => asset('storage/videos/' . $this->file),
+            'iframe' => $this->link !== null,
+            'file' => $this->link !== null ? $this->link : asset('storage/videos/' . $this->file),
             'title_en' => $this->title_en,
             'description_en' => $this->description_en,
             'title_fa' => $this->title_fa,
