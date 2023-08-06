@@ -18,7 +18,8 @@ $(document).ready(function () {
                     res.file +
                     '"></iframe>';
             } else {
-                html += '<video id="video" class="video" controls>';
+                html +=
+                    '<video id="video" class="video hidden" style="background: black;height: 500px!important;" controls>';
                 html += '<source src="' + res.file + '" type="video/mp4">';
                 html += "Your browser does not support the video tag.";
                 html += "</video>";
@@ -42,6 +43,7 @@ $(document).ready(function () {
 
             if (!res.iframe) {
                 $(".play").on("click", function () {
+                    $("#video").removeClass("hidden");
                     $("#video").css("z-index", "4").trigger("play");
                     $("#img_preview").css("visibility", "hidden");
                     $(this).addClass("hidden");

@@ -18,15 +18,11 @@
 }
 
 #products .card .img {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: calc(100% - 40px);
-
-    margin-top: -300px;
-    height: 450px;
-    border-radius: 20px;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    position: absolute;
+    left: 30px;
+    width: calc(100% - 60px);
+    height: 500px;
+    top: -290px;
 }
 
 #products .card .date {
