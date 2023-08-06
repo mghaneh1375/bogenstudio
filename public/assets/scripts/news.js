@@ -28,8 +28,12 @@ $(document).ready(function () {
                     '" class="item redirector" style="background: url(' +
                     res[i].image +
                     '); background-size: cover">';
-                html += "<h1>" + res[i].title + "</h1>";
-                html += "<p>" + res[i].digest + "</p>";
+                html += '<div class="backGround">';
+                html +=
+                    '<h1 style="padding-left: 10px;">' + res[i].title + "</h1>";
+                html +=
+                    '<p style="padding-left: 10px;">' + res[i].digest + "</p>";
+                html += "</div>";
                 html += "</div>";
 
                 if (i === 1 || i === 3) html += "</div>";

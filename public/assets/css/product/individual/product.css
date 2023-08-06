@@ -35,10 +35,9 @@
     margin-top: 20px;
 }
 
-#products .card  h2,
-#products .card  h3 {
+#products .card h2,
+#products .card h3 {
     font-family: var(--font-family);
-
 }
 
 #products .card p {
@@ -57,9 +56,14 @@
     color: var(--silver);
     word-break: break-word;
     white-space: normal;
-    margin-top: 0 !important;
+    margin-top: 20px !important;
 }
 #products .card ul li {
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
+    margin-right: unset;
+    margin-left: 20px;
+}
+#products .card ol li {
     font: normal normal normal var(--text-size) / 20px var(--font-family);
     margin-right: unset;
     margin-left: 20px;
