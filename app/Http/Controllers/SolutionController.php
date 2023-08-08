@@ -27,8 +27,6 @@ class SolutionController extends Controller
         if($request->user() != null)
             return AdminSolutionDigest::collection(Solution::all())->additional(['status' => 'ok']);
 
-        sleep(2);
-
         $solutions = Solution::visible()->get()->toArray();
         $org_lang = $lang;
 
