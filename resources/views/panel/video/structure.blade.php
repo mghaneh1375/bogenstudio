@@ -5,10 +5,9 @@
 </div>
 
 <div class="big-input editor">
+    <p class="ck-label">description(en)</p>
     <div id="toolbar-container_en"></div>
-    <div id="description_en">
-        description(en)
-    </div>
+    <div id="description_en"></div>
 </div>
 
 <div class="big-input fa">
@@ -16,9 +15,9 @@
 </div>
 
 <div class="big-input editor fa">
+    <p class="ck-label">description(fa)</p>
     <div id="toolbar-container_fa"></div>
     <div id="description_fa">
-        description(fa)
     </div>
 </div>
 
@@ -27,9 +26,9 @@
 </div>
 
 <div class="big-input editor">
+    <p class="ck-label">description(gr)</p>
     <div id="toolbar-container_gr"></div>
     <div id="description_gr">
-        description(gr)
     </div>
 </div>
 
@@ -38,9 +37,9 @@
 </div>
 
 <div class="big-input editor fa">
+    <p class="ck-label">description(ar)</p>
     <div id="toolbar-container_ar"></div>
     <div id="description_ar">
-        description(ar)
     </div>
 </div>
 
@@ -73,12 +72,6 @@
     </select>
 </div>
 
-
-<div id="file-container" class="big-input">
-    <label for="video_file">video file</label>
-    <input name="video_file" type="file" id="video_file">
-</div>
-
 <div id="link-container" class="big-input hidden">
     <label for="video_link">video link</label>
     <input name="video_link" type="text" id="video_link">
@@ -87,6 +80,10 @@
 <script src="{{ asset('panel/js/initCKs.js?v=2.1') }}"></script>
 
 <script>
+
+    var token = localStorage.getItem("token");
+    if (token == null) document.location.href = '/login';
+
     function changeVideoType(val) {
 
         if (val === 'file') {
@@ -98,4 +95,19 @@
         }
 
     }
+
+    function putInForm(formData, lang) {
+
+        let tmp = $("#description_" + lang).html();
+
+        if (tmp === '<p style="text-align:justify;">description(' + lang + ')</p>')
+            return;
+
+        formData.append("description_" + lang, tmp);
+    }
+
+    $(document).ready(function() {
+        
+    });
+
 </script>

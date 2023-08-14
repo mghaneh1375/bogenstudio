@@ -946,37 +946,43 @@ var Dropzone =
                             var token = localStorage.getItem("token");
                             if (token == null) return;
 
-                            var form = $("#form");
+                            if (
+                                storeUrl === undefined &&
+                                videoIdForEdit !== undefined
+                            ) {
+                                myPreventionFlag = false;
+                                videoId = videoIdForEdit;
+                                _my_this_.emit("videoAdded", file);
+                            } else if (storeUrl !== undefined) {
+                                var form = $("#form");
 
-                            var formData = new FormData(form[0]);
+                                var formData = new FormData(form[0]);
 
-                            putInForm(formData, "en");
-                            putInForm(formData, "fa");
-                            putInForm(formData, "ar");
-                            putInForm(formData, "gr");
+                                putInForm(formData, "en");
+                                putInForm(formData, "fa");
+                                putInForm(formData, "ar");
+                                putInForm(formData, "gr");
 
-                            formData.delete("video_file");
-
-                            $.ajax({
-                                url: storeUrl,
-                                type: "POST",
-                                data: formData,
-                                success: function (data) {
-                                    if (data.status === "ok") {
-                                        myPreventionFlag = false;
-                                        console.log("ajax res is " + data.id);
-                                        videoId = data.id;
-                                        _my_this_.emit("videoAdded", file);
-                                    }
-                                },
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                headers: {
-                                    Authorization: "Bearer " + token,
-                                    Accept: "application/json",
-                                },
-                            });
+                                $.ajax({
+                                    url: storeUrl,
+                                    type: "POST",
+                                    data: formData,
+                                    success: function (data) {
+                                        if (data.status === "ok") {
+                                            myPreventionFlag = false;
+                                            videoId = data.id;
+                                            _my_this_.emit("videoAdded", file);
+                                        }
+                                    },
+                                    cache: false,
+                                    contentType: false,
+                                    processData: false,
+                                    headers: {
+                                        Authorization: "Bearer " + token,
+                                        Accept: "application/json",
+                                    },
+                                });
+                            }
                         },
                         videoAdded: function videoAdded(file) {
                             var _this2 = this;
@@ -3660,7 +3666,7 @@ var Dropzone =
                         }
 
                         var formData = new FormData(); // Adding all @options parameters
-                        console.log("video id is " + $("#videoId").val());
+
                         formData.append("id", videoId);
                         if (this.options.params) {
                             var additionalParams = this.options.params;
