@@ -28,8 +28,12 @@ $(document).ready(function () {
                     '" class="item redirector" style="background: url(' +
                     res[i].image +
                     '); background-size: cover">';
-                html += "<h1>" + res[i].title + "</h1>";
-                html += "<p>" + res[i].digest + "</p>";
+                html += '<div class="backGround">';
+                html +=
+                    '<h1 style="padding-left: 10px;">' + res[i].title + "</h1>";
+                html +=
+                    '<p style="padding-left: 10px;">' + res[i].digest + "</p>";
+                html += "</div>";
                 html += "</div>";
 
                 if (i === 1 || i === 3) html += "</div>";
@@ -113,7 +117,7 @@ $(document).ready(function () {
                         "<div class='img' style='background-image: url(" +
                         res[i].image +
                         ")'></div>";
-                    html += "<p class='date'>" + res[i].created_at + "</p>";
+                    // html += "<p class='date'>" + res[i].created_at + "</p>";
                     html += "<h1>" + res[i].title + "</h1>";
                     html += "<p class='desc'>" + res[i].digest + "</p>";
                     html +=

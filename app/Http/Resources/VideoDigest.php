@@ -37,9 +37,10 @@ class VideoDigest extends JsonResource
 
         return [
             'preview' => URL::asset('storage/videos/' . $this->preview),
-            'file' => URL::asset('storage/videos/' . $this->file),
+            'file' => $this->link !== null ? $this->link : URL::asset('storage/videos/' . $this->file),
+            'iframe' => $this->link !== null,
             'title' => $title,
-            'description' => $desc,
+            'description' => $desc == null ? '' : $desc,
             'id' => $this->id,
             'created_at' => explode('T', $this->created_at)[0],
             'updated_at' => explode('T', $this->updated_at)[0],

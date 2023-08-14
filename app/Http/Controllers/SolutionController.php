@@ -27,8 +27,6 @@ class SolutionController extends Controller
         if($request->user() != null)
             return AdminSolutionDigest::collection(Solution::all())->additional(['status' => 'ok']);
 
-        sleep(2);
-
         $solutions = Solution::visible()->get()->toArray();
         $org_lang = $lang;
 
@@ -189,7 +187,24 @@ class SolutionController extends Controller
      * @param Request $request
      * @return SolutionResource|SolutionDigestUser
      */
-    public function show($lang, Solution $solution, Request $request)
+    public function show(Solution $solution, Request $request)
+    {
+        if($request->user() != null)
+            return SolutionResource::make($solution)->additional(['status' => 'ok']);
+
+        $solution->lang = 'en';
+        return SolutionDigestUser::make($solution)->additional(['status' => 'ok']);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param $lang
+     * @param Solution $solution
+     * @param Request $request
+     * @return SolutionResource|SolutionDigestUser
+     */
+    public function showWithLang($lang, Solution $solution, Request $request)
     {
         if($request->user() != null)
             return SolutionResource::make($solution)->additional(['status' => 'ok']);

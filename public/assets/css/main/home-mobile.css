@@ -1,5 +1,4 @@
 @media only screen and (max-width: 1200px) {
-
     .innerContent {
         margin-right: 15px;
         margin-left: 15px;
@@ -9,7 +8,8 @@
         width: 100px;
     }
 
-    .boxes .box:nth-child(4) img, .boxes .box:nth-child(5) img {
+    .boxes .box:nth-child(4) img,
+    .boxes .box:nth-child(5) img {
         width: 70px !important;
     }
 
@@ -18,7 +18,7 @@
     }
 
     #intro .card:nth-child(2) .desc span {
-        font: normal normal bold var(--text-size)/20px var(--font-family);
+        font: normal normal bold var(--text-size) / 20px var(--font-family);
     }
 
     #intro .card .desc img {
@@ -27,7 +27,6 @@
 }
 
 @media only screen and (max-width: 900px) {
-
     .boxes {
         flex-wrap: wrap;
         align-items: center;
@@ -60,7 +59,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-
     #top-banner {
         margin-left: 10px;
         padding-left: 25px;
@@ -70,7 +68,8 @@
     }
 
     #top-banner .bigTexts .bigSliderText {
-        font: normal normal bold var(--monster-text-size)/64px var(--font-family);
+        font: normal normal bold var(--monster-text-size) / 64px
+            var(--font-family);
     }
 
     #sliderCanvas {
@@ -87,7 +86,8 @@
         position: unset;
         width: 90%;
         margin-top: auto;
-        font: normal normal normal var(--medium-tiny-text-size)/20px var(--font-family);
+        font: normal normal normal var(--medium-tiny-text-size) / 20px
+            var(--font-family);
     }
 
     #sliderCanvas .bubbles {
@@ -153,11 +153,12 @@
     }
 
     .boxes .box .title {
-        font: normal normal bold var(--text-size)/20px var(--font-family);
+        font: normal normal bold var(--text-size) / 20px var(--font-family);
     }
 
     .boxes .box .desc {
-        font: normal normal normal var(--tiny-text-size)/18px var(--font-family);
+        font: normal normal normal var(--tiny-text-size) / 18px
+            var(--font-family);
     }
 
     .three-col {
@@ -177,13 +178,14 @@
     }
 
     .three-col div .title {
-        font: normal normal bold var(--text-size)/20px var(--font-family);
+        font: normal normal bold var(--text-size) / 20px var(--font-family);
         margin-bottom: 0 !important;
         margin-top: 0 !important;
     }
 
     .three-col div .desc {
-        font: normal normal normal var(--medium-tiny-text-size)/16px var(--font-family);
+        font: normal normal normal var(--medium-tiny-text-size) / 16px
+            var(--font-family);
         padding-right: 5px;
     }
 
@@ -215,22 +217,24 @@
         width: 100%;
         word-break: break-word;
         white-space: normal;
-        font: normal normal bold var(--text-size)/20px var(--font-family);
+        font: normal normal bold var(--text-size) / 20px var(--font-family);
     }
 
     #products .content .desc {
         width: 100%;
         word-break: break-word;
         white-space: normal;
-        font: normal normal normal var(--tiny-text-size)/20px var(--font-family);
+        font: normal normal normal var(--tiny-text-size) / 20px
+            var(--font-family);
     }
 
     #products .content .bubbles {
-        padding-left: 20px;
-        padding-bottom: 20px;
+        /* padding-left: 20px;
+        padding-bottom: 20px; */
     }
 
-    #productBackArrow, #productNextArrow {
+    #productBackArrow,
+    #productNextArrow {
         display: none;
     }
 
@@ -269,7 +273,8 @@
     }
 
     #intro .card:nth-child(2) .desc span {
-        font: normal normal bold var(--medium-tiny-text-size)/20px var(--font-family);
+        font: normal normal bold var(--medium-tiny-text-size) / 20px
+            var(--font-family);
     }
 
     #intro .card .desc img {
@@ -278,11 +283,12 @@
     }
 
     #intro .card h1 {
-        font: normal normal bold var(--text-size)/20px var(--font-family);
+        font: normal normal bold var(--text-size) / 20px var(--font-family);
     }
 
     #intro .card p {
-        font: normal normal normal var(--medium-tiny-text-size)/20px var(--font-family);
+        font: normal normal normal var(--medium-tiny-text-size) / 20px
+            var(--font-family);
     }
 
     #products {
@@ -296,8 +302,7 @@
 }
 
 @media screen and (max-height: 400px),
-       screen and (min-width: 650px) and (max-width: 768px) {
-
+    screen and (min-width: 650px) and (max-width: 768px) {
     #top-banner {
         display: flex;
         flex-wrap: wrap;
@@ -325,5 +330,4 @@
         width: calc(50% - 30px);
         padding: 10px;
     }
-
 }

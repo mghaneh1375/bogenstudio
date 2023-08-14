@@ -129,6 +129,11 @@ function fetchFormData(url, callBack = undefined) {
                     continue;
                 }
 
+                if (key === "iframe" && res[key]) {
+                    $("#video_link").val(res["file"]);
+                    $("#video_type").val("link").change();
+                }
+
                 if (key === "model") {
                     $("#sliderCanvas").removeClass("hidden");
                     modelPath = res["model"];

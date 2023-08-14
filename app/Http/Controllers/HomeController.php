@@ -157,9 +157,10 @@ class HomeController extends Controller {
         $video = $video->toArray();
 
         $pic = asset('storage/videos/' . $video['preview']);
+        $defaultLang = 'en';
 
-        $name = ($video['title_' . $lang] == null || empty($video['title_' . $lang])) ? $video['title_' . $video['default_lang']] : $video['title_' . $lang];
-        $description = ($video['description_' . $lang] == null || empty($video['description_' . $lang])) ? $video['description_' . $video['default_lang']] : $video['description_' . $lang];
+        $name = ($video['title_' . $lang] == null || empty($video['title_' . $lang])) ? $video['title_' . $defaultLang] : $video['title_' . $lang];
+        $description = ($video['description_' . $lang] == null || empty($video['description_' . $lang])) ? $video['description_' . $defaultLang] : $video['description_' . $lang];
         
         return $this->goToPageWithSeo(
             'video', $videoId, 'video', $lang, 

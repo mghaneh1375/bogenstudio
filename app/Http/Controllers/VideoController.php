@@ -21,8 +21,6 @@ class VideoController extends Controller
      */
     public function index(Request $request, $lang = "en", $limit = -1)
     {
-
-        sleep(2);
         $videos = ($limit == -1 || $request->user() != null) ? Video::all() : Video::take($limit)->get();
         foreach ($videos as $video)
             $video->lang = $lang;
@@ -125,7 +123,8 @@ class VideoController extends Controller
             'title_ar' => 'nullable|string|min:2',
             'description_ar' => 'nullable|string|min:3',
             'title_gr' => 'nullable|string|min:2',
-            'description_gr' => 'nullable|string|min:3'
+            'description_gr' => 'nullable|string|min:3',
+            'link' => 'nullable|string|min:3'
         ]);
 
         if($request->hasFile("preview_file") && $request->preview_file != null)
@@ -145,11 +144,21 @@ class VideoController extends Controller
      * @param Request $request
      * @return VideoResource|VideoDigest
      */
-    public function show($lang, Video $video, Request $request)
+    public function showAdmin(Video $video)
     {
-        if($request->user() != null)
-            return VideoResource::make($video)->additional(['status' => 'ok']);
+        return VideoResource::make($video)->additional(['status' => 'ok']);
+    }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param $lang
+     * @param Video $video
+     * @param Request $request
+     * @return VideoResource|VideoDigest
+     */
+    public function show($lang, Video $video)
+    {
         $video->lang = $lang;
         return VideoDigest::make($video)->additional(['status' => 'ok']);
     }
@@ -166,7 +175,6 @@ class VideoController extends Controller
     {
         $request->validate([
             'preview_file' => 'nullable|image',
-            'video_file' => 'nullable|file|mimes:mp4',
             'priority' => 'nullable|integer|min:1',
             'title_fa' => 'nullable|string|min:1',
             'description_fa' => 'nullable|string|min:1',
@@ -177,6 +185,7 @@ class VideoController extends Controller
             'title_gr' => 'nullable|string|min:1',
             'description_gr' => 'nullable|string|min:1',
             'visibility' => 'nullable|boolean',
+            'link' => 'nullable|string|min:3'
         ]);
 
 
@@ -186,14 +195,6 @@ class VideoController extends Controller
                 unlink(__DIR__ . '/../../../storage/app/public/videos/' . $video->preview);
 
             $video->preview = str_replace("public/videos/", "", $request->preview_file->store("public/videos"));
-        }
-
-        if($request->hasFile("video_file") && $request->video_file != null) {
-
-            if(file_exists(__DIR__ . '/../../../storage/app/public/videos/' . $video->file))
-                unlink(__DIR__ . '/../../../storage/app/public/videos/' . $video->file);
-
-            $video->file = str_replace("public/videos/", "", $request->video_file->store("public/videos"));
         }
 
 
@@ -211,6 +212,8 @@ class VideoController extends Controller
 
         $video->visibility = ($request->has('visibility')) ? $request['visibility'] : $video->visibility;
         $video->priority = ($request->has('priority')) ? $request['priority'] : $video->priority;
+        
+        $video->link = ($request->has('link')) ? $request['link'] : null;
 
         $video->save();
         return response()->json(['status' => 'ok']);
@@ -228,7 +231,7 @@ class VideoController extends Controller
         if(file_exists(__DIR__ . '/../../../storage/app/public/videos/' . $video->preview))
             unlink(__DIR__ . '/../../../storage/app/public/videos/' . $video->preview);
 
-        if(file_exists(__DIR__ . '/../../../storage/app/public/videos/' . $video->file))
+        if($video->file !== null && file_exists(__DIR__ . '/../../../storage/app/public/videos/' . $video->file))
             unlink(__DIR__ . '/../../../storage/app/public/videos/' . $video->file);
 
         $video->delete();

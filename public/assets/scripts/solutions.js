@@ -41,7 +41,8 @@ $(document).ready(function () {
 
             res = res.data;
 
-            html = "<div style='flex-direction: row; flex-wrap: wrap;'>";
+            html =
+                "<div style='flex-direction: row; flex-wrap: wrap;margin-top: 25px;'>";
             for (i = 0; i < res.length; i++) {
                 let t = "tag_" + res[i].tag.split(" ").join("_");
 

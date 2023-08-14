@@ -27,7 +27,8 @@
     height: max-content;
     padding: 10px 10px 20px;
     position: sticky;
-    top: 40px;
+    top: 0px;
+    z-index: 10;
 }
 
 #all #categories {
@@ -63,10 +64,10 @@
     margin-bottom: 0 !important;
 }
 
-#all > div > div:nth-child(1) h1 {
+/* #all > div > div:nth-child(1) h1 {
     font: normal normal normal var(--big-text-size) / 24px var(--font-family);
     color: var(--silver);
-}
+} */
 
 #all .item {
     width: calc(50% - 80px) !important;
@@ -78,6 +79,6 @@
     height: 250px !important;
 }
 
-#all .item h1 {
+/* #all .item h1 {
     padding-top: 100px !important;
-}
+} */

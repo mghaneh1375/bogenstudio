@@ -1,5 +1,4 @@
 @media only screen and (max-width: 768px) {
-
     #all {
         flex-wrap: wrap;
         margin-left: 0;
@@ -22,6 +21,8 @@
 
     #all > div {
         width: 100%;
+        justify-content: center;
+        row-gap: 20px;
     }
 
     #all .item img {

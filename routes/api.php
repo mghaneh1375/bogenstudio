@@ -62,7 +62,9 @@ Route::prefix('/admin-panel')->middleware('auth:api')->group(function () {
 
     Route::apiResource('/video', VideoController::class)->except(['create', 'edit', 'update']);
 
-    Route::post('/video/{video}', [VideoController::class, 'update']);
+    Route::get('/video/showAdmin/{video}', [VideoController::class, 'showAdmin'])->name('video.showAdmin');
+
+    Route::post('/video/{video}', [VideoController::class, 'update'])->name('video.update');
     
     Route::post('isValidVideo', [VideoController::class, 'isValid'])->name('video.isValid');
 
@@ -87,7 +89,7 @@ Route::prefix('/{lang}')->group(function () {
 
     Route::get('solutions', [SolutionController::class, 'index']);
 
-    Route::get('solution/show/{solution}', [SolutionController::class, 'show']);
+    Route::get('solution/show/{solution}', [SolutionController::class, 'showWithLang']);
 
 
 });

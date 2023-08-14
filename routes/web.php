@@ -122,6 +122,8 @@ Route::prefix('{locale}')->middleware('checkLang')->group(function () {
 
     Route::get('/product/{productId}', [HomeController::class, 'product'])->name('product');
 
+    Route::get('/single-news/{newsId}', [HomeController::class, 'product'])->name('singleNews');
+
     Route::get('/solution/{solutionId}', [HomeController::class, 'solution'])->name('solution');
 
     Route::get('/video/{videoId}', [HomeController::class, 'video'])->name('video');

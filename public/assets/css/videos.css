@@ -41,12 +41,14 @@
 }
 
 #videos .first-row-decs .title {
-    font: normal normal bold var(--medium-big-text-size)/36px var(--font-family);
+    font: normal normal bold var(--medium-big-text-size) / 36px
+        var(--font-family);
     color: var(--silver);
 }
 
 #videos .first-row-decs .desc {
-    font: normal normal normal var(--little-big-text-size)/24px var(--font-family);
+    font: normal normal normal var(--little-big-text-size) / 24px
+        var(--font-family);
     color: var(--silver);
 }
 
@@ -77,12 +79,13 @@
 }
 
 #videos .second-row-img h1 {
-    font: normal normal bold var(--little-big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--little-big-text-size) / 20px
+        var(--font-family);
     color: var(--silver);
 }
 
 #videos .second-row-img p {
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     color: var(--silver);
 }
 
@@ -121,6 +124,7 @@
 }
 
 .video-container {
+    height: 300px;
     width: 300px;
     position: relative;
 }
@@ -135,8 +139,9 @@
     background-position: center;
 }
 
-.first-row-decs .more, .txt .more {
+.first-row-decs .more,
+.txt .more {
     color: var(--main-color);
-    font: normal normal bold var(--text-size)/20px var(--font-family);
+    font: normal normal bold var(--text-size) / 20px var(--font-family);
     cursor: pointer;
 }
