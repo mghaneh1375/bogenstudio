@@ -6,7 +6,10 @@ $(document).ready(function () {
             Accept: "application/json",
         },
         success: function (res) {
-            if (res.status !== "ok") return;
+            if (res.status !== "ok" || res.data.length == 0) {
+                $("#videos").remove();
+                return;
+            }
 
             res = res.data;
 

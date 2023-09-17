@@ -135,6 +135,17 @@
             div, center {
                 direction: rtl;
             }
+
+            .ck-label {
+                font-size: 16px;
+                margin: 20px 0;
+                padding-left: 5px;
+                font-family: IRANSans;
+                border-left-color: #434040;
+                border-left-width: 3px;
+                border-left-style: solid;
+            }
+            
         </style>
 
         <script>
@@ -285,14 +296,14 @@
                             errsText += errs[key] + "<br />";
                         });
 
-                        $("#errMsgBox").append(errsText);
+                        $("#errMsgBox").empty().append(errsText);
                     } else {
                         var errsText = '';
 
                         for (let i = 0; i < errs.length; i++)
                             errsText += errs[i].value;
 
-                        $("#errMsgBox").append(errsText);
+                        $("#errMsgBox").empty().append(errsText);
                     }
                 }
             });

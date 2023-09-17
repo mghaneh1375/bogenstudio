@@ -46,7 +46,7 @@ class VideoController extends Controller
 
             $b = Video::find($request['id']);
 
-            if($b == null || $b->file_status == 1)
+            if($b == null)
                 return response()->json(["status" => "nok"], 401);
 
             if($idx == 0) {
@@ -56,8 +56,15 @@ class VideoController extends Controller
                     $request->file("file")->getClientOriginalExtension()
                 );
 
+                if(
+                    $b->file != null && !empty($b->file) &&
+                    file_exists(__DIR__ . '/../../../storage/app/public/videos/' . $b->file)
+                )
+                    unlink(__DIR__ . '/../../../storage/app/public/videos/' . $b->file);
+
                 $b->file = str_replace("public/videos/", "", $path);
                 $b->start_uploading = time();
+                $b->file_status = false;
 
                 if($idx == $total - 1)
                     $b->file_status = true;
@@ -92,12 +99,12 @@ class VideoController extends Controller
             'priority' => 'required|integer|min:1',
             'title_fa' => 'required|string|min:2',
             'description_fa' => 'nullable|string|min:3',
-            'title_en' => 'required|string|min:2',
+            'title_en' => 'nullable|string|min:2',
             'description_en' => 'nullable|string|min:3',
-            'title_ar' => 'required|string|min:2',
+            'title_ar' => 'nullable|string|min:2',
             'description_ar' => 'nullable|string|min:3',
-            'title_gr' => 'required|string|min:2',
-            'description_gr' => 'nullable|string|min:3'
+            'title_gr' => 'nullable|string|min:2',
+            'description_gr' => 'nullable|string|min:3',
         ]);
         
         return response()->json(['status' => 'ok']);
@@ -214,6 +221,15 @@ class VideoController extends Controller
         $video->priority = ($request->has('priority')) ? $request['priority'] : $video->priority;
         
         $video->link = ($request->has('link')) ? $request['link'] : null;
+
+        if($video->link != null && !empty($video->link) && 
+            $video->file != null && !empty($video->file) &&
+            file_exists(__DIR__ . '/../../../storage/app/public/videos/' . $video->file)
+        ) {
+            unlink(__DIR__ . '/../../../storage/app/public/videos/' . $video->file);
+            $video->file = null;
+            $video->file_status = false;
+        }
 
         $video->save();
         return response()->json(['status' => 'ok']);

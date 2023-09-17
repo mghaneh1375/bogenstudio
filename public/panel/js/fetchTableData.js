@@ -113,6 +113,8 @@ function fetchFormData(url, callBack = undefined) {
             if (res.status !== "ok") return;
 
             res = res.data;
+            var canHasVideo = true;
+
             for (var key in res) {
                 if (key === "pic" || key === "preview" || key === "texture") {
                     $("#" + key)
@@ -130,8 +132,17 @@ function fetchFormData(url, callBack = undefined) {
                 }
 
                 if (key === "iframe" && res[key]) {
+                    canHasVideo = false;
                     $("#video_link").val(res["file"]);
                     $("#video_type").val("link").change();
+                }
+
+                if (key === "file" && canHasVideo) {
+                    $("#curr_file")
+                        .removeClass("hidden")
+                        .append(
+                            '<source src="' + res[key] + '" type="video/mp4">'
+                        );
                 }
 
                 if (key === "model") {
