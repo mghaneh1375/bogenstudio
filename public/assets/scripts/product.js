@@ -7,19 +7,20 @@ $(document).ready(function () {
         },
         success: function (res) {
             if (res.status !== "ok") return;
-
             res = res.data;
             var html = "<div class='card'>";
+            html +=
+                '<span class="glyphicon glyphicon-arrow-left"style="position: absolute;left: 30px;top: -330px;cursor: pointer;font-size: 30px;" onclick="history.back();"></span>';
 
             if (res.image !== undefined)
                 html +=
-                    '<div class="img" style="background: url(' +
+                    '<div class="img" style="background-position: center;background: url(' +
                     res.image +
                     ')"></div>';
 
             if (res.preview !== undefined)
                 html +=
-                    '<div class="img" style="background: url(' +
+                    '<div class="img" style="background-position: center;background: url(' +
                     res.preview +
                     ')"></div>';
 

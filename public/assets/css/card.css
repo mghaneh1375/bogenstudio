@@ -1,6 +1,6 @@
 #all .item {
-    width: calc(33% - 80px);
-    margin: 110px 30px 30px;
+    /* width: 30%;
+    margin-top: 110px; */
     padding: 10px;
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;

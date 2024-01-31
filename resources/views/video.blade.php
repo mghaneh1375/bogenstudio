@@ -1,5 +1,5 @@
 @extends('layouts.showVideo')
-{{-- 
+
 @section('seo')
 
     @if ($pic != null)
@@ -63,7 +63,7 @@
     }
     </script>
 
-@stop --}}
+@stop
 
 @section('fetch')
     <script>

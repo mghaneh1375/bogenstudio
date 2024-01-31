@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1200px) {
     .video-container {
-        width: 150px;
+        width: 100%;
     }
 
     #videos .second-row-img .txt {
@@ -9,7 +9,6 @@
 }
 
 @media only screen and (max-width: 850px) {
-
     #videos {
         border-radius: unset;
         margin-right: 0;
@@ -55,11 +54,12 @@
         height: 100%;
     }
     #videos .first-row-decs .title {
-        font: normal normal bold var(--text-size)/18px var(--font-family);
+        font: normal normal bold var(--text-size) / 18px var(--font-family);
     }
 
     #videos .first-row-decs .desc {
-        font: normal normal normal var(--medium-tiny-text-size)/16px var(--font-family);
+        font: normal normal normal var(--medium-tiny-text-size) / 16px
+            var(--font-family);
     }
 
     #videos .second-row-img {
@@ -93,13 +93,15 @@
     }
 
     #videos .second-row-img h1 {
-        font: normal normal bold var(--medium-tiny-text-size)/16px var(--font-family);
+        font: normal normal bold var(--medium-tiny-text-size) / 16px
+            var(--font-family);
         margin-top: 0;
         margin-right: 5px;
     }
 
     #videos .second-row-img p {
-        font: normal normal normal var(--tiny-text-size)/16px var(--font-family);
+        font: normal normal normal var(--tiny-text-size) / 16px
+            var(--font-family);
         margin-top: 0;
     }
 
@@ -109,7 +111,9 @@
         top: calc(50% - 15px);
     }
 
-    .first-row-decs .more, .txt .more {
-        font: normal normal bold var(--medium-tiny-text-size)/20px var(--font-family);
+    .first-row-decs .more,
+    .txt .more {
+        font: normal normal bold var(--medium-tiny-text-size) / 20px
+            var(--font-family);
     }
 }

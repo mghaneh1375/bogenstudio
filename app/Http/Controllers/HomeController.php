@@ -45,13 +45,12 @@ class HomeController extends Controller {
     private function goToPageWithSeo($page, $addId, $view, $locale, 
         $pic = null, $itemKey = null, $name = null, $description = null,
         $createdAt = null
-    ) {
-        
+    ) { 
         $seo = Seo::wherePage($page)->whereAdditionalId($addId)->first();
         
         if($seo == null) {
             if($itemKey != null)
-                return view($view, ['seo' => null, 'pic' => null, 
+                return view($view, ['seo' => null, 'pic' => $pic, 
                     $itemKey => $addId, 'digest' => $description, 'name' => $name,
                     'createdAt' => $createdAt
                 ]);
@@ -65,17 +64,19 @@ class HomeController extends Controller {
             $locale = $seo['default_lang'];
 
         $seo = SeoResource::customMake($seo, $locale);
-        
         if($itemKey != null)
             return view($view, ['seo' => $seo, 'pic' => $pic, 
                 $itemKey => $addId, 'name' => $name, 'digest' => $description,
                 'createdAt' => $createdAt
         ]);
-
         return view($view, ['seo' => $seo, 'pic' => $pic]);
     }
 
     public function home($locale) {
+        $product = Product::whereIsNews(0)->first();
+        $pic = null;
+        if($product != null)
+            $pic = asset('storage/products/' . $product->pic);
         return $this->goToPageWithSeo('home', null, 'welcome', $locale);
     }
     
@@ -106,7 +107,7 @@ class HomeController extends Controller {
     }
 
     public function product($lang, $productId) {
-        
+
         $product = Product::whereId($productId)->first();
         if($product == null)
             return Redirect::route('home', ['locale' => $lang]);
@@ -120,7 +121,6 @@ class HomeController extends Controller {
 
         $name = ($product['title_' . $lang] == null || empty($product['title_' . $lang])) ? $product['title_' . $product['default_lang']] : $product['title_' . $lang];
         $description = ($product['digest_' . $lang] == null || empty($product['digest_' . $lang])) ? $product['digest_' . $product['default_lang']] : $product['digest_' . $lang];
-        
         return $this->goToPageWithSeo(
             ($isNews) ? 'news' : 'product', $productId, 'product', $lang, 
             $pic, 'productId', $name, $description, $createdAt

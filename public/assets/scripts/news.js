@@ -12,7 +12,6 @@ $(document).ready(function () {
             if (res.status !== "ok") return;
 
             res = res.data;
-
             var html = "";
             var limit = 4;
             if (res.length < 4) limit = res.length;

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ \Illuminate\Support\Facades\URL::asset('assets/css/videos.css?v=2.1') }}">
+<link rel="stylesheet" href="{{ \Illuminate\Support\Facades\URL::asset('assets/css/videos.css?v=2.5') }}">
 
 @if (\Illuminate\Support\Facades\App::getLocale() == 'fa' || \Illuminate\Support\Facades\App::getLocale() == 'ar')
     <link rel="stylesheet" href="{{ \Illuminate\Support\Facades\URL::asset('/assets/css/videos-rtl.css?v=2.1') }}">

@@ -5,15 +5,15 @@ function $$(x) {
 }
 
 // Add indexOf to IE.
-if(!Array.indexOf){
-    Array.prototype.indexOf = function(obj){
-        for(var i=0; i<this.length; i++){
-            if(this[i]==obj){
+if (!Array.indexOf) {
+    Array.prototype.indexOf = function (obj) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == obj) {
                 return i;
             }
         }
         return -1;
-    }
+    };
 }
 
 var canvas, gl;
@@ -40,21 +40,28 @@ function addClass(element, clas) {
 }
 
 function pageLoaded() {
-
+    removeClass($$("good"), "hidden");
     removeClass($$("have-javascript"), "hidden");
     addClass($$("no-javascript"), "hidden");
 
     canvas = document.getElementById("webgl-logo");
-    var ratio = (window.devicePixelRatio ? window.devicePixelRatio : 1);
+    var ratio = window.devicePixelRatio ? window.devicePixelRatio : 1;
     canvas.width = 140 * ratio;
     canvas.height = 150 * ratio;
     var experimental = false;
-    try { gl = canvas.getContext("webgl"); }
-    catch (x) { gl = null; }
+    try {
+        gl = canvas.getContext("webgl");
+    } catch (x) {
+        gl = null;
+    }
 
     if (gl == null) {
-        try { gl = canvas.getContext("experimental-webgl"); experimental = true; }
-        catch (x) { gl = null; }
+        try {
+            gl = canvas.getContext("experimental-webgl");
+            experimental = true;
+        } catch (x) {
+            gl = null;
+        }
     }
 
     if (gl) {
@@ -72,4 +79,3 @@ function pageLoaded() {
 
 // addEventListener does not work on IE7/8.
 window.onload = pageLoaded;
-

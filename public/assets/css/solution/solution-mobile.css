@@ -7,16 +7,12 @@
     }
 
     #all > div:nth-child(1) {
+        transition: all 0.7s;
         width: 100%;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         margin-right: 30px;
-    }
-
-    #all .item {
-        width: calc(100% - 40px) !important;
-        max-width: 280px;
-        margin: 140px 10px 10px 10px !important;
+        overflow: hidden;
     }
 
     #all > div {
@@ -28,5 +24,8 @@
     #all .item img {
         top: -100px !important;
         height: 200px !important;
+    }
+    .close {
+        height: 35px;
     }
 }

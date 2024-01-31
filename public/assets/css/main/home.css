@@ -62,15 +62,21 @@
 }
 
 #sliderCanvas {
+    border: 10px solid #ffffff;
+    border-radius: 45px;
     position: absolute;
-    right: 30px;
-    top: 80px;
+    right: 80px;
+    top: 30px;
     bottom: 200px;
-    width: calc(100% - 500px - 50px - 60px - 30px - 50px);
-    height: calc(100% - 80px - 200px);
+    width: calc(100% - 550px - 50px - 60px - 30px - 50px);
+    height: calc(100% - 80px - 40px);
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    -ms-border-radius: 45px;
+    -o-border-radius: 45px;
 }
 
 #sliderCanvas .bubbles {
@@ -116,12 +122,33 @@
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 20px;
-    margin-right: 10px;
-    width: calc(20% - 15px - 30px);
-    padding: 35px 15px 20px;
+    /* margin-right: 10px; */
+    /* width: calc(20% - 15px - 30px); */
+    padding: 35px 10px 20px;
+    width: 30%;
+}
+.boxes .firstBox {
+    background: unset !important;
+    box-shadow: unset !important;
 }
 
 .boxes .box .title {
+    color: var(--silver);
+    display: block;
+    font: normal normal bold var(--little-big-text-size) / 20px
+        var(--font-family);
+    margin: 0 !important;
+}
+
+.about .title {
+    padding-left: 15px;
+    color: var(--silver);
+    display: block;
+    font: normal normal bold var(--very-big-text-size) / 40px var(--font-family);
+    margin: 0 !important;
+}
+.about .desc {
+    padding-top: 10px;
     color: var(--silver);
     display: block;
     font: normal normal bold var(--little-big-text-size) / 20px
@@ -297,7 +324,11 @@
     left: 0;
     bottom: 20px;
 }
-
+#all {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 #products .content .title {
     font: normal normal bold var(--tiny-big-text-size) / 20px var(--font-family);
     color: var(--silver);
@@ -354,12 +385,17 @@
 }
 
 #intro {
+    padding: 5px;
+    width: 65%;
+    margin: auto;
     display: flex;
+    flex-direction: column;
     overflow-x: auto;
     overflow-y: hidden;
     /*height: 350px;*/
     margin-top: 50px;
     margin-bottom: 50px;
+    padding: 5px;
 }
 
 #intro .scroll-arrows {
@@ -378,7 +414,6 @@
 #intro .card {
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
-    width: calc((100% - 80px) / 3 - 50px);
     margin-right: 50px;
     padding: 10px;
     display: flex;
@@ -444,6 +479,11 @@
     color: var(--light-silver) !important;
     padding-top: 20px;
     text-align: center;
+}
+#good {
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
+    color: var(--light-silver) !important;
+    padding-top: 20px;
 }
 
 #webgl-container canvas {

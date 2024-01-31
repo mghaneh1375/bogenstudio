@@ -12,18 +12,18 @@ footer {
 }
 
 footer .col {
-    width: 17%;
+    text-align: center;
 }
 
 footer .col:first-child {
-    width: calc(30% - 60px);
+    text-align: unset;
     padding-left: 30px;
     padding-right: 30px;
     min-height: 250px;
 }
 
 footer .col:first-child h1 {
-    font: normal normal bold var(--very-big-text-size)/45px var(--font-family);
+    font: normal normal bold var(--very-big-text-size) / 45px var(--font-family);
 }
 
 footer .col:first-child img {
@@ -31,22 +31,26 @@ footer .col:first-child img {
 }
 
 footer .col:first-child p {
-    font: normal normal 300 var(--big-text-size)/20px var(--font-family);
+    font: normal normal 300 var(--big-text-size) / 20px var(--font-family);
     margin-top: 10px !important;
     margin-bottom: 0 !important;
 }
 
-footer .col:nth-child(2) h1, footer .col:nth-child(3) h1,
-footer .col:nth-child(4) h1, footer .col:nth-child(5) h1 {
-    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+footer .col:nth-child(2) h1,
+footer .col:nth-child(3) h1,
+footer .col:nth-child(4) h1,
+footer .col:nth-child(5) h1 {
+    font: normal normal bold var(--big-text-size) / 20px var(--font-family);
 }
 
-footer .col:nth-child(2) a, footer .col:nth-child(3) a,
-footer .col:nth-child(4) a, footer .col:nth-child(5) a {
+footer .col:nth-child(2) a,
+footer .col:nth-child(3) a,
+footer .col:nth-child(4) a,
+footer .col:nth-child(5) a {
     display: block;
     color: inherit !important;
     text-decoration: none !important;
-    font: normal normal 300 var(--text-size)/20px var(--font-family);
+    font: normal normal 300 var(--text-size) / 20px var(--font-family);
     margin-top: 5px;
 }
 
@@ -57,11 +61,33 @@ footer .address {
 }
 
 footer .address h1 {
-    font: normal normal bold var(--big-text-size)/20px var(--font-family);
+    font: normal normal bold var(--big-text-size) / 20px var(--font-family);
     margin-bottom: 0 !important;
 }
 
 footer .address p {
-    font: normal normal normal var(--text-size)/20px var(--font-family);
+    font: normal normal normal var(--text-size) / 20px var(--font-family);
     margin-top: 0 !important;
+}
+@media only screen and (max-width: 768px) {
+    footer .col {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        text-align: unset !important;
+        margin-left: 15px;
+    }
+
+    footer .col:first-child {
+        width: 60%;
+    }
+}
+@media only screen and (min-width: 1101px) {
+    footer .col {
+        width: 24%;
+    }
+
+    footer .col:first-child {
+        width: calc(30% - 60px);
+    }
 }

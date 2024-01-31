@@ -69,7 +69,7 @@ $(document).ready(function () {
             hover($(this), false);
         });
 
-    getArticles();
+    // getArticles();
 });
 
 function hover(node, on) {
@@ -197,3 +197,37 @@ function scrollProductTagsRtl() {
         }
     });
 }
+$(document).ready(function () {
+    var currPage = 0;
+    var totalPage = 0;
+
+    $.ajax({
+        type: "get",
+        url: fetchNewsUrl + "/" + newsFetchLimit,
+        headers: {
+            Accept: "application/json",
+        },
+        success: function (res) {
+            if (res.status !== "ok") return;
+
+            res = res.data;
+            var html = "";
+            html += '<div id="all">';
+
+            for (let i = 0; i < 4; i++) {
+                html += '<div data-cats="" class="item">';
+                html +=
+                    '<div class="img"style="background-image: url(' +
+                    res[i].image +
+                    ')"></div>';
+                html += "<h1>" + res[i].title + "</h1>";
+                html += '<p class="desc">' + res[i].digest + "</p>";
+                html += '<p data-id="17" class="more">';
+                html += "</p>";
+                html += "</div>";
+            }
+            html += "</div>";
+            $("#news").append(html);
+        },
+    });
+});

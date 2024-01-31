@@ -8,9 +8,13 @@
     <meta property="og:site_name" content="Products | Bogen studio" />
     <title>Products | Bogen studio</title>
 
+    <meta property="og:image"
+        content="https://bogenstudio.com/storage/products/psFGT5z1oCwEJzdZ1O8vOSiUi831C163pAWL8fVs.jpg" />
+    <meta property="og:image:secure_url"
+        content="https://bogenstudio.com/storage/products/psFGT5z1oCwEJzdZ1O8vOSiUi831C163pAWL8fVs.jpg" />
+    <meta property="og:image:width" content="2040" />
+    <meta property="og:image:height" content="1152" />
     @if ($pic != null)
-        <meta property="og:image" content="{{ $pic }}" />
-        <meta property="og:image:secure_url" content="{{ $pic }}" />
         <meta name="twitter:image" content="{{ $pic }}" />
     @endif
 
@@ -23,7 +27,7 @@
     @endif
 
     <?php
-    $description = $seo['description'] != null && !empty($seo['description']) ? $seo['description'] : '';
+    $description = $seo['description'] != null && !empty($seo['description']) ? $seo['description'] : 'description :Bogen Studio Virtual reality (VR) and augmented reality (AR) firefighting and commander training software, virtual exhibitions, art galleries, and industrial simulations.';
     ?>
 
     @if (!empty($description))
@@ -36,8 +40,8 @@
         {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "نام",
-          "image": "عکس ",
+          "name": "product",
+          "image": "https://bogenstudio.com/storage/products/psFGT5z1oCwEJzdZ1O8vOSiUi831C163pAWL8fVs.jpg ",
           "@id": "",
           "url": "{{URL::current()}}",
           "telephone": "",

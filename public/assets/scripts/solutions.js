@@ -42,7 +42,7 @@ $(document).ready(function () {
             res = res.data;
 
             html =
-                "<div style='flex-direction: row; flex-wrap: wrap;margin-top: 25px;'>";
+                "<div style='flex-direction: row; flex-wrap: wrap;margin-top: 25px;justify-content: space-between;margin-right:10px'>";
             for (i = 0; i < res.length; i++) {
                 let t = "tag_" + res[i].tag.split(" ").join("_");
 
@@ -107,5 +107,12 @@ $(document).ready(function () {
                         $(this).removeClass("hidden");
                 });
         }
+    }
+});
+$("#categories-container").click(function () {
+    if ($(".close").css("height") == "35px") {
+        $(".close").css("height", "315px");
+    } else {
+        $(".close").css("height", "35px");
     }
 });

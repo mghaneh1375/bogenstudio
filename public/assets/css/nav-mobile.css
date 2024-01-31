@@ -1,5 +1,4 @@
 @media only screen and (max-width: 900px) {
-
     #menu p {
         padding-right: 15px;
         padding-left: 15px;
@@ -8,11 +7,9 @@
     #menu button {
         width: 105px;
     }
-
 }
 
 @media only screen and (max-width: 768px) {
-
     #navbar {
         height: 65px !important;
     }
@@ -103,7 +100,8 @@
         display: block !important;
         /* UI Properties */
         text-align: left;
-        font: normal normal normal var(--medium-tiny-text-size)/27px var(--font-family);
+        font: normal normal normal var(--medium-tiny-text-size) / 27px
+            var(--font-family);
         letter-spacing: 0;
         color: var(--silver);
         opacity: 1;
@@ -112,12 +110,13 @@
     #open-menu p {
         color: var(--main-color);
         margin-left: 40px;
-        margin-top: 30px;;
+        margin-top: 30px;
     }
 
     #open-menu p a {
         text-decoration: none;
-        font: normal normal normal var(--medium-big-text-size)/27px var(--font-family);
+        font: normal normal normal var(--medium-big-text-size) / 27px
+            var(--font-family);
         color: inherit;
     }
 
@@ -131,9 +130,7 @@
     }
 }
 
-@media only screen and (max-height: 400px),
-       only screen and (min-width: 650px) {
-
+@media only screen and (max-height: 400px), only screen and (min-width: 650px) {
     #open-menu p {
         margin-top: 25px;
     }

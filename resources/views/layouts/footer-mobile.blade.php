@@ -7,13 +7,13 @@
 
 <footer id="phone-footer" class="hidden">
 
-    <div class="col">
+    {{-- <div class="col" >
         <h1>{{ __('footer.lang') }}</h1>
         <a href="{{ route('changeLang', ['lang' => 'en']) }}">English</a>
         <a href="{{ route('changeLang', ['lang' => 'gr']) }}">Deutsch</a>
         <a href="{{ route('changeLang', ['lang' => 'ar']) }}">العربیه</a>
         <a href="{{ route('changeLang', ['lang' => 'fa']) }}">فارسی</a>
-    </div>
+    </div> --}}
 
     <div class="col">
         <h1>{{ __('footer.findUs') }}</h1>
